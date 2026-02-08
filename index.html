@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lyes Mouhoun — Portfolio BTS SIO SISR</title>
+  <meta name="description" content="Portfolio de Lyes Mouhoun - Étudiant BTS SIO option SISR">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-dark text-gray-200">
+
+  <!-- Background gradient -->
+  <div class="bg-grid"></div>
+
+  <!-- Mouse glow effect -->
+  <div id="mouseGlow" class="mouse-glow"></div>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo">LM</div>
+      <div>
+        <p class="sidebar-name">Lyes Mouhoun</p>
+        <p class="sidebar-subtitle">BTS SIO SISR</p>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a href="#accueil" class="nav-link">Accueil</a>
+      <a href="#profil" class="nav-link">Profil</a>
+      <a href="#competences" class="nav-link">Compétences</a>
+      <a href="#e6" class="nav-link">Situations Pro E6</a>
+      <a href="#projets" class="nav-link">Projets</a>
+      <a href="#certifications" class="nav-link">Certifications</a>
+      <a href="#parcours" class="nav-link">Parcours</a>
+      <a href="#experiences" class="nav-link">Expériences</a>
+      <a href="#documents" class="nav-link">Documents</a>
+      <a href="#veille" class="nav-link">Veille</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <p>© 2025 Lyes Mouhoun</p>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+
+    <!-- Accueil -->
+    <section id="accueil" class="hero-section">
+      <div class="text-center max-w-2xl mx-auto">
+        <p class="text-accent text-sm tracking-widest mb-4 hero-subtitle">BTS SIO — OPTION SISR</p>
+        <h1 class="hero-title">Lyes Mouhoun</h1>
+        <p class="text-xl text-gray-400 mb-8 font-light hero-subtitle">Passionné par les infrastructures systèmes et
+          réseaux</p>
+        <div class="flex gap-4 justify-center hero-buttons">
+          <a href="#profil" class="btn-primary">Découvrir →</a>
+          <a href="#contact" class="btn-secondary">Me contacter</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Profil -->
+    <section id="profil" class="section" data-aos="fade-up">
+      <h2 class="section-title"><span>Profil</span></h2>
+      <div class="section-divider"></div>
+      <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
+        <div class="card card-hover stagger-item">
+          <h3 class="card-title">📋 Informations</h3>
+          <ul class="space-y-3 text-gray-300">
+            <li class="flex justify-between"><span class="text-gray-500">Né le</span> <span>31 mai 2005</span></li>
+            <li class="flex justify-between"><span class="text-gray-500">Formation</span> <span>BTS SIO SISR</span></li>
+            <li class="flex justify-between"><span class="text-gray-500">Établissement</span> <span>Lycée Turgot,
+                Paris</span></li>
+            <li class="flex justify-between"><span class="text-gray-500">Email</span>
+              <span>lyes.mouhoun@email.com</span></li>
+          </ul>
+        </div>
+        <div class="card card-hover stagger-item">
+          <h3 class="card-title">✨ À propos</h3>
+          <p class="text-gray-300 leading-relaxed mb-4">
+            Passionné par les infrastructures systèmes et réseaux, je me forme pour devenir administrateur
+            systèmes/réseaux avec un intérêt particulier pour la cybersécurité et la virtualisation.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="tag">Curieux</span>
+            <span class="tag">Rigoureux</span>
+            <span class="tag">Autonome</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Compétences -->
+    <section id="competences" class="section" data-aos="fade-up">
+      <h2 class="section-title"><span>Compétences</span></h2>
+      <div class="section-divider"></div>
+      <div class="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Linux -->
+        <div class="skill-card stagger-item">
+          <div class="skill-header">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux"
+              class="skill-logo">
+            <div>
+              <h3 class="skill-name">Linux</h3>
+              <p class="text-gray-500 text-sm">Administration système</p>
+            </div>
+          </div>
+          <div class="skill-items">
+            <span class="skill-item">Debian</span>
+            <span class="skill-item">Ubuntu Server</span>
+            <span class="skill-item">CentOS</span>
+            <span class="skill-item">SSH</span>
+            <span class="skill-item">Apache</span>
+            <span class="skill-item">Nginx</span>
+            <span class="skill-item">Bash Scripting</span>
+            <span class="skill-item">Cron</span>
+          </div>
+          <div class="skill-level">
+            <div class="flex justify-between text-xs mb-1">
+              <span class="text-gray-500">Niveau</span>
+              <span class="text-accent">80%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="80%" style="width: 80%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Windows Server -->
+        <div class="skill-card stagger-item">
+          <div class="skill-header">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg" alt="Windows"
+              class="skill-logo">
+            <div>
+              <h3 class="skill-name">Windows Server</h3>
+              <p class="text-gray-500 text-sm">Infrastructure Microsoft</p>
+            </div>
+          </div>
+          <div class="skill-items">
+            <span class="skill-item">Active Directory</span>
+            <span class="skill-item">GPO</span>
+            <span class="skill-item">DNS</span>
+            <span class="skill-item">DHCP</span>
+            <span class="skill-item">IIS</span>
+            <span class="skill-item">PowerShell</span>
+            <span class="skill-item">Hyper-V</span>
+            <span class="skill-item">WSUS</span>
+          </div>
+          <div class="skill-level">
+            <div class="flex justify-between text-xs mb-1">
+              <span class="text-gray-500">Niveau</span>
+              <span class="text-accent">75%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="75%" style="width: 75%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Virtualisation -->
+        <div class="skill-card stagger-item">
+          <div class="skill-header">
+            <img src="https://www.svgrepo.com/show/448253/vmware.svg" alt="VMware" class="skill-logo">
+            <div>
+              <h3 class="skill-name">Virtualisation</h3>
+              <p class="text-gray-500 text-sm">Environnements virtuels</p>
+            </div>
+          </div>
+          <div class="skill-items">
+            <span class="skill-item">VMware ESXi</span>
+            <span class="skill-item">vSphere</span>
+            <span class="skill-item">Proxmox VE</span>
+            <span class="skill-item">VirtualBox</span>
+            <span class="skill-item">Docker</span>
+            <span class="skill-item">Containers</span>
+            <span class="skill-item">Snapshots</span>
+          </div>
+          <div class="skill-level">
+            <div class="flex justify-between text-xs mb-1">
+              <span class="text-gray-500">Niveau</span>
+              <span class="text-accent">70%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="70%" style="width: 70%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Réseau -->
+        <div class="skill-card stagger-item">
+          <div class="skill-header">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/networkx/networkx-original.svg" alt="Réseau"
+              class="skill-logo" style="filter: invert(1);">
+            <div>
+              <h3 class="skill-name">Réseau</h3>
+              <p class="text-gray-500 text-sm">Infrastructure réseau</p>
+            </div>
+          </div>
+          <div class="skill-items">
+            <span class="skill-item">TCP/IP</span>
+            <span class="skill-item">VLAN</span>
+            <span class="skill-item">Routage</span>
+            <span class="skill-item">Switching</span>
+            <span class="skill-item">Cisco IOS</span>
+            <span class="skill-item">Packet Tracer</span>
+            <span class="skill-item">Wireshark</span>
+            <span class="skill-item">VPN</span>
+          </div>
+          <div class="skill-level">
+            <div class="flex justify-between text-xs mb-1">
+              <span class="text-gray-500">Niveau</span>
+              <span class="text-accent">75%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="75%" style="width: 75%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sécurité -->
+        <div class="skill-card stagger-item">
+          <div class="skill-header">
+            <img src="https://cdn-icons-png.flaticon.com/512/2092/2092663.png" alt="Sécurité" class="skill-logo">
+            <div>
+              <h3 class="skill-name">Sécurité</h3>
+              <p class="text-gray-500 text-sm">Cybersécurité</p>
+            </div>
+          </div>
+          <div class="skill-items">
+            <span class="skill-item">Firewall</span>
+            <span class="skill-item">pfSense</span>
+            <span class="skill-item">iptables</span>
+            <span class="skill-item">Hardening</span>
+            <span class="skill-item">Logs & SIEM</span>
+            <span class="skill-item">Fail2ban</span>
+            <span class="skill-item">SSL/TLS</span>
+          </div>
+          <div class="skill-level">
+            <div class="flex justify-between text-xs mb-1">
+              <span class="text-gray-500">Niveau</span>
+              <span class="text-accent">65%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="65%" style="width: 65%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Supervision -->
+        <div class="skill-card stagger-item">
+          <div class="skill-header">
+            <img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png" alt="Supervision" class="skill-logo">
+            <div>
+              <h3 class="skill-name">Supervision</h3>
+              <p class="text-gray-500 text-sm">Monitoring & ITSM</p>
+            </div>
+          </div>
+          <div class="skill-items">
+            <span class="skill-item">GLPI</span>
+            <span class="skill-item">Zabbix</span>
+            <span class="skill-item">Nagios</span>
+            <span class="skill-item">Grafana</span>
+            <span class="skill-item">SNMP</span>
+            <span class="skill-item">Ticketing</span>
+            <span class="skill-item">Backup</span>
+          </div>
+          <div class="skill-level">
+            <div class="flex justify-between text-xs mb-1">
+              <span class="text-gray-500">Niveau</span>
+              <span class="text-accent">70%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="70%" style="width: 70%;"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Situations Professionnelles E6 -->
+    <section id="e6" class="section" data-aos="fade-up">
+      <h2 class="section-title"><span>Situations Professionnelles E6</span></h2>
+      <p class="section-subtitle">Support de l'épreuve "Administration des systèmes et des réseaux"</p>
+      <div class="section-divider"></div>
+
+      <div class="max-w-6xl mx-auto">
+        <!-- Infrastructure Réseau - Full width -->
+        <div class="mb-10">
+          <div class="pdf-container glow-border">
+            <div class="pdf-header">
+              <span class="pdf-title">🌐 Infrastructure Réseau</span>
+              <a href="pdf/infra_reseau.pdf" target="_blank" class="btn-accent text-xs">Plein écran ↗</a>
+            </div>
+            <iframe src="pdf/infra_reseau.pdf"></iframe>
+          </div>
+        </div>
+
+        <!-- Situations Pro 1 & 2 - Side by side -->
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="pdf-container glow-border">
+            <div class="pdf-header">
+              <span class="pdf-title">📋 Situation Professionnelle 1</span>
+              <a href="pdf/situation_pro_1.pdf" target="_blank" class="btn-accent text-xs">Plein écran ↗</a>
+            </div>
+            <iframe src="pdf/situation_pro_1.pdf"></iframe>
+          </div>
+
+          <div class="pdf-container glow-border">
+            <div class="pdf-header">
+              <span class="pdf-title">📋 Situation Professionnelle 2</span>
+              <a href="pdf/situation_pro_2.pdf" target="_blank" class="btn-accent text-xs">Plein écran ↗</a>
+            </div>
+            <iframe src="pdf/situation_pro_2.pdf"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projets -->
+    <section id="projets" class="section" data-aos="fade-up">
+      <h2 class="section-title"><span>Projets</span></h2>
+      <div class="section-divider"></div>
+      <div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-6">
+        <div class="card card-hover text-center stagger-item">
+          <div class="text-5xl mb-4">🎮</div>
+          <h3 class="font-semibold text-white mb-2">Devine le Nombre</h3>
+          <p class="text-gray-500 text-sm mb-4">Jeu Python interactif avec interface graphique</p>
+          <div class="flex gap-2 justify-center mb-4">
+            <span class="skill-item">Python</span>
+            <span class="skill-item">Tkinter</span>
+          </div>
+          <a href="https://github.com/lyes3105" target="_blank" class="btn-accent">GitHub →</a>
+        </div>
+        <div class="card card-hover text-center stagger-item">
+          <div class="text-5xl mb-4">📱</div>
+          <h3 class="font-semibold text-white mb-2">Site iPhone</h3>
+          <p class="text-gray-500 text-sm mb-4">E-commerce avec base de données MySQL</p>
+          <div class="flex gap-2 justify-center mb-4">
+            <span class="skill-item">PHP</span>
+            <span class="skill-item">MySQL</span>
+          </div>
+          <a href="https://github.com/lyes3105" target="_blank" class="btn-accent">GitHub →</a>
+        </div>
+        <div class="card card-hover text-center stagger-item">
+          <div class="text-5xl mb-4">🌐</div>
+          <h3 class="font-semibold text-white mb-2">Portfolio</h3>
+          <p class="text-gray-500 text-sm mb-4">Ce site portfolio responsive</p>
+          <div class="flex gap-2 justify-center mb-4">
+            <span class="skill-item">HTML</span>
+            <span class="skill-item">CSS</span>
+            <span class="skill-item">JS</span>
+          </div>
+          <a href="https://github.com/lyes3105" target="_blank" class="btn-accent">GitHub →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certifications -->
+    <section id="certifications" class="section" data-aos="fade-up">
+      <h2 class="section-title"><span>Certifications</span></h2>
+      <div class="section-divider"></div>
+      <div class="max-w-5xl mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+        <a href="pdf/notionsdebasesreseau.pdf" target="_blank" class="card card-hover text-center stagger-item">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Cisco_logo_blue_2016.svg/1200px-Cisco_logo_blue_2016.svg.png"
+            alt="Cisco" class="cert-logo mx-auto mb-3">
+          <h3 class="font-medium text-white text-sm">Notions Réseaux</h3>
+          <p class="text-xs text-gray-600 mt-1">Cisco Networking Academy</p>
+        </a>
+        <a href="pdf/Python Essentials 1.pdf" target="_blank" class="card card-hover text-center stagger-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"
+            class="cert-logo mx-auto mb-3">
+          <h3 class="font-medium text-white text-sm">Python Essentials 1</h3>
+          <p class="text-xs text-gray-600 mt-1">Cisco Networking Academy</p>
+        </a>
+        <a href="pdf/introcyber.pdf" target="_blank" class="card card-hover text-center stagger-item">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Cisco_logo_blue_2016.svg/1200px-Cisco_logo_blue_2016.svg.png"
+            alt="Cisco" class="cert-logo mx-auto mb-3">
+          <h3 class="font-medium text-white text-sm">Intro Cybersécurité</h3>
+          <p class="text-xs text-gray-600 mt-1">Cisco Networking Academy</p>
+        </a>
+        <a href="pdf/intropackettracer.pdf" target="_blank" class="card card-hover text-center stagger-item">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Cisco_logo_blue_2016.svg/1200px-Cisco_logo_blue_2016.svg.png"
+            alt="Cisco" class="cert-logo mx-auto mb-3">
+          <h3 class="font-medium text-white text-sm">Packet Tracer</h3>
+          <p class="text-xs text-gray-600 mt-1">Cisco Networking Academy</p>
+        </a>
+        <a href="pdf/ccna.pdf" target="_blank" class="card card-hover text-center stagger-item">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Cisco_logo_blue_2016.svg/1200px-Cisco_logo_blue_2016.svg.png"
+            alt="Cisco" class="cert-logo mx-auto mb-3">
+          <h3 class="font-medium text-white text-sm">CCNA</h3>
+          <p class="text-xs text-gray-600 mt-1">Cisco Networking Academy</p>
+        </a>
+        <a href="pdf/pix_certification.pdf" target="_blank" class="card card-hover text-center stagger-item">
+          <img src="https://upload.wikimedia.org/wikipedia/fr/thumb/5/5c/Logo_Pix.svg/1200px-Logo_Pix.svg.png" alt="PIX"
+            class="cert-logo mx-auto mb-3">
+          <h3 class="font-medium text-white text-sm">PIX Digital Skills</h3>
+          <p class="text-xs text-gray-600 mt-1">PIX</p>
+        </a>
+        <a href="pdf/Core Designer Certificate.pdf" target="_blank" class="card card-hover text-center stagger-item">
+          <img src="https://www.dataiku.com/static/img/partners/logo-dataiku.svg" alt="Dataiku"
+            class="cert-logo mx-auto mb-3">
+          <h3 class="font-medium text-white text-sm">Core Designer</h3>
+          <p class="text-xs text-gray-600 mt-1">Dataiku</p>
+        </a>
+        <a href="pdf/Generative AI Practitioner Certificate.pdf" target="_blank"
+          class="card card-hover text-center stagger-item">
+          <img src="https://www.dataiku.com/static/img/partners/logo-dataiku.svg" alt="Dataiku"
+            class="cert-logo mx-auto mb-3">
+          <h3 class="font-medium text-white text-sm">Generative AI</h3>
+          <p class="text-xs text-gray-600 mt-1">Dataiku</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- Parcours -->
+    <section id="parcours" class="section" data-aos="fade-up">
+      <h2 class="section-title"><span>Parcours</span></h2>
+      <div class="section-divider"></div>
+      <div class="max-w-2xl mx-auto">
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="text-accent text-sm font-medium">2019 - 2020</span>
+              <h3 class="font-semibold text-white mt-1">Brevet Général</h3>
+              <p class="text-gray-500 text-sm">Collège Stéphane Mallarmé — Mention</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="text-accent text-sm font-medium">2022 - 2023</span>
+              <h3 class="font-semibold text-white mt-1">Bac Général Maths/SVT</h3>
+              <p class="text-gray-500 text-sm">Lycée Edgar Quinet, Paris</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="text-accent text-sm font-medium">2023 - 2024</span>
+              <h3 class="font-semibold text-white mt-1">Année PASS</h3>
+              <p class="text-gray-500 text-sm">Réorientation vers l'informatique</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="text-accent text-sm font-medium">2024 - 2026</span>
+              <h3 class="font-semibold text-white mt-1">BTS SIO Option SISR</h3>
+              <p class="text-gray-500 text-sm">Lycée Turgot, Paris — En cours</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Expériences -->
+    <section id="experiences" class="section" data-aos="fade-up">
+      <h2 class="section-title"><span>Expériences</span></h2>
+      <div class="section-divider"></div>
+      <div class="max-w-3xl mx-auto space-y-6">
+        <div class="card card-hover stagger-item">
+          <div class="flex items-start gap-4 mb-4">
+            <div class="logo-container">
+              <img src="logo/stage 1.jpg" alt="Logo Stage 1">
+            </div>
+            <div class="flex-1">
+              <div class="flex justify-between items-start flex-wrap gap-2">
+                <h3 class="font-semibold text-white">Stage 1ère année BTS SIO SISR</h3>
+                <span class="badge">2024-2025</span>
+              </div>
+              <p class="text-gray-500 text-sm mt-1">Technicien Infrastructure & Sécurité</p>
+            </div>
+          </div>
+          <ul class="text-gray-400 text-sm space-y-2 mb-4">
+            <li class="flex items-start gap-2"><span class="text-accent">▸</span> Installation et configuration de
+              serveurs Debian et Windows Server</li>
+            <li class="flex items-start gap-2"><span class="text-accent">▸</span> Gestion des utilisateurs via Active
+              Directory et GPO</li>
+            <li class="flex items-start gap-2"><span class="text-accent">▸</span> Virtualisation d'environnements VMware
+              / VirtualBox</li>
+            <li class="flex items-start gap-2"><span class="text-accent">▸</span> Rédaction de documentation technique
+            </li>
+          </ul>
+          <a href="pdf/Raportstage.pdf" target="_blank" class="btn-accent">📄 Voir le rapport →</a>
+        </div>
+
+        <div class="card card-hover stagger-item">
+          <div class="flex items-start gap-4 mb-4">
+            <div class="logo-container">
+              <img src="logo/stage2eme annee.png" alt="Logo Stage 2">
+            </div>
+            <div class="flex-1">
+              <div class="flex justify-between items-start flex-wrap gap-2">
+                <h3 class="font-semibold text-white">Stage 2ème année BTS SIO SISR</h3>
+                <span class="badge badge-alt">2025-2026</span>
+              </div>
+              <p class="text-gray-500 text-sm mt-1">Technicien Support & Réseau</p>
+            </div>
+          </div>
+          <ul class="text-gray-400 text-sm space-y-2 mb-4">
+            <li class="flex items-start gap-2"><span class="text-accent">▸</span> Déploiement et supervision de serveurs
+              (Linux/Windows)</li>
+            <li class="flex items-start gap-2"><span class="text-accent">▸</span> Configuration avancée des réseaux
+              (VLAN, routage, firewall)</li>
+            <li class="flex items-start gap-2"><span class="text-accent">▸</span> Automatisation via scripts Bash /
+              PowerShell</li>
+            <li class="flex items-start gap-2"><span class="text-accent">▸</span> Audit et durcissement de la sécurité
+            </li>
+          </ul>
+          <a href="pdf/rapport de stage 2eme annee.pdf" target="_blank" class="btn-accent">📄 Voir le rapport →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Documents Officiels -->
+    <section id="documents" class="section" data-aos="fade-up">
+      <h2 class="section-title"><span>Documents Officiels</span></h2>
+      <div class="section-divider"></div>
+      <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
+        <div>
+          <div class="pdf-container glow-border">
+            <div class="pdf-header">
+              <span class="pdf-title">📊 Tableau de Synthèse</span>
+              <a href="pdf/Tableau_Synthese.pdf" target="_blank" class="btn-accent text-xs">Plein écran ↗</a>
+            </div>
+            <iframe src="pdf/Tableau_Synthese.pdf"></iframe>
+          </div>
+        </div>
+        <div>
+          <div class="pdf-container glow-border">
+            <div class="pdf-header">
+              <span class="pdf-title">📄 Curriculum Vitae</span>
+              <a href="pdf/Lyes mouhoun CV.pdf" target="_blank" class="btn-accent text-xs">Plein écran ↗</a>
+            </div>
+            <iframe src="pdf/Lyes mouhoun CV.pdf"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <div class="max-w-5xl mx-auto mt-12">
+        <h3 class="text-accent mb-6 font-semibold text-lg text-center">Documentation Technique</h3>
+        <div class="grid md:grid-cols-2 gap-4">
+          <a href="pdf/proxmox instalation.pdf" target="_blank"
+            class="card card-hover flex items-center gap-4 stagger-item">
+            <span class="text-3xl">🖥️</span>
+            <div>
+              <h4 class="font-medium text-white">Installation Proxmox</h4>
+              <p class="text-gray-600 text-sm">Configuration complète Proxmox VE</p>
+            </div>
+          </a>
+          <a href="pdf/Documentation-Installation GLPI sur Debian (1) (1).pdf" target="_blank"
+            class="card card-hover flex items-center gap-4 stagger-item">
+            <span class="text-3xl">🎫</span>
+            <div>
+              <h4 class="font-medium text-white">Installation GLPI</h4>
+              <p class="text-gray-600 text-sm">Déploiement GLPI sur Debian</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Veille Technologique -->
+    <section id="veille" class="section" data-aos="fade-up">
+      <h2 class="section-title"><span>Veille Technologique</span></h2>
+      <p class="section-subtitle">Méthodologie, Outils et Analyse</p>
+      <div class="section-divider"></div>
+
+      <div class="max-w-4xl mx-auto">
+        <!-- Thème -->
+        <div class="card card-hover mb-8 stagger-item">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="text-4xl">🔍</div>
+            <div>
+              <h3 class="font-semibold text-white text-lg">L'IA appliquée aux Objets Connectés</h3>
+              <p class="text-accent text-sm">Thème 2024-2025</p>
+            </div>
+          </div>
+          <p class="text-gray-400 leading-relaxed">
+            Ma veille porte sur l'Intelligence Artificielle appliquée aux objets connectés :
+            lunettes intelligentes, capteurs embarqués, interfaces voice-AI, wearables et IoT médical.
+          </p>
+        </div>
+
+        <!-- Analyse -->
+        <h3 class="text-accent mb-6 font-semibold text-lg">Analyse du Sujet</h3>
+        <div class="grid md:grid-cols-2 gap-6 mb-10">
+          <div class="card border-l-4" style="border-left-color: var(--accent);">
+            <h4 class="font-semibold text-white mb-2">🕶️ Lunettes Connectées & IA</h4>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Meta développe des lunettes avec IA intégrée : reconnaissance visuelle,
+              commandes vocales, affichage AR. Les Ray-Ban Meta combinent caméra, micro et assistant IA.
+            </p>
+          </div>
+          <div class="card border-l-4" style="border-left-color: var(--accent);">
+            <h4 class="font-semibold text-white mb-2">🏥 IoT & Santé Connectée</h4>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Les capteurs biométriques permettent un télésuivi médical en temps réel.
+              L'IA analyse les données pour anticiper les anomalies et améliorer les soins.
+            </p>
+          </div>
+        </div>
+
+        <!-- Méthodologie -->
+        <div class="card card-hover mb-10 stagger-item">
+          <h3 class="text-accent mb-4 font-semibold">⚙️ Méthodologie</h3>
+          <p class="text-gray-400 mb-4">
+            J'utilise un agrégateur RSS (Feedly) pour centraliser l'information et effectuer une veille quotidienne.
+            Alertes Google et réseaux sociaux en complément.
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <span class="tag">📡 Feedly</span>
+            <span class="tag">🔔 Google Alerts</span>
+            <span class="tag">🐦 Twitter/X</span>
+            <span class="tag">💼 LinkedIn</span>
+          </div>
+        </div>
+
+        <!-- Sources -->
+        <h3 class="text-accent mb-6 font-semibold text-lg">Sources Principales</h3>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+          <a href="https://www.lemonde.fr/pixels/" target="_blank" class="card card-hover text-center p-4 stagger-item">
+            <span class="block font-medium text-white">Le Monde Pixels</span>
+            <span class="text-xs text-gray-600">Actualités tech</span>
+          </a>
+          <a href="https://www.techniques-ingenieur.fr/" target="_blank"
+            class="card card-hover text-center p-4 stagger-item">
+            <span class="block font-medium text-white">Techniques Ingénieur</span>
+            <span class="text-xs text-gray-600">Articles techniques</span>
+          </a>
+          <a href="https://www.zdnet.fr/" target="_blank" class="card card-hover text-center p-4 stagger-item">
+            <span class="block font-medium text-white">ZDNet</span>
+            <span class="text-xs text-gray-600">Tech & Business</span>
+          </a>
+          <a href="https://www.medtechfrance.fr/" target="_blank" class="card card-hover text-center p-4 stagger-item">
+            <span class="block font-medium text-white">MedTech France</span>
+            <span class="text-xs text-gray-600">Santé & IoT</span>
+          </a>
+        </div>
+
+        <!-- Articles -->
+        <h3 class="text-accent mb-6 font-semibold text-lg">Articles Récents</h3>
+        <div class="space-y-4">
+          <a href="https://www.lemonde.fr/pixels/article/2025/09/18/ray-ban-display-que-penser-des-lunettes-a-ecran-integre-devoilees-par-meta_6641712_4408996.html"
+            target="_blank" class="card card-hover block stagger-item">
+            <h4 class="font-medium text-white mb-1">Ray‑Ban Display : lunettes à écran intégré par Meta</h4>
+            <p class="text-gray-500 text-sm">Micro‑écran projeté, commandes gestuelles et intégration IA.</p>
+            <span class="text-accent text-xs mt-2 inline-block">Le Monde →</span>
+          </a>
+          <a href="https://www.lemonde.fr/pixels/article/2025/06/17/on-a-teste-les-ray-ban-connectees-de-meta_6613893_4408996.html"
+            target="_blank" class="card card-hover block stagger-item">
+            <h4 class="font-medium text-white mb-1">Test des Ray‑Ban connectées de Meta</h4>
+            <p class="text-gray-500 text-sm">Lunettes dotées d'IA visuelle et audio, fonctions avancées.</p>
+            <span class="text-accent text-xs mt-2 inline-block">Le Monde →</span>
+          </a>
+          <a href="https://www.medtechfrance.fr/innovations-et-technologies/sante-numerique/telesuivi-et-objets-connectes-comment-gagner-du-temps-sans-perdre-en-qualite/"
+            target="_blank" class="card card-hover block stagger-item">
+            <h4 class="font-medium text-white mb-1">Télésuivi et objets connectés en santé</h4>
+            <p class="text-gray-500 text-sm">Capteurs biométriques et IA pour le suivi médical.</p>
+            <span class="text-accent text-xs mt-2 inline-block">MedTech France →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section" data-aos="fade-up">
+      <h2 class="section-title"><span>Contact</span></h2>
+      <p class="section-subtitle">Ouvert aux opportunités de stage et d'alternance</p>
+      <div class="section-divider"></div>
+      <div class="max-w-xl mx-auto">
+        <form action="contact.php" method="POST" class="card space-y-5">
+          <div class="grid md:grid-cols-2 gap-4">
+            <input type="text" name="name" placeholder="Votre nom" required class="form-input">
+            <input type="email" name="email" placeholder="Votre email" required class="form-input">
+          </div>
+          <textarea name="message" rows="5" placeholder="Votre message..." required
+            class="form-input resize-none"></textarea>
+          <button type="submit" class="btn-primary w-full">Envoyer le message →</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>© 2025 <span class="text-accent">Lyes Mouhoun</span> — BTS SIO SISR • Lycée Turgot, Paris</p>
+    </footer>
+
+  </main>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="script.js"></script>
+
+</body>
+
+</html>
