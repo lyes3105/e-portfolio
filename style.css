@@ -573,6 +573,26 @@ body {
   transform: translateX(5px);
 }
 
+.btn-doc {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-secondary);
+  text-decoration: none;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+.btn-doc:hover {
+  background: rgba(124, 58, 237, 0.15);
+  border-color: rgba(124, 58, 237, 0.4);
+  color: var(--accent-light);
+  transform: translateY(-2px);
+}
+
 /* ==============================
    Text Colors
 ============================== */

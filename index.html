@@ -57,10 +57,14 @@
     <!-- Accueil -->
     <section id="accueil" class="hero-section">
       <div class="text-center max-w-2xl mx-auto">
-        <p class="text-accent text-sm tracking-widest mb-4 hero-subtitle">BTS SIO — OPTION SISR</p>
+        <div class="flex items-center justify-center gap-3 mb-4 hero-subtitle">
+          <img src="logo/lycéee turgot.jpeg" alt="Logo Lycée Turgot" class="h-12 w-12 object-contain rounded-lg">
+          <p class="text-accent text-sm tracking-widest">ÉTUDIANT EN 2ÈME ANNÉE BTS SIO — OPTION SISR</p>
+        </div>
         <h1 class="hero-title">Lyes Mouhoun</h1>
-        <p class="text-xl text-gray-400 mb-8 font-light hero-subtitle">Passionné par les infrastructures systèmes et
+        <p class="text-xl text-gray-400 mb-2 font-light hero-subtitle">Passionné par les infrastructures systèmes et
           réseaux</p>
+        <p class="text-sm text-gray-500 mb-8 hero-subtitle">📍 Lycée Turgot — Paris 75003</p>
         <div class="flex gap-4 justify-center hero-buttons">
           <a href="#profil" class="btn-primary">Découvrir →</a>
           <a href="#contact" class="btn-secondary">Me contacter</a>
@@ -81,7 +85,8 @@
             <li class="flex justify-between"><span class="text-gray-500">Établissement</span> <span>Lycée Turgot,
                 Paris</span></li>
             <li class="flex justify-between"><span class="text-gray-500">Email</span>
-              <span>lyes.mouhoun@email.com</span></li>
+              <span>lyesmouhoun05@gmail.com</span>
+            </li>
           </ul>
         </div>
         <div class="card card-hover stagger-item">
@@ -118,12 +123,9 @@
           <div class="skill-items">
             <span class="skill-item">Debian</span>
             <span class="skill-item">Ubuntu Server</span>
-            <span class="skill-item">CentOS</span>
             <span class="skill-item">SSH</span>
             <span class="skill-item">Apache</span>
-            <span class="skill-item">Nginx</span>
             <span class="skill-item">Bash Scripting</span>
-            <span class="skill-item">Cron</span>
           </div>
           <div class="skill-level">
             <div class="flex justify-between text-xs mb-1">
@@ -151,10 +153,8 @@
             <span class="skill-item">GPO</span>
             <span class="skill-item">DNS</span>
             <span class="skill-item">DHCP</span>
-            <span class="skill-item">IIS</span>
             <span class="skill-item">PowerShell</span>
             <span class="skill-item">Hyper-V</span>
-            <span class="skill-item">WSUS</span>
           </div>
           <div class="skill-level">
             <div class="flex justify-between text-xs mb-1">
@@ -178,10 +178,8 @@
           </div>
           <div class="skill-items">
             <span class="skill-item">VMware ESXi</span>
-            <span class="skill-item">vSphere</span>
             <span class="skill-item">Proxmox VE</span>
             <span class="skill-item">VirtualBox</span>
-            <span class="skill-item">Docker</span>
             <span class="skill-item">Containers</span>
             <span class="skill-item">Snapshots</span>
           </div>
@@ -242,7 +240,6 @@
             <span class="skill-item">iptables</span>
             <span class="skill-item">Hardening</span>
             <span class="skill-item">Logs & SIEM</span>
-            <span class="skill-item">Fail2ban</span>
             <span class="skill-item">SSL/TLS</span>
           </div>
           <div class="skill-level">
@@ -269,7 +266,6 @@
             <span class="skill-item">GLPI</span>
             <span class="skill-item">Zabbix</span>
             <span class="skill-item">Nagios</span>
-            <span class="skill-item">Grafana</span>
             <span class="skill-item">SNMP</span>
             <span class="skill-item">Ticketing</span>
             <span class="skill-item">Backup</span>
@@ -331,26 +327,58 @@
     <section id="projets" class="section" data-aos="fade-up">
       <h2 class="section-title"><span>Projets</span></h2>
       <div class="section-divider"></div>
-      <div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-6">
+      <div class="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         <div class="card card-hover text-center stagger-item">
-          <div class="text-5xl mb-4">🎮</div>
+          <div class="text-5xl mb-4">🏛️</div>
+          <h3 class="font-semibold text-white mb-2">Projet Sécurisation Mairie</h3>
+          <p class="text-gray-500 text-sm mb-4">Sécurisation infrastructure réseau d'une mairie</p>
+          <div class="flex gap-2 justify-center mb-4">
+            <span class="skill-item">Sécurité</span>
+            <span class="skill-item">Réseau</span>
+          </div>
+          <a href="https://github.com/lyes3105" target="_blank" class="btn-accent mb-2">GitHub →</a>
+          <div class="flex flex-col gap-2 mt-3">
+            <a href="pdf/projets/documentation projet mairie.pdf" target="_blank" class="btn-doc">📄 Voir
+              Documentation</a>
+            <a href="pdf/projets/Cahier des charges projet mairie.pdf" target="_blank" class="btn-doc">📋 Voir Cahier
+              Des Charges</a>
+            <a href="pdf/projets/gant projet mairie.pdf" target="_blank" class="btn-doc">📊 Suivi de Projet (Gantt)</a>
+          </div>
+        </div>
+        <div class="card card-hover text-center stagger-item">
+          <div class="text-5xl mb-4">🖥️</div>
+          <h3 class="font-semibold text-white mb-2">Installation Serveur Mine Test</h3>
+          <p class="text-gray-500 text-sm mb-4">Déploiement et configuration d'un serveur de jeu</p>
+          <div class="flex gap-2 justify-center mb-4">
+            <span class="skill-item">Linux</span>
+            <span class="skill-item">Réseau</span>
+          </div>
+          <a href="https://github.com/lyes3105" target="_blank" class="btn-accent mb-2">GitHub →</a>
+          <div class="flex flex-col gap-2 mt-3">
+            <a href="pdf/projets/cahier des charges Lyes-Rémi.pdf" target="_blank" class="btn-doc">📄 Voir
+              Documentation</a>
+            <a href="pdf/projets/cahier de test Lyes-Rémi.pdf" target="_blank" class="btn-doc">📋 Voir Cahier De
+              Tests</a>
+            <a href="pdf/projets/Cahier de recette Rémi-Lyes.pdf" target="_blank" class="btn-doc">📝 Voir Cahier
+              Recette</a>
+            <a href="pdf/projets/gant projet mine test .pdf" target="_blank" class="btn-doc">📊 Suivi de Projet
+              (Gantt)</a>
+          </div>
+        </div>
+        <div class="card card-hover text-center stagger-item">
+          <div class="text-5xl mb-4">�</div>
           <h3 class="font-semibold text-white mb-2">Devine le Nombre</h3>
           <p class="text-gray-500 text-sm mb-4">Jeu Python interactif avec interface graphique</p>
           <div class="flex gap-2 justify-center mb-4">
             <span class="skill-item">Python</span>
             <span class="skill-item">Tkinter</span>
           </div>
-          <a href="https://github.com/lyes3105" target="_blank" class="btn-accent">GitHub →</a>
-        </div>
-        <div class="card card-hover text-center stagger-item">
-          <div class="text-5xl mb-4">📱</div>
-          <h3 class="font-semibold text-white mb-2">Site iPhone</h3>
-          <p class="text-gray-500 text-sm mb-4">E-commerce avec base de données MySQL</p>
-          <div class="flex gap-2 justify-center mb-4">
-            <span class="skill-item">PHP</span>
-            <span class="skill-item">MySQL</span>
+          <a href="https://github.com/lyes3105" target="_blank" class="btn-accent mb-2">GitHub →</a>
+          <div class="flex flex-col gap-2 mt-3">
+            <a href="pdf/projets/devine_nombre_doc.pdf" target="_blank" class="btn-doc">📄 Voir Documentation</a>
+            <a href="pdf/projets/devine_nombre_tests.pdf" target="_blank" class="btn-doc">📋 Voir Cahier De Tests</a>
+            <a href="pdf/projets/devine_nombre_suivi.pdf" target="_blank" class="btn-doc">📊 Suivi de Projet</a>
           </div>
-          <a href="https://github.com/lyes3105" target="_blank" class="btn-accent">GitHub →</a>
         </div>
         <div class="card card-hover text-center stagger-item">
           <div class="text-5xl mb-4">🌐</div>
@@ -361,8 +389,14 @@
             <span class="skill-item">CSS</span>
             <span class="skill-item">JS</span>
           </div>
-          <a href="https://github.com/lyes3105" target="_blank" class="btn-accent">GitHub →</a>
+          <a href="https://github.com/lyes3105" target="_blank" class="btn-accent mb-2">GitHub →</a>
+          <div class="flex flex-col gap-2 mt-3">
+            <a href="pdf/projets/portfolio_doc.pdf" target="_blank" class="btn-doc">📄 Voir Documentation</a>
+            <a href="pdf/projets/portfolio_tests.pdf" target="_blank" class="btn-doc">📋 Voir Cahier De Tests</a>
+            <a href="pdf/projets/portfolio_suivi.pdf" target="_blank" class="btn-doc">� Suivi de Projet</a>
+          </div>
         </div>
+      </div>
       </div>
     </section>
 
@@ -411,18 +445,10 @@
           <h3 class="font-medium text-white text-sm">PIX Digital Skills</h3>
           <p class="text-xs text-gray-600 mt-1">PIX</p>
         </a>
-        <a href="pdf/Core Designer Certificate.pdf" target="_blank" class="card card-hover text-center stagger-item">
-          <img src="https://www.dataiku.com/static/img/partners/logo-dataiku.svg" alt="Dataiku"
-            class="cert-logo mx-auto mb-3">
-          <h3 class="font-medium text-white text-sm">Core Designer</h3>
-          <p class="text-xs text-gray-600 mt-1">Dataiku</p>
-        </a>
-        <a href="pdf/Generative AI Practitioner Certificate.pdf" target="_blank"
-          class="card card-hover text-center stagger-item">
-          <img src="https://www.dataiku.com/static/img/partners/logo-dataiku.svg" alt="Dataiku"
-            class="cert-logo mx-auto mb-3">
-          <h3 class="font-medium text-white text-sm">Generative AI</h3>
-          <p class="text-xs text-gray-600 mt-1">Dataiku</p>
+        <a href="pdf/secnum_academy.pdf" target="_blank" class="card card-hover text-center stagger-item">
+          <img src="https://www.ssi.gouv.fr/uploads/2015/10/logo_anssi.png" alt="ANSSI" class="cert-logo mx-auto mb-3">
+          <h3 class="font-medium text-white text-sm">SecNumAcadémie</h3>
+          <p class="text-xs text-gray-600 mt-1">ANSSI</p>
         </a>
       </div>
     </section>
@@ -471,7 +497,7 @@
 
     <!-- Expériences -->
     <section id="experiences" class="section" data-aos="fade-up">
-      <h2 class="section-title"><span>Expériences</span></h2>
+      <h2 class="section-title"><span>Expériences Professionnelles</span></h2>
       <div class="section-divider"></div>
       <div class="max-w-3xl mx-auto space-y-6">
         <div class="card card-hover stagger-item">
@@ -488,14 +514,18 @@
             </div>
           </div>
           <ul class="text-gray-400 text-sm space-y-2 mb-4">
-            <li class="flex items-start gap-2"><span class="text-accent">▸</span> Installation et configuration de
-              serveurs Debian et Windows Server</li>
-            <li class="flex items-start gap-2"><span class="text-accent">▸</span> Gestion des utilisateurs via Active
-              Directory et GPO</li>
-            <li class="flex items-start gap-2"><span class="text-accent">▸</span> Virtualisation d'environnements VMware
-              / VirtualBox</li>
-            <li class="flex items-start gap-2"><span class="text-accent">▸</span> Rédaction de documentation technique
-            </li>
+            <li class="flex items-start gap-2"><span class="text-accent">▸</span> Maintenance et mise à jour des sites
+              WordPress (correction erreurs 404, plugins, navigation)</li>
+            <li class="flex items-start gap-2"><span class="text-accent">▸</span> Sauvegarde et restauration des bases
+              de données MySQL via SSH</li>
+            <li class="flex items-start gap-2"><span class="text-accent">▸</span> Automatisation de formulaires
+              dynamiques PHP et génération de QR codes</li>
+            <li class="flex items-start gap-2"><span class="text-accent">▸</span> Création et configuration d'un
+              sous-domaine WordPress sur OVH</li>
+            <li class="flex items-start gap-2"><span class="text-accent">▸</span> Sécurisation des accès : suppression
+              anciens comptes, réinitialisation mots de passe</li>
+            <li class="flex items-start gap-2"><span class="text-accent">▸</span> Détection et suppression d'un malware
+              sur le serveur</li>
           </ul>
           <a href="pdf/Raportstage.pdf" target="_blank" class="btn-accent">📄 Voir le rapport →</a>
         </div>
@@ -514,14 +544,18 @@
             </div>
           </div>
           <ul class="text-gray-400 text-sm space-y-2 mb-4">
-            <li class="flex items-start gap-2"><span class="text-accent">▸</span> Déploiement et supervision de serveurs
-              (Linux/Windows)</li>
-            <li class="flex items-start gap-2"><span class="text-accent">▸</span> Configuration avancée des réseaux
-              (VLAN, routage, firewall)</li>
-            <li class="flex items-start gap-2"><span class="text-accent">▸</span> Automatisation via scripts Bash /
-              PowerShell</li>
-            <li class="flex items-start gap-2"><span class="text-accent">▸</span> Audit et durcissement de la sécurité
-            </li>
+            <li class="flex items-start gap-2"><span class="text-accent">▸</span> Réparation et optimisation du matériel
+              en atelier (upgrade SSD, RAM)</li>
+            <li class="flex items-start gap-2"><span class="text-accent">▸</span> Déploiement sur site et recette client
+              (Centre de Formation Aubervilliers)</li>
+            <li class="flex items-start gap-2"><span class="text-accent">▸</span> Migration critique pare-feu
+              Stormshield vers Fortinet</li>
+            <li class="flex items-start gap-2"><span class="text-accent">▸</span> Segmentation réseau virtuelle avec
+              pfSense sous Proxmox</li>
+            <li class="flex items-start gap-2"><span class="text-accent">▸</span> Déploiement Active Directory et GPO
+              dans environnement virtualisé</li>
+            <li class="flex items-start gap-2"><span class="text-accent">▸</span> Mise en œuvre cluster Proxmox HA avec
+              stockage ZFS et Q-Device</li>
           </ul>
           <a href="pdf/rapport de stage 2eme annee.pdf" target="_blank" class="btn-accent">📄 Voir le rapport →</a>
         </div>
