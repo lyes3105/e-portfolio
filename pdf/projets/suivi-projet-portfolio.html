@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suivi de Projet — Portfolio BTS SIO</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 50px 60px;
+            min-height: 100vh;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #1a1a2e;
+            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+        }
+
+        .date {
+            text-align: center;
+            color: #999;
+            font-size: 0.85rem;
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            color: #7c3aed;
+            font-size: 1.3rem;
+            margin: 30px 0 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e8e0ff;
+        }
+
+        p {
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.85rem;
+        }
+
+        th {
+            background: #7c3aed;
+            color: #fff;
+            padding: 8px 10px;
+            text-align: left;
+        }
+
+        td {
+            padding: 8px 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        tr:nth-child(even) {
+            background: #faf8ff;
+        }
+
+        .done {
+            color: #16a34a;
+            font-weight: 700;
+        }
+
+        .in-progress {
+            color: #f59e0b;
+            font-weight: 700;
+        }
+
+        .gantt {
+            margin: 20px 0;
+            overflow-x: auto;
+        }
+
+        .gantt-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 4px;
+        }
+
+        .gantt-label {
+            width: 200px;
+            min-width: 200px;
+            font-size: 0.8rem;
+            padding-right: 10px;
+            text-align: right;
+        }
+
+        .gantt-bar-container {
+            flex: 1;
+            height: 28px;
+            position: relative;
+            background: #f5f3ff;
+            border-radius: 4px;
+        }
+
+        .gantt-bar {
+            position: absolute;
+            height: 100%;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .gantt-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            border-bottom: 2px solid #7c3aed;
+            padding-bottom: 5px;
+        }
+
+        .gantt-header-label {
+            width: 200px;
+            min-width: 200px;
+            font-weight: 700;
+            color: #7c3aed;
+            font-size: 0.85rem;
+            text-align: right;
+            padding-right: 10px;
+        }
+
+        .gantt-months {
+            flex: 1;
+            display: flex;
+            font-size: 0.7rem;
+            color: #666;
+        }
+
+        .gantt-month {
+            flex: 1;
+            text-align: center;
+            border-left: 1px solid #e5e7eb;
+        }
+
+        .phase1 {
+            background: linear-gradient(90deg, #7c3aed, #a78bfa);
+        }
+
+        .phase2 {
+            background: linear-gradient(90deg, #3b82f6, #60a5fa);
+        }
+
+        .phase3 {
+            background: linear-gradient(90deg, #8b5cf6, #a78bfa);
+        }
+
+        .phase4 {
+            background: linear-gradient(90deg, #06b6d4, #22d3ee);
+        }
+
+        .phase5 {
+            background: linear-gradient(90deg, #f59e0b, #fbbf24);
+        }
+
+        .phase6 {
+            background: linear-gradient(90deg, #10b981, #34d399);
+        }
+
+        .phase7 {
+            background: linear-gradient(90deg, #ef4444, #f87171);
+        }
+
+        .phase8 {
+            background: linear-gradient(90deg, #ec4899, #f472b6);
+        }
+
+        .phase9 {
+            background: linear-gradient(90deg, #16a34a, #4ade80);
+        }
+
+        .legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 20px 0;
+            font-size: 0.8rem;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .legend-color {
+            width: 14px;
+            height: 14px;
+            border-radius: 3px;
+        }
+
+        .info-box {
+            background: #f0ebff;
+            border-left: 4px solid #7c3aed;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .summary-box {
+            background: #ecfdf5;
+            border-left: 4px solid #16a34a;
+            padding: 15px 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #eee;
+            margin: 30px 0;
+        }
+
+        @media print {
+            .container {
+                box-shadow: none;
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>📊 Suivi de Projet</h1>
+        <p class="subtitle">Projet E-Portfolio — BTS SIO SISR</p>
+        <p class="date">Lyes Mouhoun — Année scolaire 2024-2026</p>
+
+        <h2>1. Diagramme de Gantt</h2>
+
+        <div class="gantt">
+            <div class="gantt-header">
+                <div class="gantt-header-label">Tâches</div>
+                <div class="gantt-months">
+                    <div class="gantt-month">Oct 24</div>
+                    <div class="gantt-month">Nov 24</div>
+                    <div class="gantt-month">Déc 24</div>
+                    <div class="gantt-month">Jan 25</div>
+                    <div class="gantt-month">Fév 25</div>
+                    <div class="gantt-month">Mar-Jui 25</div>
+                    <div class="gantt-month">Sep-Déc 25</div>
+                    <div class="gantt-month">Jan 26</div>
+                    <div class="gantt-month">Fév 26</div>
+                    <div class="gantt-month">Mar 26</div>
+                </div>
+            </div>
+
+            <!-- Conception -->
+            <div class="gantt-row">
+                <div class="gantt-label">Conception / Maquettage</div>
+                <div class="gantt-bar-container">
+                    <div class="gantt-bar phase1" style="left: 0%; width: 10%;">2 sem</div>
+                </div>
+            </div>
+
+            <!-- HTML structure -->
+            <div class="gantt-row">
+                <div class="gantt-label">Développement HTML</div>
+                <div class="gantt-bar-container">
+                    <div class="gantt-bar phase2" style="left: 10%; width: 10%;">2 sem</div>
+                </div>
+            </div>
+
+            <!-- CSS Design -->
+            <div class="gantt-row">
+                <div class="gantt-label">Design CSS / Responsive</div>
+                <div class="gantt-bar-container">
+                    <div class="gantt-bar phase3" style="left: 20%; width: 15%;">3 sem</div>
+                </div>
+            </div>
+
+            <!-- JavaScript -->
+            <div class="gantt-row">
+                <div class="gantt-label">Intégration JavaScript</div>
+                <div class="gantt-bar-container">
+                    <div class="gantt-bar phase4" style="left: 30%; width: 10%;">2 sem</div>
+                </div>
+            </div>
+
+            <!-- Contenus -->
+            <div class="gantt-row">
+                <div class="gantt-label">Ajout contenus / documents</div>
+                <div class="gantt-bar-container">
+                    <div class="gantt-bar phase5" style="left: 40%; width: 30%;">En continu</div>
+                </div>
+            </div>
+
+            <!-- Veille -->
+            <div class="gantt-row">
+                <div class="gantt-label">Veille technologique</div>
+                <div class="gantt-bar-container">
+                    <div class="gantt-bar phase6" style="left: 40%; width: 10%;">2 sem</div>
+                </div>
+            </div>
+
+            <!-- Contact PHP -->
+            <div class="gantt-row">
+                <div class="gantt-label">Formulaire contact PHP</div>
+                <div class="gantt-bar-container">
+                    <div class="gantt-bar phase7" style="left: 40%; width: 5%;">1 sem</div>
+                </div>
+            </div>
+
+            <!-- Projets iNext + Devine -->
+            <div class="gantt-row">
+                <div class="gantt-label">Intégration projets</div>
+                <div class="gantt-bar-container">
+                    <div class="gantt-bar phase8" style="left: 90%; width: 5%;">1 sem</div>
+                </div>
+            </div>
+
+            <!-- Documentation & Tests -->
+            <div class="gantt-row">
+                <div class="gantt-label">Documentation & Tests</div>
+                <div class="gantt-bar-container">
+                    <div class="gantt-bar phase9" style="left: 93%; width: 7%;">1 sem</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color phase1"></div> Conception
+            </div>
+            <div class="legend-item">
+                <div class="legend-color phase2"></div> HTML
+            </div>
+            <div class="legend-item">
+                <div class="legend-color phase3"></div> CSS
+            </div>
+            <div class="legend-item">
+                <div class="legend-color phase4"></div> JavaScript
+            </div>
+            <div class="legend-item">
+                <div class="legend-color phase5"></div> Contenus
+            </div>
+            <div class="legend-item">
+                <div class="legend-color phase6"></div> Veille
+            </div>
+            <div class="legend-item">
+                <div class="legend-color phase7"></div> PHP
+            </div>
+            <div class="legend-item">
+                <div class="legend-color phase8"></div> Projets
+            </div>
+            <div class="legend-item">
+                <div class="legend-color phase9"></div> Tests & Doc
+            </div>
+        </div>
+
+        <h2>2. Détail des phases</h2>
+        <table>
+            <tr>
+                <th>Phase</th>
+                <th>Période</th>
+                <th>Tâches réalisées</th>
+                <th>Statut</th>
+            </tr>
+            <tr>
+                <td>1. Conception</td>
+                <td>Oct 2024</td>
+                <td>Définition du cahier des charges, choix des technologies, maquettage de l'interface</td>
+                <td class="done">✅ Terminé</td>
+            </tr>
+            <tr>
+                <td>2. Structure HTML</td>
+                <td>Nov 2024</td>
+                <td>Création du squelette HTML, mise en place des 11 sections, sidebar de navigation</td>
+                <td class="done">✅ Terminé</td>
+            </tr>
+            <tr>
+                <td>3. Design CSS</td>
+                <td>Déc 2024</td>
+                <td>Dark theme, animations, responsive design, glassmorphism, barres de compétences</td>
+                <td class="done">✅ Terminé</td>
+            </tr>
+            <tr>
+                <td>4. JavaScript</td>
+                <td>Jan 2025</td>
+                <td>Navigation fluide, section active, effet souris lumineux, AOS.js, animations scroll</td>
+                <td class="done">✅ Terminé</td>
+            </tr>
+            <tr>
+                <td>5. Contenus</td>
+                <td>Fév — Juin 2025</td>
+                <td>Ajout des PDFs, certifications, CV, tableau de synthèse, rapports de stage</td>
+                <td class="done">✅ Terminé</td>
+            </tr>
+            <tr>
+                <td>6. Veille techno</td>
+                <td>Fév 2025</td>
+                <td>Recherche sur l'IA en cybersécurité, rédaction de l'analyse, ajout des sources et articles</td>
+                <td class="done">✅ Terminé</td>
+            </tr>
+            <tr>
+                <td>7. Formulaire PHP</td>
+                <td>Fév 2025</td>
+                <td>Configuration PHPMailer, SMTP OVH, formulaire de contact fonctionnel</td>
+                <td class="done">✅ Terminé</td>
+            </tr>
+            <tr>
+                <td>8. Intégration projets</td>
+                <td>Mar 2026</td>
+                <td>Ajout des projets iNext et Devine le Nombre avec tous les documents et le jeu jouable</td>
+                <td class="done">✅ Terminé</td>
+            </tr>
+            <tr>
+                <td>9. Documentation</td>
+                <td>Mar 2026</td>
+                <td>Rédaction documentation technique, cahier des charges, cahier de recette, suivi de projet</td>
+                <td class="done">✅ Terminé</td>
+            </tr>
+        </table>
+
+        <h2>3. Bilan du projet</h2>
+
+        <div class="summary-box">
+            <h3 style="color:#16a34a; margin-bottom:10px;">✅ Avancement global : 100%</h3>
+            <p><strong>Durée totale :</strong> Octobre 2024 — Mars 2026 (18 mois)</p>
+            <p><strong>Phases réalisées :</strong> 9/9</p>
+            <p><strong>Technologies maîtrisées :</strong> HTML5, CSS3, JavaScript, PHP, Git/GitHub, AOS.js</p>
+            <p style="margin-bottom:0;"><strong>Points forts :</strong> Design moderne dark theme, responsive,
+                animations fluides, documentation complète, jeu interactif intégré, 5 projets documentés.</p>
+        </div>
+
+        <hr>
+        <p style="text-align:center; color:#999; font-size:0.8rem;">Document réalisé dans le cadre du BTS SIO SISR —
+            Lycée Turgot, Paris — 2024-2026</p>
+    </div>
+</body>
+
+</html>

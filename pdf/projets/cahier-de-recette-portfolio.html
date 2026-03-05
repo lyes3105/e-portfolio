@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cahier de Recette — Portfolio BTS SIO</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 50px 60px;
+            min-height: 100vh;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #1a1a2e;
+            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+        }
+
+        .date {
+            text-align: center;
+            color: #999;
+            font-size: 0.85rem;
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            color: #7c3aed;
+            font-size: 1.3rem;
+            margin: 30px 0 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e8e0ff;
+        }
+
+        h3 {
+            color: #1a1a2e;
+            font-size: 1.05rem;
+            margin: 20px 0 10px;
+        }
+
+        p {
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.85rem;
+        }
+
+        th {
+            background: #7c3aed;
+            color: #fff;
+            padding: 8px 12px;
+            text-align: left;
+        }
+
+        td {
+            padding: 8px 12px;
+            border-bottom: 1px solid #eee;
+        }
+
+        tr:nth-child(even) {
+            background: #faf8ff;
+        }
+
+        .ok {
+            color: #16a34a;
+            font-weight: 700;
+        }
+
+        .ko {
+            color: #dc2626;
+            font-weight: 700;
+        }
+
+        .na {
+            color: #9ca3af;
+            font-weight: 600;
+        }
+
+        .info-box {
+            background: #f0ebff;
+            border-left: 4px solid #7c3aed;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .summary-box {
+            background: #ecfdf5;
+            border-left: 4px solid #16a34a;
+            padding: 15px 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #eee;
+            margin: 30px 0;
+        }
+
+        @media print {
+            .container {
+                box-shadow: none;
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>📝 Cahier de Recette</h1>
+        <p class="subtitle">Projet E-Portfolio — BTS SIO SISR</p>
+        <p class="date">Lyes Mouhoun — Mars 2026</p>
+
+        <h2>1. Objet du document</h2>
+        <p>Ce cahier de recette a pour objectif de valider le bon fonctionnement de l'ensemble des fonctionnalités du
+            site portfolio. Chaque test est associé à une exigence du cahier des charges et donne lieu à un résultat :
+            <span class="ok">OK</span> (conforme), <span class="ko">KO</span> (non conforme) ou <span
+                class="na">N/A</span> (non applicable).</p>
+
+        <h2>2. Environnement de test</h2>
+        <div class="info-box">
+            <strong>Navigateurs testés :</strong> Google Chrome 122, Mozilla Firefox 124, Microsoft Edge 122<br>
+            <strong>Appareils :</strong> PC Desktop (1920×1080), Tablette (768×1024), Mobile (375×812)<br>
+            <strong>Hébergement :</strong> GitHub Pages (front-end) / OVH (PHP)<br>
+            <strong>Date des tests :</strong> Mars 2026
+        </div>
+
+        <h2>3. Tests de navigation</h2>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Test</th>
+                <th>Résultat attendu</th>
+                <th>Statut</th>
+            </tr>
+            <tr>
+                <td>T01</td>
+                <td>Clic sur chaque lien du menu sidebar</td>
+                <td>Scroll fluide vers la section correspondante</td>
+                <td class="ok">OK ✅</td>
+            </tr>
+            <tr>
+                <td>T02</td>
+                <td>Section active en surbrillance dans le menu</td>
+                <td>Le lien de la section visible est mis en évidence</td>
+                <td class="ok">OK ✅</td>
+            </tr>
+            <tr>
+                <td>T03</td>
+                <td>Bouton "Découvrir →" sur la page d'accueil</td>
+                <td>Redirection vers la section Profil</td>
+                <td class="ok">OK ✅</td>
+            </tr>
+            <tr>
+                <td>T04</td>
+                <td>Bouton "Me contacter" sur la page d'accueil</td>
+                <td>Redirection vers la section Contact</td>
+                <td class="ok">OK ✅</td>
+            </tr>
+        </table>
+
+        <h2>4. Tests des sections</h2>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Test</th>
+                <th>Résultat attendu</th>
+                <th>Statut</th>
+            </tr>
+            <tr>
+                <td>T05</td>
+                <td>Affichage section Profil</td>
+                <td>Informations et présentation visibles</td>
+                <td class="ok">OK ✅</td>
+            </tr>
+            <tr>
+                <td>T06</td>
+                <td>Barres de compétences animées</td>
+                <td>Les barres s'animent au scroll</td>
+                <td class="ok">OK ✅</td>
+            </tr>
+            <tr>
+                <td>T07</td>
+                <td>6 domaines de compétences affichés</td>
+                <td>Linux, Windows, Virtualisation, Réseau, Sécurité, Supervision</td>
+                <td class="ok">OK ✅</td>
+            </tr>
+            <tr>
+                <td>T08</td>
+                <td>PDFs E6 intégrés en iframe</td>
+                <td>3 documents visibles et navigables</td>
+                <td class="ok">OK ✅</td>
+            </tr>
+            <tr>
+                <td>T09</td>
+                <td>Boutons "Plein écran" des PDFs E6</td>
+                <td>Ouverture du PDF dans un nouvel onglet</td>
+                <td class="ok">OK ✅</td>
+            </tr>
+            <tr>
+                <td>T10</td>
+                <td>Timeline du parcours</td>
+                <td>4 étapes chronologiques affichées</td>
+                <td class="ok">OK ✅</td>
+            </tr>
+            <tr>
+                <td>T11</td>
+                <td>Expériences professionnelles</td>
+                <td>2 stages détaillés avec liens vers rapports</td>
+                <td class="ok">OK ✅</td>
+            </tr>
+            <tr>
+                <td>T12</td>
+                <td>Documents officiels (CV, Tableau synthèse)</td>
+                <td>PDFs intégrés et téléchargeables</td>
+                <td class="ok">OK ✅</td>
+            </tr>
+        </table>
+
+        <h2>5. Tests des projets</h2>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Test</th>
+                <th>Résultat attendu</th>
+                <th>Statut</th>
+            </tr>
+            <tr>
+                <td>T13</td>
+                <td>5 projets affichés dans la grille</td>
+                <td>Mairie, Mine Test, Devine le Nombre, iNext, Portfolio</td>
+                <td class="ok">OK ✅</td>
+            </tr>
+            <tr>
+                <td>T14</td>
+                <td>Liens documents Projet Mairie</td>
+                <td>Documentation, cahier des charges, Gantt accessibles</td>
+                <td class="ok">OK ✅</td>
+            </tr>
+            <tr>
+                <td>T15</td>
+                <td>Liens documents Projet Mine Test</td>
+                <td>Documentation, cahier de tests, recette, Gantt accessibles</td>
+                <td class="ok">OK ✅</td>
+            </tr>
+            <tr>
+                <td>T16</td>
+                <td>Liens documents Devine le Nombre</td>
+                <td>Cahier des charges, doc technique, maquette, suivi accessibles</td>
+                <td class="ok">OK ✅</td>
+            </tr>
+            <tr>
+                <td>T17</td>
+                <td>Bouton "Jouer au Jeu" (Devine le Nombre)</td>
+                <td>Ouverture du jeu fonctionnel dans un nouvel onglet</td>
+                <td class="ok">OK ✅</td>
+            </tr>
+            <tr>
+                <td>T18</td>
+                <td>Liens documents Projet iNext</td>
+                <td>Cahier des charges, recette, journal de bord accessibles</td>
+                <td class="ok">OK ✅</td>
+            </tr>
+            <tr>
+                <td>T19</td>
+                <td>Modal suivi de projet iNext</td>
+                <td>4 captures affichées en grille 2×2, fermeture par ✕</td>
+                <td class="ok">OK ✅</td>
+            </tr>
+            <tr>
+                <td>T20</td>
+                <td>Liens documents Portfolio</td>
+                <td>Documentation, cahier des charges, recette, suivi accessibles</td>
+                <td class="ok">OK ✅</td>
+            </tr>
+        </table>
+
+        <h2>6. Tests des certifications</h2>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Test</th>
+                <th>Résultat attendu</th>
+                <th>Statut</th>
+            </tr>
+            <tr>
+                <td>T21</td>
+                <td>7 certifications affichées</td>
+                <td>Notions Réseaux, Python, Cybersécurité, Packet Tracer, CCNA, PIX, SecNumAcadémie</td>
+                <td class="ok">OK ✅</td>
+            </tr>
+            <tr>
+                <td>T22</td>
+                <td>Clic sur certification avec PDF</td>
+                <td>Ouverture du certificat dans un nouvel onglet</td>
+                <td class="ok">OK ✅</td>
+            </tr>
+            <tr>
+                <td>T23</td>
+                <td>Badge "En cours" sur CCNA et SecNumAcadémie</td>
+                <td>Badge jaune visible en haut à droite</td>
+                <td class="ok">OK ✅</td>
+            </tr>
+        </table>
+
+        <h2>7. Tests veille technologique</h2>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Test</th>
+                <th>Résultat attendu</th>
+                <th>Statut</th>
+            </tr>
+            <tr>
+                <td>T24</td>
+                <td>Thème de veille affiché</td>
+                <td>"L'IA dans la Cybersécurité" avec description</td>
+                <td class="ok">OK ✅</td>
+            </tr>
+            <tr>
+                <td>T25</td>
+                <td>3 cartes d'analyse (Générale, Offensive, Défensive)</td>
+                <td>Contenu pertinent avec bordures colorées</td>
+                <td class="ok">OK ✅</td>
+            </tr>
+            <tr>
+                <td>T26</td>
+                <td>4 outils IA affichés avec logos</td>
+                <td>ChatGPT, Gemini, Claude, Meta AI</td>
+                <td class="ok">OK ✅</td>
+            </tr>
+            <tr>
+                <td>T27</td>
+                <td>4 sources principales avec liens</td>
+                <td>ANSSI, Clubic, Le Monde Informatique, Silicon</td>
+                <td class="ok">OK ✅</td>
+            </tr>
+            <tr>
+                <td>T28</td>
+                <td>3 articles récents avec liens</td>
+                <td>Articles cliquables ouvrant dans un nouvel onglet</td>
+                <td class="ok">OK ✅</td>
+            </tr>
+        </table>
+
+        <h2>8. Tests formulaire de contact</h2>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Test</th>
+                <th>Résultat attendu</th>
+                <th>Statut</th>
+            </tr>
+            <tr>
+                <td>T29</td>
+                <td>Validation champs vides</td>
+                <td>Message d'erreur navigateur (required)</td>
+                <td class="ok">OK ✅</td>
+            </tr>
+            <tr>
+                <td>T30</td>
+                <td>Validation format email</td>
+                <td>Message d'erreur si email invalide</td>
+                <td class="ok">OK ✅</td>
+            </tr>
+            <tr>
+                <td>T31</td>
+                <td>Envoi formulaire (hébergement OVH)</td>
+                <td>Email reçu via PHPMailer</td>
+                <td class="ok">OK ✅</td>
+            </tr>
+        </table>
+
+        <h2>9. Tests responsive</h2>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Test</th>
+                <th>Résultat attendu</th>
+                <th>Statut</th>
+            </tr>
+            <tr>
+                <td>T32</td>
+                <td>Affichage desktop (1920×1080)</td>
+                <td>Layout complet, sidebar visible</td>
+                <td class="ok">OK ✅</td>
+            </tr>
+            <tr>
+                <td>T33</td>
+                <td>Affichage tablette (768×1024)</td>
+                <td>Grilles adaptées, sidebar réduite</td>
+                <td class="ok">OK ✅</td>
+            </tr>
+            <tr>
+                <td>T34</td>
+                <td>Affichage mobile (375×812)</td>
+                <td>Layout en colonne, menu hamburger</td>
+                <td class="ok">OK ✅</td>
+            </tr>
+            <tr>
+                <td>T35</td>
+                <td>Animations AOS sur mobile</td>
+                <td>Animations fluides au scroll</td>
+                <td class="ok">OK ✅</td>
+            </tr>
+        </table>
+
+        <h2>10. Tests de performance</h2>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Test</th>
+                <th>Résultat attendu</th>
+                <th>Statut</th>
+            </tr>
+            <tr>
+                <td>T36</td>
+                <td>Chargement initial &lt; 5 secondes</td>
+                <td>Page chargée en moins de 5s</td>
+                <td class="ok">OK ✅</td>
+            </tr>
+            <tr>
+                <td>T37</td>
+                <td>Aucune erreur console JavaScript</td>
+                <td>Console propre, pas d'erreurs</td>
+                <td class="ok">OK ✅</td>
+            </tr>
+            <tr>
+                <td>T38</td>
+                <td>Images et GIFs chargés correctement</td>
+                <td>Tous les médias visibles</td>
+                <td class="ok">OK ✅</td>
+            </tr>
+        </table>
+
+        <div class="summary-box">
+            <h3 style="color:#16a34a; margin-bottom:10px;">✅ Bilan des tests</h3>
+            <p><strong>Total :</strong> 38 tests exécutés</p>
+            <p><strong>Réussis :</strong> 38/38 (100%)</p>
+            <p><strong>Échecs :</strong> 0</p>
+            <p style="margin-bottom:0;"><strong>Conclusion :</strong> L'ensemble des fonctionnalités est conforme au
+                cahier des charges. Le site est validé pour la mise en production.</p>
+        </div>
+
+        <hr>
+        <p style="text-align:center; color:#999; font-size:0.8rem;">Document réalisé dans le cadre du BTS SIO SISR —
+            Lycée Turgot, Paris — 2024-2026</p>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cahier des Charges — Portfolio BTS SIO</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 50px 60px;
+            min-height: 100vh;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #1a1a2e;
+            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+        }
+
+        .date {
+            text-align: center;
+            color: #999;
+            font-size: 0.85rem;
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            color: #7c3aed;
+            font-size: 1.3rem;
+            margin: 30px 0 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e8e0ff;
+        }
+
+        h3 {
+            color: #1a1a2e;
+            font-size: 1.05rem;
+            margin: 20px 0 10px;
+        }
+
+        p {
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+
+        ul,
+        ol {
+            margin: 10px 0 15px 25px;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.9rem;
+        }
+
+        th {
+            background: #7c3aed;
+            color: #fff;
+            padding: 10px 15px;
+            text-align: left;
+        }
+
+        td {
+            padding: 10px 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        tr:nth-child(even) {
+            background: #faf8ff;
+        }
+
+        .info-box {
+            background: #f0ebff;
+            border-left: 4px solid #7c3aed;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .priority-high {
+            color: #dc2626;
+            font-weight: 600;
+        }
+
+        .priority-mid {
+            color: #f59e0b;
+            font-weight: 600;
+        }
+
+        .priority-low {
+            color: #22c55e;
+            font-weight: 600;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #eee;
+            margin: 30px 0;
+        }
+
+        @media print {
+            .container {
+                box-shadow: none;
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>📋 Cahier des Charges</h1>
+        <p class="subtitle">Projet E-Portfolio — BTS SIO SISR</p>
+        <p class="date">Lyes Mouhoun — Année scolaire 2024-2026</p>
+
+        <h2>1. Contexte du projet</h2>
+        <p>Dans le cadre de la formation BTS SIO option SISR au Lycée Turgot (Paris), chaque étudiant doit réaliser un
+            <strong>portfolio numérique</strong> regroupant l'ensemble de ses compétences, projets et expériences
+            professionnelles. Ce portfolio sert de support pour les épreuves E4 et E6 du BTS SIO et constitue également
+            une vitrine professionnelle.</p>
+
+        <h2>2. Objectifs</h2>
+        <h3>2.1 Objectif principal</h3>
+        <p>Concevoir et développer un site web portfolio <strong>moderne, responsive et interactif</strong> permettant
+            de présenter de manière professionnelle le parcours de l'étudiant.</p>
+
+        <h3>2.2 Objectifs secondaires</h3>
+        <ul>
+            <li>Mettre en valeur les compétences techniques acquises en BTS SIO SISR</li>
+            <li>Centraliser tous les documents officiels (CV, tableau de synthèse, rapports de stage)</li>
+            <li>Présenter les projets réalisés avec leur documentation associée</li>
+            <li>Intégrer une section de veille technologique sur l'IA en cybersécurité</li>
+            <li>Proposer un formulaire de contact fonctionnel</li>
+            <li>Assurer une accessibilité et une lisibilité optimales</li>
+        </ul>
+
+        <h2>3. Public cible</h2>
+        <table>
+            <tr>
+                <th>Public</th>
+                <th>Besoin</th>
+            </tr>
+            <tr>
+                <td>Jury BTS SIO</td>
+                <td>Accéder aux documents E4/E6, vérifier les compétences</td>
+            </tr>
+            <tr>
+                <td>Recruteurs / Entreprises</td>
+                <td>Évaluer le profil, les compétences et l'expérience</td>
+            </tr>
+            <tr>
+                <td>Professeurs / Tuteurs</td>
+                <td>Suivre l'avancement et la qualité du travail</td>
+            </tr>
+            <tr>
+                <td>Étudiants / Pairs</td>
+                <td>S'inspirer ou collaborer sur des projets</td>
+            </tr>
+        </table>
+
+        <h2>4. Spécifications fonctionnelles</h2>
+
+        <h3>4.1 Fonctionnalités obligatoires</h3>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Fonctionnalité</th>
+                <th>Priorité</th>
+            </tr>
+            <tr>
+                <td>F01</td>
+                <td>Page d'accueil avec présentation et navigation</td>
+                <td class="priority-high">Haute</td>
+            </tr>
+            <tr>
+                <td>F02</td>
+                <td>Section Profil (informations personnelles)</td>
+                <td class="priority-high">Haute</td>
+            </tr>
+            <tr>
+                <td>F03</td>
+                <td>Section Compétences avec barres de progression</td>
+                <td class="priority-high">Haute</td>
+            </tr>
+            <tr>
+                <td>F04</td>
+                <td>Section Situations Professionnelles E6 (PDFs intégrés)</td>
+                <td class="priority-high">Haute</td>
+            </tr>
+            <tr>
+                <td>F05</td>
+                <td>Section Projets avec documentation téléchargeable</td>
+                <td class="priority-high">Haute</td>
+            </tr>
+            <tr>
+                <td>F06</td>
+                <td>Section Certifications</td>
+                <td class="priority-high">Haute</td>
+            </tr>
+            <tr>
+                <td>F07</td>
+                <td>Section Parcours (timeline chronologique)</td>
+                <td class="priority-mid">Moyenne</td>
+            </tr>
+            <tr>
+                <td>F08</td>
+                <td>Section Expériences professionnelles</td>
+                <td class="priority-high">Haute</td>
+            </tr>
+            <tr>
+                <td>F09</td>
+                <td>Section Documents officiels (CV, tableau de synthèse)</td>
+                <td class="priority-high">Haute</td>
+            </tr>
+            <tr>
+                <td>F10</td>
+                <td>Section Veille technologique</td>
+                <td class="priority-high">Haute</td>
+            </tr>
+            <tr>
+                <td>F11</td>
+                <td>Formulaire de contact fonctionnel</td>
+                <td class="priority-mid">Moyenne</td>
+            </tr>
+            <tr>
+                <td>F12</td>
+                <td>Design responsive (mobile, tablette, desktop)</td>
+                <td class="priority-high">Haute</td>
+            </tr>
+        </table>
+
+        <h3>4.2 Fonctionnalités souhaitées</h3>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Fonctionnalité</th>
+                <th>Priorité</th>
+            </tr>
+            <tr>
+                <td>F13</td>
+                <td>Animations au scroll (AOS.js)</td>
+                <td class="priority-mid">Moyenne</td>
+            </tr>
+            <tr>
+                <td>F14</td>
+                <td>Effet lumineux suivant le curseur</td>
+                <td class="priority-low">Basse</td>
+            </tr>
+            <tr>
+                <td>F15</td>
+                <td>Navigation avec section active en surbrillance</td>
+                <td class="priority-mid">Moyenne</td>
+            </tr>
+            <tr>
+                <td>F16</td>
+                <td>Modals pour le suivi de projet</td>
+                <td class="priority-low">Basse</td>
+            </tr>
+            <tr>
+                <td>F17</td>
+                <td>Jeux interactifs intégrés (Devine le Nombre)</td>
+                <td class="priority-low">Basse</td>
+            </tr>
+        </table>
+
+        <h2>5. Spécifications techniques</h2>
+        <h3>5.1 Technologies imposées</h3>
+        <ul>
+            <li><strong>Front-end :</strong> HTML5, CSS3, JavaScript (vanilla)</li>
+            <li><strong>Back-end :</strong> PHP (formulaire de contact)</li>
+            <li><strong>Versionnage :</strong> Git avec dépôt GitHub</li>
+            <li><strong>Hébergement :</strong> GitHub Pages (front) + OVH (PHP)</li>
+        </ul>
+
+        <h3>5.2 Contraintes techniques</h3>
+        <ul>
+            <li>Pas de framework CSS (design 100% personnalisé)</li>
+            <li>Site en une seule page (Single Page Application)</li>
+            <li>Compatible Chrome, Firefox, Edge (dernières versions)</li>
+            <li>Temps de chargement initial &lt; 5 secondes</li>
+            <li>Poids total du site &lt; 100 Mo</li>
+        </ul>
+
+        <h2>6. Charte graphique</h2>
+        <div class="info-box">
+            <strong>Thème :</strong> Dark mode premium avec accents violets<br>
+            <strong>Couleur principale :</strong> #7c3aed (violet)<br>
+            <strong>Fond :</strong> #0f0f1a (noir profond)<br>
+            <strong>Typographies :</strong> Playfair Display (titres) + Inter (texte)<br>
+            <strong>Style :</strong> Glassmorphism, glow effects, micro-animations
+        </div>
+
+        <h2>7. Livrables attendus</h2>
+        <ol>
+            <li>Site web portfolio complet et fonctionnel</li>
+            <li>Code source versionné sur GitHub</li>
+            <li>Documentation technique du projet</li>
+            <li>Cahier des charges (ce document)</li>
+            <li>Cahier de recette (tests de validation)</li>
+            <li>Suivi de projet (planning et avancement)</li>
+        </ol>
+
+        <h2>8. Planning prévisionnel</h2>
+        <table>
+            <tr>
+                <th>Phase</th>
+                <th>Période</th>
+                <th>Durée</th>
+            </tr>
+            <tr>
+                <td>Conception et maquettage</td>
+                <td>Octobre 2024</td>
+                <td>2 semaines</td>
+            </tr>
+            <tr>
+                <td>Développement structure HTML</td>
+                <td>Novembre 2024</td>
+                <td>2 semaines</td>
+            </tr>
+            <tr>
+                <td>Design CSS et responsive</td>
+                <td>Décembre 2024</td>
+                <td>3 semaines</td>
+            </tr>
+            <tr>
+                <td>Intégration JavaScript</td>
+                <td>Janvier 2025</td>
+                <td>2 semaines</td>
+            </tr>
+            <tr>
+                <td>Ajout contenus et documents</td>
+                <td>Février — Juin 2025</td>
+                <td>En continu</td>
+            </tr>
+            <tr>
+                <td>Veille technologique</td>
+                <td>Février 2025</td>
+                <td>2 semaines</td>
+            </tr>
+            <tr>
+                <td>Formulaire de contact PHP</td>
+                <td>Février 2025</td>
+                <td>1 semaine</td>
+            </tr>
+            <tr>
+                <td>Ajout projets (iNext, Devine le Nombre)</td>
+                <td>Mars 2026</td>
+                <td>1 semaine</td>
+            </tr>
+            <tr>
+                <td>Tests et corrections</td>
+                <td>Mars 2026</td>
+                <td>1 semaine</td>
+            </tr>
+            <tr>
+                <td>Documentation finale</td>
+                <td>Mars 2026</td>
+                <td>1 semaine</td>
+            </tr>
+        </table>
+
+        <hr>
+        <p style="text-align:center; color:#999; font-size:0.8rem;">Document réalisé dans le cadre du BTS SIO SISR —
+            Lycée Turgot, Paris — 2024-2026</p>
+    </div>
+</body>
+
+</html>

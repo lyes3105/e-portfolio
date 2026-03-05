@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation Technique — Portfolio BTS SIO</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 50px 60px;
+            min-height: 100vh;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #1a1a2e;
+            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+        }
+
+        .date {
+            text-align: center;
+            color: #999;
+            font-size: 0.85rem;
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            color: #7c3aed;
+            font-size: 1.3rem;
+            margin: 30px 0 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e8e0ff;
+        }
+
+        h3 {
+            color: #1a1a2e;
+            font-size: 1.05rem;
+            margin: 20px 0 10px;
+        }
+
+        p {
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+
+        ul,
+        ol {
+            margin: 10px 0 15px 25px;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.9rem;
+        }
+
+        th {
+            background: #7c3aed;
+            color: #fff;
+            padding: 10px 15px;
+            text-align: left;
+        }
+
+        td {
+            padding: 10px 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        tr:nth-child(even) {
+            background: #faf8ff;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #e8e0ff;
+            color: #7c3aed;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin: 2px;
+        }
+
+        code {
+            background: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+
+        .info-box {
+            background: #f0ebff;
+            border-left: 4px solid #7c3aed;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .header-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            padding: 15px;
+            background: #faf8ff;
+            border-radius: 8px;
+            font-size: 0.85rem;
+        }
+
+        .header-meta div {
+            text-align: center;
+        }
+
+        .header-meta strong {
+            display: block;
+            color: #7c3aed;
+            margin-bottom: 3px;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #eee;
+            margin: 30px 0;
+        }
+
+        @media print {
+            .container {
+                box-shadow: none;
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>📄 Documentation Technique</h1>
+        <p class="subtitle">Projet E-Portfolio — BTS SIO SISR</p>
+        <p class="date">Lyes Mouhoun — Mars 2026</p>
+
+        <div class="header-meta">
+            <div><strong>Auteur</strong>Lyes Mouhoun</div>
+            <div><strong>Formation</strong>BTS SIO SISR</div>
+            <div><strong>Version</strong>2.0</div>
+            <div><strong>Statut</strong>En cours</div>
+        </div>
+
+        <h2>1. Présentation du projet</h2>
+        <p>Ce projet consiste en la réalisation d'un <strong>portfolio en ligne</strong> dans le cadre du BTS SIO option
+            SISR au Lycée Turgot (Paris). Le site a pour objectif de présenter l'ensemble de mes compétences, projets,
+            certifications et expériences professionnelles dans un format moderne et interactif.</p>
+        <p>Le portfolio est hébergé sur <strong>GitHub Pages</strong> et accessible publiquement. Il sert de support
+            pour l'épreuve E4 du BTS SIO et constitue une vitrine professionnelle pour les recruteurs.</p>
+
+        <div class="info-box">
+            <strong>URL du site :</strong> <a
+                href="https://lyes3105.github.io/e-portfolio/">https://lyes3105.github.io/e-portfolio/</a><br>
+            <strong>Dépôt GitHub :</strong> <a
+                href="https://github.com/lyes3105/e-portfolio">https://github.com/lyes3105/e-portfolio</a>
+        </div>
+
+        <h2>2. Technologies utilisées</h2>
+        <table>
+            <tr>
+                <th>Technologie</th>
+                <th>Utilisation</th>
+                <th>Version</th>
+            </tr>
+            <tr>
+                <td>HTML5</td>
+                <td>Structure et contenu des pages</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>CSS3</td>
+                <td>Design, animations, responsive design</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>JavaScript</td>
+                <td>Interactions, animations, navigation dynamique</td>
+                <td>ES6+</td>
+            </tr>
+            <tr>
+                <td>PHP</td>
+                <td>Formulaire de contact (envoi d'email)</td>
+                <td>8.x</td>
+            </tr>
+            <tr>
+                <td>PHPMailer</td>
+                <td>Bibliothèque d'envoi d'emails sécurisé</td>
+                <td>6.x</td>
+            </tr>
+            <tr>
+                <td>AOS.js</td>
+                <td>Animations au scroll (Animate On Scroll)</td>
+                <td>2.3.1</td>
+            </tr>
+            <tr>
+                <td>Google Fonts</td>
+                <td>Typographies (Playfair Display, Inter)</td>
+                <td>—</td>
+            </tr>
+            <tr>
+                <td>Git / GitHub</td>
+                <td>Versionnage et hébergement (GitHub Pages)</td>
+                <td>—</td>
+            </tr>
+        </table>
+
+        <h2>3. Architecture du projet</h2>
+        <h3>3.1 Arborescence des fichiers</h3>
+        <pre style="background:#1a1a2e;color:#a78bfa;padding:20px;border-radius:8px;font-size:0.85rem;overflow-x:auto;">
+e-portfolio/
+├── index.html              ← Page principale du portfolio
+├── style.css               ← Feuille de styles (design complet)
+├── script.js               ← Interactions et animations JS
+├── contact.php             ← Traitement du formulaire de contact
+├── devine-le-nombre.html   ← Jeu interactif intégré
+├── .htaccess               ← Configuration serveur Apache
+├── PHPMailer/              ← Bibliothèque d'envoi d'emails
+│   └── src/
+├── pdf/                    ← Documents PDF et images
+│   ├── projets/            ← Documents des projets
+│   ├── *.pdf               ← Certifications, CV, rapports
+│   └── *.png               ← Captures de suivi de projet
+├── logo/                   ← Logos et images
+└── gif/                    ← Animations GIF
+    </pre>
+
+        <h3>3.2 Architecture logique</h3>
+        <p>Le site est une <strong>Single Page Application (SPA)</strong> composée de sections navigables via un menu
+            latéral fixe. La navigation est gérée en JavaScript avec un système de scroll fluide et de mise en
+            surbrillance de la section active.</p>
+
+        <h2>4. Fonctionnalités</h2>
+
+        <h3>4.1 Sections du portfolio</h3>
+        <table>
+            <tr>
+                <th>Section</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>Accueil</td>
+                <td>Page d'introduction avec animation hero</td>
+            </tr>
+            <tr>
+                <td>Profil</td>
+                <td>Informations personnelles et présentation</td>
+            </tr>
+            <tr>
+                <td>Compétences</td>
+                <td>6 domaines avec barres de progression animées</td>
+            </tr>
+            <tr>
+                <td>Situations Pro E6</td>
+                <td>Documents PDF intégrés en iframe pour l'épreuve E6</td>
+            </tr>
+            <tr>
+                <td>Projets</td>
+                <td>5 projets avec documentation téléchargeable</td>
+            </tr>
+            <tr>
+                <td>Certifications</td>
+                <td>7 certifications (Cisco, PIX, ANSSI...)</td>
+            </tr>
+            <tr>
+                <td>Parcours</td>
+                <td>Timeline chronologique de formation</td>
+            </tr>
+            <tr>
+                <td>Expériences</td>
+                <td>2 stages professionnels détaillés</td>
+            </tr>
+            <tr>
+                <td>Documents</td>
+                <td>CV, tableau de synthèse, documentation technique</td>
+            </tr>
+            <tr>
+                <td>Veille Techno</td>
+                <td>Veille sur l'IA en cybersécurité</td>
+            </tr>
+            <tr>
+                <td>Contact</td>
+                <td>Formulaire d'envoi d'email via PHPMailer</td>
+            </tr>
+        </table>
+
+        <h3>4.2 Fonctionnalités techniques</h3>
+        <ul>
+            <li><strong>Design responsive</strong> — Adapté mobile, tablette et desktop via CSS media queries</li>
+            <li><strong>Mode sombre</strong> — Interface dark theme avec palette violet/gris</li>
+            <li><strong>Animations au scroll</strong> — Bibliothèque AOS.js pour les effets d'apparition</li>
+            <li><strong>Effet souris lumineux</strong> — Halo qui suit le curseur (JavaScript)</li>
+            <li><strong>Navigation intelligente</strong> — Sidebar avec surbrillance de la section active</li>
+            <li><strong>Formulaire de contact</strong> — Envoi d'email via PHP et PHPMailer avec SMTP OVH</li>
+            <li><strong>Modals interactifs</strong> — Fenêtres modales pour le suivi de projet iNext</li>
+            <li><strong>PDFs intégrés</strong> — Visualisation des documents directement dans le site</li>
+        </ul>
+
+        <h2>5. Design et interface</h2>
+        <h3>5.1 Charte graphique</h3>
+        <table>
+            <tr>
+                <th>Élément</th>
+                <th>Valeur</th>
+            </tr>
+            <tr>
+                <td>Couleur principale</td>
+                <td><span class="badge" style="background:#7c3aed;color:#fff;">#7c3aed</span> Violet</td>
+            </tr>
+            <tr>
+                <td>Fond principal</td>
+                <td><span class="badge" style="background:#0f0f1a;color:#fff;">#0f0f1a</span> Noir profond</td>
+            </tr>
+            <tr>
+                <td>Texte principal</td>
+                <td><span class="badge">#e5e7eb</span> Gris clair</td>
+            </tr>
+            <tr>
+                <td>Typographie titres</td>
+                <td>Playfair Display</td>
+            </tr>
+            <tr>
+                <td>Typographie texte</td>
+                <td>Inter</td>
+            </tr>
+        </table>
+
+        <h3>5.2 Éléments UX</h3>
+        <ul>
+            <li>Cards avec effet <code>hover</code> et glow animé</li>
+            <li>Barres de compétences animées au scroll</li>
+            <li>Boutons avec transitions fluides</li>
+            <li>Grille CSS responsive (grid + flexbox)</li>
+            <li>Effet glassmorphism sur les cartes</li>
+        </ul>
+
+        <h2>6. Hébergement et déploiement</h2>
+        <p>Le site est déployé automatiquement via <strong>GitHub Pages</strong> à chaque push sur la branche
+            <code>main</code>. Le processus de déploiement est le suivant :</p>
+        <ol>
+            <li>Modification du code en local</li>
+            <li>Commit et push vers GitHub (<code>git push origin main</code>)</li>
+            <li>GitHub Actions déclenche automatiquement le build</li>
+            <li>Le site est déployé sur <code>https://lyes3105.github.io/e-portfolio/</code></li>
+        </ol>
+
+        <div class="info-box">
+            <strong>Note :</strong> Le formulaire de contact nécessite un hébergement PHP (type OVH). Sur GitHub Pages
+            (statique), seule la partie front-end est fonctionnelle.
+        </div>
+
+        <h2>7. Évolutions futures</h2>
+        <ul>
+            <li>Ajout d'un mode clair/sombre avec toggle</li>
+            <li>Intégration d'un blog technique</li>
+            <li>Ajout de projets supplémentaires</li>
+            <li>Optimisation des performances (lazy loading images)</li>
+            <li>Ajout d'un système multilingue (FR/EN)</li>
+        </ul>
+
+        <hr>
+        <p style="text-align:center; color:#999; font-size:0.8rem; margin-top:20px;">Document réalisé dans le cadre du
+            BTS SIO SISR — Lycée Turgot, Paris — 2024-2026</p>
+    </div>
+</body>
+
+</html>
