@@ -19,13 +19,19 @@
   <!-- Background gradient -->
   <div class="bg-grid"></div>
 
+  <!-- Parallax Floating Shapes -->
+  <div id="parallaxContainer" class="parallax-shapes"></div>
+
+  <!-- Theme Transition Layer -->
+  <div id="themeTransition" class="theme-transition-overlay"></div>
+
   <!-- Mouse glow effect -->
   <div id="mouseGlow" class="mouse-glow"></div>
 
   <!-- Sidebar -->
   <aside class="sidebar">
     <div class="sidebar-header">
-      <div class="sidebar-logo">LM</div>
+      <img src="logo/sidebar_logo_1772817530076.png" alt="LM Logo" class="sidebar-logo-img">
       <div>
         <p class="sidebar-name">Lyes Mouhoun</p>
         <p class="sidebar-subtitle">BTS SIO SISR</p>
@@ -47,7 +53,11 @@
     </nav>
 
     <div class="sidebar-footer">
-      <p>© 2025 Lyes Mouhoun</p>
+      <button id="themeToggle" class="theme-toggle" aria-label="Changer de thème">
+        <span class="toggle-icon">☀️</span>
+        <span class="toggle-text">Mode clair</span>
+      </button>
+      <p style="margin-top: 0.75rem;">© 2025 Lyes Mouhoun</p>
     </div>
   </aside>
 
@@ -66,11 +76,13 @@
           réseaux</p>
         <p class="text-sm text-gray-500 mb-8 hero-subtitle">📍 Lycée Turgot — Paris 75003</p>
         <div class="flex gap-4 justify-center hero-buttons">
-          <a href="#profil" class="btn-primary">Découvrir →</a>
-          <a href="#contact" class="btn-secondary">Me contacter</a>
+          <a href="#profil" class="btn-primary antigravity-glow">Découvrir →</a>
+          <a href="#contact" class="btn-secondary antigravity-glow">Me contacter</a>
         </div>
       </div>
     </section>
+
+
 
     <!-- Profil -->
     <section id="profil" class="section" data-aos="fade-up">
@@ -85,7 +97,8 @@
             <li class="flex justify-between"><span class="text-gray-500">Établissement</span> <span>Lycée Turgot,
                 Paris</span></li>
           </ul>
-          <a href="#contact" class="btn-accent mt-4 inline-block text-center w-full text-sm">✉️ Me contacter →</a>
+          <a href="#contact" class="btn-accent antigravity-glow mt-4 inline-block text-center w-full text-sm">✉️ Me
+            contacter →</a>
         </div>
         <div class="card card-hover stagger-item">
           <h3 class="card-title">✨ À propos</h3>
@@ -106,10 +119,42 @@
     <section id="competences" class="section" data-aos="fade-up">
       <h2 class="section-title"><span>Compétences</span></h2>
       <div class="section-divider"></div>
+
+      <!-- Antigravity Marquee -->
+      <div class="marquee-banner" data-aos="fade-in" style="margin-top: 1rem; margin-bottom: 3rem;">
+        <div class="marquee-track">
+          <!-- We duplicate the items several times to create an infinite scroll -->
+          <a href="#comp-linux" class="marquee-item transition hover:text-accent">🐧 Linux <span
+              class="marquee-dot"></span></a>
+          <a href="#comp-windows" class="marquee-item transition hover:text-accent">🪟 Windows Server <span
+              class="marquee-dot"></span></a>
+          <a href="#comp-virtu" class="marquee-item transition hover:text-accent">☁️ Virtualisation <span
+              class="marquee-dot"></span></a>
+          <a href="#comp-reseau" class="marquee-item transition hover:text-accent">🌐 Réseau & Infra <span
+              class="marquee-dot"></span></a>
+          <a href="#comp-secu" class="marquee-item transition hover:text-accent">🛡️ Cybersécurité <span
+              class="marquee-dot"></span></a>
+          <a href="#comp-supervision" class="marquee-item transition hover:text-accent">📊 Supervision <span
+              class="marquee-dot"></span></a>
+          <!-- Duplicates for seamless loop -->
+          <a href="#comp-linux" class="marquee-item transition hover:text-accent">🐧 Linux <span
+              class="marquee-dot"></span></a>
+          <a href="#comp-windows" class="marquee-item transition hover:text-accent">🪟 Windows Server <span
+              class="marquee-dot"></span></a>
+          <a href="#comp-virtu" class="marquee-item transition hover:text-accent">☁️ Virtualisation <span
+              class="marquee-dot"></span></a>
+          <a href="#comp-reseau" class="marquee-item transition hover:text-accent">🌐 Réseau & Infra <span
+              class="marquee-dot"></span></a>
+          <a href="#comp-secu" class="marquee-item transition hover:text-accent">🛡️ Cybersécurité <span
+              class="marquee-dot"></span></a>
+          <a href="#comp-supervision" class="marquee-item transition hover:text-accent">📊 Supervision <span
+              class="marquee-dot"></span></a>
+        </div>
+      </div>
       <div class="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
         <!-- Linux -->
-        <div class="skill-card stagger-item">
+        <div id="comp-linux" class="skill-card stagger-item">
           <div class="skill-header">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux"
               class="skill-logo">
@@ -128,7 +173,6 @@
           <div class="skill-level">
             <div class="flex justify-between text-xs mb-1">
               <span class="text-gray-500">Niveau</span>
-              <span class="text-accent">80%</span>
             </div>
             <div class="skill-bar">
               <div class="skill-progress" data-width="80%" style="width: 80%;"></div>
@@ -137,7 +181,7 @@
         </div>
 
         <!-- Windows Server -->
-        <div class="skill-card stagger-item">
+        <div id="comp-windows" class="skill-card stagger-item">
           <div class="skill-header">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg" alt="Windows"
               class="skill-logo">
@@ -157,7 +201,6 @@
           <div class="skill-level">
             <div class="flex justify-between text-xs mb-1">
               <span class="text-gray-500">Niveau</span>
-              <span class="text-accent">75%</span>
             </div>
             <div class="skill-bar">
               <div class="skill-progress" data-width="75%" style="width: 75%;"></div>
@@ -166,9 +209,9 @@
         </div>
 
         <!-- Virtualisation -->
-        <div class="skill-card stagger-item">
+        <div id="comp-virtu" class="skill-card stagger-item">
           <div class="skill-header">
-            <img src="https://www.svgrepo.com/show/448253/vmware.svg" alt="VMware" class="skill-logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Vmware.svg" alt="VMware" class="skill-logo">
             <div>
               <h3 class="skill-name">Virtualisation</h3>
               <p class="text-gray-500 text-sm">Environnements virtuels</p>
@@ -184,7 +227,6 @@
           <div class="skill-level">
             <div class="flex justify-between text-xs mb-1">
               <span class="text-gray-500">Niveau</span>
-              <span class="text-accent">70%</span>
             </div>
             <div class="skill-bar">
               <div class="skill-progress" data-width="70%" style="width: 70%;"></div>
@@ -193,7 +235,7 @@
         </div>
 
         <!-- Réseau -->
-        <div class="skill-card stagger-item">
+        <div id="comp-reseau" class="skill-card stagger-item">
           <div class="skill-header">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/networkx/networkx-original.svg" alt="Réseau"
               class="skill-logo" style="filter: invert(1);">
@@ -207,15 +249,13 @@
             <span class="skill-item">VLAN</span>
             <span class="skill-item">Routage</span>
             <span class="skill-item">Switching</span>
-            <span class="skill-item">Cisco</span>
-            <span class="skill-item">Packet Tracer</span>
+            <span class="skill-item">Cisco Packet Tracer</span>
             <span class="skill-item">Wireshark</span>
             <span class="skill-item">VPN</span>
           </div>
           <div class="skill-level">
             <div class="flex justify-between text-xs mb-1">
               <span class="text-gray-500">Niveau</span>
-              <span class="text-accent">75%</span>
             </div>
             <div class="skill-bar">
               <div class="skill-progress" data-width="75%" style="width: 75%;"></div>
@@ -224,7 +264,7 @@
         </div>
 
         <!-- Sécurité -->
-        <div class="skill-card stagger-item">
+        <div id="comp-secu" class="skill-card stagger-item">
           <div class="skill-header">
             <img src="https://cdn-icons-png.flaticon.com/512/2092/2092663.png" alt="Sécurité" class="skill-logo">
             <div>
@@ -243,7 +283,6 @@
           <div class="skill-level">
             <div class="flex justify-between text-xs mb-1">
               <span class="text-gray-500">Niveau</span>
-              <span class="text-accent">65%</span>
             </div>
             <div class="skill-bar">
               <div class="skill-progress" data-width="65%" style="width: 65%;"></div>
@@ -252,7 +291,7 @@
         </div>
 
         <!-- Supervision -->
-        <div class="skill-card stagger-item">
+        <div id="comp-supervision" class="skill-card stagger-item">
           <div class="skill-header">
             <img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png" alt="Supervision" class="skill-logo">
             <div>
@@ -271,7 +310,6 @@
           <div class="skill-level">
             <div class="flex justify-between text-xs mb-1">
               <span class="text-gray-500">Niveau</span>
-              <span class="text-accent">70%</span>
             </div>
             <div class="skill-bar">
               <div class="skill-progress" data-width="70%" style="width: 70%;"></div>
@@ -507,15 +545,14 @@
           <p class="text-xs text-gray-600 mt-1">Cisco Networking Academy</p>
         </div>
         <a href="pdf/pix_certification.pdf" target="_blank" class="card card-hover text-center stagger-item">
-          <img src="https://upload.wikimedia.org/wikipedia/fr/thumb/5/5c/Logo_Pix.svg/1200px-Logo_Pix.svg.png" alt="PIX"
-            class="cert-logo mx-auto mb-3">
+          <img src="https://pix.fr/images/pix-logo.svg" alt="PIX" class="cert-logo mx-auto mb-3">
           <h3 class="font-medium text-white text-sm">PIX Digital Skills</h3>
           <p class="text-xs text-gray-600 mt-1">PIX</p>
         </a>
         <div class="card card-hover text-center stagger-item relative">
           <span class="absolute top-2 right-2 bg-yellow-500 text-black text-xs px-2 py-1 rounded-full font-semibold">En
             cours</span>
-          <img src="https://www.ssi.gouv.fr/uploads/2015/10/logo_anssi.png" alt="ANSSI" class="cert-logo mx-auto mb-3">
+          <img src="https://cyber.gouv.fr/sites/default/files/logo.svg" alt="ANSSI" class="cert-logo mx-auto mb-3">
           <h3 class="font-medium text-white text-sm">SecNumAcadémie</h3>
           <p class="text-xs text-gray-600 mt-1">ANSSI</p>
         </div>
@@ -866,7 +903,7 @@
   </main>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="script.js"></script>
+  <script src="script.js?v=2"></script>
 
 </body>
 

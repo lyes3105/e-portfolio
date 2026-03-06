@@ -19,6 +19,8 @@ document.addEventListener('DOMContentLoaded', function () {
   setupCardEffects();
   setupButtonEffects();
   setupScrollProgress();
+  setupThemeToggle();
+  initParallaxShapes();
 
   // Animate hero on load
   animateHeroOnLoad();
@@ -311,3 +313,186 @@ window.addEventListener('scroll', () => {
 // Console
 // ==============================
 console.log('%c🚀 Portfolio Lyes Mouhoun', 'font-size: 20px; color: #7c3aed; font-weight: bold;');
+
+// ==============================
+// Theme Toggle (Animated Rising Sun/Moon)
+// ==============================
+function setupThemeToggle() {
+  const toggleBtn = document.getElementById('themeToggle');
+  const transitionOverlay = document.getElementById('themeTransition');
+  console.log('setupThemeToggle init', toggleBtn, transitionOverlay);
+  if (!toggleBtn || !transitionOverlay) return;
+
+  const toggleIcon = toggleBtn.querySelector('.toggle-icon');
+  const toggleText = toggleBtn.querySelector('.toggle-text');
+  let isAnimating = false;
+
+  // Load saved theme
+  const savedTheme = localStorage.getItem('portfolio-theme');
+  if (savedTheme === 'light') {
+    document.documentElement.setAttribute('data-theme', 'light');
+    updateToggleButton(true);
+  }
+
+  // Toggle on click
+  toggleBtn.addEventListener('click', (e) => {
+    console.log('themeToggle clicked! isAnimating:', isAnimating);
+    if (isAnimating) return;
+    isAnimating = true;
+
+    const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+    const targetTheme = isLight ? 'dark' : 'light';
+    const btnRect = toggleBtn.getBoundingClientRect();
+    const centerX = btnRect.left + btnRect.width / 2;
+    const centerY = btnRect.top + btnRect.height / 2;
+
+    console.log('Switching to targetTheme:', targetTheme, 'from isLight:', isLight);
+
+    // Create celestial body (Sun or Moon)
+    const celestial = document.createElement('div');
+    celestial.className = 'theme-celestial';
+    celestial.textContent = isLight ? '🌙' : '☀️';
+    celestial.style.top = `${centerY}px`;
+    celestial.style.left = `${centerX}px`;
+    transitionOverlay.appendChild(celestial);
+
+    // Initial state
+    celestial.style.transform = `translate(-50%, 0) scale(0)`;
+    celestial.style.opacity = '0';
+    celestial.style.transition = 'all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)';
+
+    // Trigger rise animation
+    requestAnimationFrame(() => {
+      celestial.style.transform = `translate(-50%, -60vh) scale(3)`;
+      celestial.style.opacity = '1';
+    });
+
+    // Theme switch & Lightwave ripple
+    setTimeout(() => {
+      // Apply theme
+      if (targetTheme === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+      } else {
+        document.documentElement.removeAttribute('data-theme');
+      }
+      localStorage.setItem('portfolio-theme', targetTheme);
+      updateToggleButton(targetTheme === 'light');
+
+      // Create ripple effect
+      const ripple = document.createElement('div');
+      ripple.style.position = 'absolute';
+      ripple.style.top = celestial.style.top;
+      ripple.style.left = celestial.style.left;
+      ripple.style.width = '10px';
+      ripple.style.height = '10px';
+      ripple.style.background = targetTheme === 'light' ? '#faf8f5' : '#09090b';
+      ripple.style.borderRadius = '50%';
+      ripple.style.transform = 'translate(-50%, -50%) scale(1)';
+      ripple.style.transition = 'transform 0.8s ease-in-out';
+      ripple.style.zIndex = '99998';
+      transitionOverlay.appendChild(ripple);
+
+      requestAnimationFrame(() => {
+        ripple.style.transform = 'translate(-50%, -50%) scale(500)';
+      });
+
+      // Cleanup
+      setTimeout(() => {
+        celestial.style.opacity = '0';
+        celestial.style.transform = `translate(-50%, -100vh) scale(1)`;
+        setTimeout(() => {
+          transitionOverlay.innerHTML = '';
+          isAnimating = false;
+        }, 500);
+      }, 700);
+
+    }, 600);
+  });
+
+  function updateToggleButton(isLight) {
+    if (isLight) {
+      toggleIcon.textContent = '🌙';
+      toggleText.textContent = 'Mode sombre';
+    } else {
+      toggleIcon.textContent = '☀️';
+      toggleText.textContent = 'Mode clair';
+    }
+  }
+}
+
+// ==============================
+// Floating Parallax Shapes
+// ==============================
+function initParallaxShapes() {
+  const container = document.getElementById('parallaxContainer');
+  if (!container) return;
+
+  const shapes = [];
+  const numShapes = 20;
+
+  // Generate shapes
+  for (let i = 0; i < numShapes; i++) {
+    const shape = document.createElement('div');
+    shape.className = 'parallax-shape';
+
+    // Randomize properties
+    const size = Math.random() * 150 + 50; // 50px to 200px
+    const isCircle = Math.random() > 0.5;
+
+    shape.style.width = `${size}px`;
+    shape.style.height = `${size}px`;
+    shape.style.borderRadius = isCircle ? '50%' : '15%';
+    shape.style.background = Math.random() > 0.5 ? 'var(--accent)' : 'var(--accent-light)';
+
+    // Initial position
+    const x = Math.random() * window.innerWidth;
+    const y = Math.random() * window.innerHeight;
+    shape.style.left = `${x}px`;
+    shape.style.top = `${y}px`;
+
+    // Custom animation constraints
+    shape.dataset.speed = Math.random() * 0.5 + 0.1;
+    shape.dataset.offsetX = 0;
+    shape.dataset.offsetY = 0;
+    shape.dataset.baseX = x;
+    shape.dataset.baseY = y;
+
+    container.appendChild(shape);
+    shapes.push(shape);
+  }
+
+  // Mouse move inverse parallax
+  window.addEventListener('mousemove', (e) => {
+    const mouseX = e.clientX / window.innerWidth - 0.5;
+    const mouseY = e.clientY / window.innerHeight - 0.5;
+
+    shapes.forEach(shape => {
+      const speed = parseFloat(shape.dataset.speed);
+      const moveX = mouseX * -100 * speed;
+      const moveY = mouseY * -100 * speed;
+
+      shape.style.transform = `translate(${moveX}px, ${moveY}px)`;
+    });
+  });
+
+  // Slow natural float
+  let time = 0;
+  function animateFloat() {
+    time += 0.005;
+    shapes.forEach((shape, index) => {
+      const speed = parseFloat(shape.dataset.speed);
+      const floatX = Math.sin(time + index) * 20 * speed;
+      const floatY = Math.cos(time + index) * 20 * speed;
+
+      // Combine mouse transform with float transform using matrix or just adjusting base positions
+      const currentTransform = shape.style.transform;
+      if (currentTransform) {
+        // Simple hack to add independent movement
+        shape.style.marginLeft = `${floatX}px`;
+        shape.style.marginTop = `${floatY}px`;
+      }
+    });
+    requestAnimationFrame(animateFloat);
+  }
+  animateFloat();
+}

@@ -167,6 +167,20 @@ body {
   animation: pulse-glow 3s infinite;
 }
 
+.sidebar-logo-img {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 4px 15px var(--accent-glow);
+  animation: pulse-glow 3s infinite;
+  transition: transform 0.3s ease;
+}
+
+.sidebar-logo-img:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
 @keyframes pulse-glow {
 
   0%,
@@ -923,4 +937,542 @@ body {
   .section-title {
     font-size: 2rem;
   }
+}
+
+/* ==============================
+   Theme Toggle Button
+============================== */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  background: rgba(124, 58, 237, 0.1);
+  border: 1px solid rgba(124, 58, 237, 0.2);
+  border-radius: 10px;
+  color: var(--accent-light);
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  justify-content: center;
+}
+
+.theme-toggle:hover {
+  background: rgba(124, 58, 237, 0.2);
+  transform: translateY(-2px);
+}
+
+.theme-toggle .toggle-icon {
+  font-size: 1.1rem;
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover .toggle-icon {
+  transform: rotate(20deg);
+}
+
+/* ==============================
+   Smooth Theme Transition
+============================== */
+body,
+.sidebar,
+.card,
+.skill-card,
+.timeline-content,
+.pdf-container,
+.pdf-header,
+.form-input,
+.nav-link,
+.btn-primary,
+.btn-secondary,
+.btn-accent,
+.btn-doc,
+.badge,
+.tag,
+.skill-item,
+.footer {
+  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* ==============================
+   Light Mode Theme
+============================== */
+[data-theme="light"] {
+  --accent: #7c5ce6;
+  --accent-light: #9b7bfc;
+  --accent-dark: #5b3dbd;
+  --accent-glow: rgba(124, 92, 230, 0.2);
+  --dark: #faf8f5;
+  --dark-card: #ffffff;
+  --dark-lighter: #f0ede8;
+  --text-primary: #2d2a3e;
+  --text-secondary: #5a5672;
+  --text-muted: #8a86a0;
+}
+
+/* Override Tailwind classes for light mode */
+[data-theme="light"] .text-white {
+  color: #2d2a3e !important;
+}
+
+[data-theme="light"] .text-gray-200 {
+  color: #3d3a50 !important;
+}
+
+[data-theme="light"] .text-gray-300 {
+  color: #5a5672 !important;
+}
+
+[data-theme="light"] .text-gray-400 {
+  color: #7a7690 !important;
+}
+
+[data-theme="light"] .text-gray-500 {
+  color: #8a86a0 !important;
+}
+
+[data-theme="light"] .text-gray-600 {
+  color: #a09caf !important;
+}
+
+[data-theme="light"] .bg-dark {
+  background: var(--dark) !important;
+}
+
+/* Sidebar light mode */
+[data-theme="light"] .sidebar {
+  background: rgba(255, 255, 255, 0.95);
+  border-right: 1px solid rgba(124, 92, 230, 0.08);
+  box-shadow: 2px 0 30px rgba(0, 0, 0, 0.04);
+  backdrop-filter: blur(20px);
+}
+
+[data-theme="light"] .sidebar-header {
+  border-bottom-color: rgba(124, 92, 230, 0.08);
+}
+
+[data-theme="light"] .sidebar-name {
+  color: #2d2a3e;
+}
+
+[data-theme="light"] .sidebar-subtitle {
+  color: #8a86a0;
+}
+
+[data-theme="light"] .sidebar-footer {
+  border-top-color: rgba(124, 92, 230, 0.08);
+  color: #8a86a0;
+}
+
+[data-theme="light"] .nav-link {
+  color: #5a5672;
+}
+
+[data-theme="light"] .nav-link:hover {
+  color: var(--accent);
+  background: rgba(124, 92, 230, 0.06);
+}
+
+[data-theme="light"] .nav-link.active {
+  color: var(--accent);
+  background: rgba(124, 92, 230, 0.08);
+}
+
+/* Cards — diffuse soft shadows */
+[data-theme="light"] .card {
+  background: var(--dark-card);
+  border-color: rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .card-hover:hover {
+  border-color: rgba(124, 92, 230, 0.2);
+  box-shadow:
+    0 -8px 30px rgba(124, 92, 230, 0.12),
+    0 20px 40px rgba(0, 0, 0, 0.06);
+}
+
+/* Skill cards */
+[data-theme="light"] .skill-card {
+  background: linear-gradient(135deg, #ffffff, #f8f6ff);
+  border-color: rgba(124, 92, 230, 0.06);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+[data-theme="light"] .skill-card:hover {
+  border-color: rgba(124, 92, 230, 0.2);
+  box-shadow: 0 -6px 25px rgba(124, 92, 230, 0.1), 0 15px 35px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .skill-logo {
+  background: rgba(124, 92, 230, 0.06);
+}
+
+[data-theme="light"] .skill-item {
+  background: rgba(124, 92, 230, 0.06);
+  border-color: rgba(124, 92, 230, 0.12);
+  color: var(--accent);
+}
+
+[data-theme="light"] .skill-bar {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+/* Buttons — antigravity glow (shadow rises) */
+[data-theme="light"] .btn-primary {
+  box-shadow: 0 4px 15px rgba(124, 92, 230, 0.3);
+}
+
+[data-theme="light"] .btn-primary:hover {
+  box-shadow: 0 -4px 20px rgba(124, 92, 230, 0.4), 0 8px 25px rgba(124, 92, 230, 0.2);
+}
+
+[data-theme="light"] .btn-secondary {
+  color: var(--accent);
+  border-color: rgba(124, 92, 230, 0.2);
+}
+
+[data-theme="light"] .btn-secondary:hover {
+  background: rgba(124, 92, 230, 0.06);
+  box-shadow: 0 -4px 15px rgba(124, 92, 230, 0.15);
+}
+
+[data-theme="light"] .btn-accent {
+  color: var(--accent);
+  background: rgba(124, 92, 230, 0.06);
+}
+
+[data-theme="light"] .btn-doc {
+  background: rgba(124, 92, 230, 0.03);
+  border-color: rgba(0, 0, 0, 0.06);
+  color: #5a5672;
+}
+
+[data-theme="light"] .btn-doc:hover {
+  color: var(--accent);
+  background: rgba(124, 92, 230, 0.08);
+  border-color: rgba(124, 92, 230, 0.2);
+  box-shadow: 0 -4px 12px rgba(124, 92, 230, 0.1);
+}
+
+/* Timeline */
+[data-theme="light"] .timeline-content {
+  background: #ffffff;
+  border-color: rgba(124, 92, 230, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+/* PDF container */
+[data-theme="light"] .pdf-container {
+  border-color: rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .pdf-header {
+  background: rgba(124, 92, 230, 0.04);
+  border-bottom-color: rgba(124, 92, 230, 0.08);
+}
+
+[data-theme="light"] .pdf-title {
+  color: var(--accent);
+}
+
+/* Badge & Tags — pastel */
+[data-theme="light"] .badge {
+  background: rgba(124, 92, 230, 0.08);
+  color: var(--accent);
+  border-color: rgba(124, 92, 230, 0.15);
+}
+
+[data-theme="light"] .badge-alt {
+  background: rgba(16, 185, 129, 0.08);
+  color: #059669;
+  border-color: rgba(16, 185, 129, 0.15);
+}
+
+[data-theme="light"] .tag {
+  background: rgba(124, 92, 230, 0.06);
+  color: var(--accent);
+  border-color: rgba(124, 92, 230, 0.1);
+}
+
+/* Form inputs */
+[data-theme="light"] .form-input {
+  background: #f5f3f0;
+  border-color: rgba(0, 0, 0, 0.08);
+  color: #2d2a3e;
+}
+
+[data-theme="light"] .form-input::placeholder {
+  color: #a09caf;
+}
+
+[data-theme="light"] .form-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(124, 92, 230, 0.1);
+  background: #ffffff;
+}
+
+/* Footer */
+[data-theme="light"] .footer {
+  border-top-color: rgba(0, 0, 0, 0.04);
+  color: #8a86a0;
+}
+
+/* Background effects — very subtle */
+[data-theme="light"] .bg-grid {
+  background-image:
+    radial-gradient(circle at 20% 80%, rgba(124, 92, 230, 0.04) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(251, 191, 36, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(124, 92, 230, 0.02) 0%, transparent 70%);
+}
+
+[data-theme="light"] .mouse-glow {
+  background: radial-gradient(circle, rgba(124, 92, 230, 0.06) 0%, rgba(251, 191, 36, 0.02) 40%, transparent 70%);
+}
+
+/* Scrollbar */
+[data-theme="light"] ::-webkit-scrollbar-track {
+  background: #f0ede8;
+}
+
+[data-theme="light"] ::-webkit-scrollbar-thumb {
+  background: rgba(124, 92, 230, 0.25);
+}
+
+/* Section title — warm gradient */
+[data-theme="light"] .section-title span {
+  background: linear-gradient(135deg, #2d2a3e, #7c5ce6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+[data-theme="light"] .section-subtitle {
+  color: #8a86a0;
+}
+
+[data-theme="light"] .section-divider {
+  background: linear-gradient(90deg, transparent, rgba(124, 92, 230, 0.3), transparent);
+}
+
+/* Text accent */
+[data-theme="light"] .text-accent {
+  color: var(--accent) !important;
+}
+
+/* Cert logo */
+[data-theme="light"] .cert-logo {
+  filter: none;
+}
+
+/* Hero — warm treatment */
+[data-theme="light"] .hero-title {
+  background: linear-gradient(135deg, #2d2a3e, #7c5ce6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Sidebar logo glow softened */
+[data-theme="light"] .sidebar-logo,
+[data-theme="light"] .sidebar-logo-img {
+  box-shadow: 0 4px 15px rgba(124, 92, 230, 0.15);
+}
+
+/* Modal */
+[data-theme="light"] #inextSuiviModal>div {
+  background: #ffffff !important;
+  border-color: rgba(124, 92, 230, 0.1) !important;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.1) !important;
+}
+
+[data-theme="light"] #inextSuiviModal>div>button {
+  color: #2d2a3e !important;
+}
+
+[data-theme="light"] #inextSuiviModal h3 {
+  color: var(--accent) !important;
+}
+
+[data-theme="light"] #inextSuiviModal p {
+  color: #5a5672 !important;
+}
+
+[data-theme="light"] #inextSuiviModal img {
+  border-color: rgba(0, 0, 0, 0.06) !important;
+}
+
+/* Theme toggle in light mode */
+[data-theme="light"] .theme-toggle {
+  background: rgba(124, 92, 230, 0.06);
+  border-color: rgba(124, 92, 230, 0.12);
+  color: var(--accent);
+}
+
+[data-theme="light"] .theme-toggle:hover {
+  background: rgba(124, 92, 230, 0.12);
+  box-shadow: 0 -4px 15px rgba(124, 92, 230, 0.1);
+}
+
+/* ==============================
+   Theme Transition Overlay
+============================== */
+.theme-transition-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 99999;
+}
+
+.theme-celestial {
+  position: absolute;
+  font-size: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100000;
+  pointer-events: none;
+}
+
+/* ==============================
+   Marquee Banner
+============================== */
+.marquee-banner {
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 0.8rem 0;
+  border-top: 1px solid rgba(124, 58, 237, 0.1);
+  border-bottom: 1px solid rgba(124, 58, 237, 0.1);
+  position: relative;
+  margin: 2rem 0;
+}
+
+.marquee-banner::before,
+.marquee-banner::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.marquee-banner::before {
+  left: 0;
+  background: linear-gradient(90deg, var(--dark), transparent);
+}
+
+.marquee-banner::after {
+  right: 0;
+  background: linear-gradient(270deg, var(--dark), transparent);
+}
+
+.marquee-track {
+  display: inline-flex;
+  animation: marquee-scroll 30s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 2rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.marquee-item .marquee-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.6;
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+[data-theme="light"] .marquee-banner {
+  border-color: rgba(124, 92, 230, 0.08);
+}
+
+/* ==============================
+   Floating Parallax Shapes
+============================== */
+.parallax-shapes {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.parallax-shape {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.07;
+  will-change: transform;
+  transition: transform 0.1s linear;
+}
+
+[data-theme="light"] .parallax-shape {
+  opacity: 0.05;
+}
+
+/* ==============================
+   Antigravity Hover Glow
+============================== */
+.antigravity-glow {
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.antigravity-glow::after {
+  content: '';
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  bottom: 100%;
+  height: 0;
+  background: radial-gradient(ellipse, var(--accent-glow), transparent);
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.antigravity-glow:hover::after {
+  height: 40px;
+  opacity: 1;
+  bottom: calc(100% - 5px);
+}
+
+.antigravity-glow:hover {
+  box-shadow: 0 -8px 25px rgba(124, 58, 237, 0.2), 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .antigravity-glow:hover {
+  box-shadow: 0 -8px 25px rgba(124, 92, 230, 0.15), 0 4px 15px rgba(0, 0, 0, 0.04);
 }
