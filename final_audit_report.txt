@@ -1,0 +1,106 @@
+=== FINAL PORTFOLIO AUDIT ===
+
+[1] IMAGE SOURCES:
+  [.] OK -> logo/sidebar_logo_1772817530076.png
+  [.] OK -> logo/lycéee turgot.jpeg
+  [.] OK -> logo/logo proxmox.png
+  [.] EXTERNAL -> https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg
+  [.] EXTERNAL -> https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg
+  [.] EXTERNAL -> https://cdn.jsdelivr.net/gh/devicons/devicon/icons/debian/debian-original.svg
+  [.] OK -> logo/pfsense logo.png
+  [.] OK -> logo/metasploit 2 logo.png
+  [.] OK -> logo/logo lynis.png
+  [.] OK -> logo/logo glpi.png
+  [.] EXTERNAL -> https://cdn.jsdelivr.net/gh/devicons/devicon/icons/networkx/networkx-original.svg
+  [.] OK -> logo/logo proxmox.png
+  [.] EXTERNAL -> https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg
+  [.] EXTERNAL -> https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg
+  [.] EXTERNAL -> https://cdn.jsdelivr.net/gh/devicons/devicon/icons/debian/debian-original.svg
+  [.] OK -> logo/pfsense logo.png
+  [.] OK -> logo/metasploit 2 logo.png
+  [.] OK -> logo/logo lynis.png
+  [.] OK -> logo/logo glpi.png
+  [.] EXTERNAL -> https://cdn.jsdelivr.net/gh/devicons/devicon/icons/networkx/networkx-original.svg
+  [.] EXTERNAL -> https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg
+  [.] EXTERNAL -> https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg
+  [.] EXTERNAL -> https://upload.wikimedia.org/wikipedia/commons/9/9a/Vmware.svg
+  [.] EXTERNAL -> https://cdn.jsdelivr.net/gh/devicons/devicon/icons/networkx/networkx-original.svg
+  [.] OK -> logo/logo Flaticon (Sécurité, Supervision.jpg
+  [.] OK -> logo/logo Flaticon (Sécurité, Supervision.jpg
+  [.] OK -> logo/logo proxmox.png
+  [.] EXTERNAL -> https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg
+  [.] EXTERNAL -> https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg
+  [.] EXTERNAL -> https://cdn.jsdelivr.net/gh/devicons/devicon/icons/debian/debian-original.svg
+  [.] OK -> logo/pfsense logo.png
+  [.] OK -> logo/metasploit 2 logo.png
+  [.] OK -> logo/logo lynis.png
+  [.] OK -> logo/logo cisco.png
+  [.] OK -> logo/logo glpi.png
+  [.] EXTERNAL -> https://cdn.jsdelivr.net/gh/devicons/devicon/icons/networkx/networkx-original.svg
+  [.] OK -> pdf/e6/infra_reseau.pdf
+  [.] OK -> pdf/e6/situation_pro_1.pdf
+  [.] OK -> pdf/e6/situation_pro_2.pdf
+  [.] OK -> pdf/projets/suivi de projet 1 inext .png
+  [.] OK -> pdf/projets/suivi de projet 2 inext.png
+  [.] OK -> pdf/projets/suivi de projet 3 inext.png
+  [.] OK -> pdf/projets/suivi de projet 4 inext.png
+  [.] EXTERNAL -> https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Cisco_logo_blue_2016.svg/1200px-Cisco_logo_blue_2016.svg.png
+  [.] EXTERNAL -> https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg
+  [.] EXTERNAL -> https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Cisco_logo_blue_2016.svg/1200px-Cisco_logo_blue_2016.svg.png
+  [.] EXTERNAL -> https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Cisco_logo_blue_2016.svg/1200px-Cisco_logo_blue_2016.svg.png
+  [.] EXTERNAL -> https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Cisco_logo_blue_2016.svg/1200px-Cisco_logo_blue_2016.svg.png
+  [.] EXTERNAL -> https://pix.fr/images/pix-logo.svg
+  [.] EXTERNAL -> https://cyber.gouv.fr/sites/default/files/logo.svg
+  [.] OK -> logo/stage 1.jpg
+  [.] OK -> logo/stage2eme annee.png
+  [.] OK -> pdf/officiels/Tableau_Synthese.pdf
+  [.] OK -> pdf/officiels/Lyes mouhoun CV.pdf
+  [.] EXTERNAL -> https://unpkg.com/aos@2.3.1/dist/aos.js
+  [.] OK -> script.js?v=2
+  [.] OK -> assets/js/gaming-bg.js
+
+[2] DOCUMENT LINKS (PDF):
+  [.] OK -> pdf/e6/situation_pro_1.pdf
+  [.] OK -> pdf/doc_technique/sauvegarde,restauration FIC (full image copie) site web.pdf
+  [.] OK -> pdf/projets/Cahier des Charges jeu devine le nombre.pdf
+  [.] OK -> pdf/projets/gant projet mine test .pdf
+  [.] OK -> pdf/officiels/Lyes mouhoun CV.pdf
+  [.] OK -> pdf/certifications/introcyber.pdf
+  [.] OK -> pdf/projets/Cahier de recette Rémi-Lyes.pdf
+  [.] OK -> pdf/projets/journaldebord inext.pdf
+  [.] OK -> pdf/doc_technique/Documentation-Installation et Configuration SSH sur Debian.pdf
+  [.] OK -> pdf/projets/cahier des charges Lyes-Rémi.pdf
+  [.] OK -> pdf/doc_technique/doc commandes routeur cisco.pdf
+  [.] OK -> pdf/projets/Documentation-Installation Debian 12.1.0.pdf
+  [.] OK -> pdf/e6/situation_pro_2.pdf
+  [.] OK -> pdf/doc_technique/doc insta et utili de  SNMP.pdf
+  [.] OK -> pdf/projets/Cahier des charges projet mairie.pdf
+  [.] OK -> pdf/stages/rapport de stage 2eme annee.pdf
+  [.] OK -> pdf/certifications/notionsdebasesreseau.pdf
+  [.] OK -> pdf/doc_technique/Documentation-Installation GLPI sur Debian (1) (1).pdf
+  [.] OK -> pdf/projets/gant projet mairie.pdf
+  [.] OK -> pdf/doc_technique/pfsense.pdf
+  [.] OK -> pdf/doc_technique/documentation instalation et utilisation Lynis .pdf
+  [.] OK -> pdf/officiels/Tableau_Synthese.pdf
+  [.] OK -> pdf/projets/documentation projet mairie.pdf
+  [.] OK -> pdf/doc_technique/Documentation-Installation Active Directory (AD DS) Windows Server 2022.pdf
+  [.] OK -> pdf/certifications/intropackettracer.pdf
+  [.] OK -> pdf/certifications/Python Essentials 1.pdf
+  [.] OK -> pdf/stages/Raportstage.pdf
+  [.] OK -> pdf/certifications/pix_certification.pdf
+  [.] OK -> pdf/projets/cahier de recette inext.pdf
+  [.] OK -> pdf/projets/Documentation Technique projet devine le nombre.pdf
+  [.] OK -> pdf/doc_technique/proxmox instalation.pdf
+  [.] OK -> pdf/projets/Inext cahier des charges.pdf
+  [.] OK -> pdf/doc_technique/Installation de Metasploitable 2 sur l'Hyperviseur Proxmox VE.pdf
+  [.] OK -> pdf/projets/cahier de test Lyes-Rémi.pdf
+  [.] OK -> pdf/e6/infra_reseau.pdf
+
+[3] STRUCTURAL INTEGRITY:
+  [OK] pfSense case
+  [OK] Cachier typo
+  [FAIL] Broken chars ()
+  [OK] Duplicate IDs
+  [OK] Double links (</a></a>)
+
+[4] MARQUEE SYNC: Found 20 items (Set 1 + Set 2).

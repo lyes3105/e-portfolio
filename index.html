@@ -28,15 +28,27 @@
   <!-- Theme Transition Layer -->
   <div id="themeTransition" class="theme-transition-overlay"></div>
 
-  <!-- Mouse glow effect -->
-  <div id="mouseGlow" class="mouse-glow"></div>
+  <!-- Custom Cursor & Flashlight -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-outline"></div>
+  <div class="flashlight"></div>
 
   <!-- Sidebar -->
   <aside class="sidebar">
     <div class="sidebar-header">
       <img src="logo/sidebar_logo_1772817530076.png" alt="LM Logo" class="sidebar-logo-img">
       <div>
-        <p class="sidebar-name">Lyes Mouhoun</p>
+        <div class="flex items-center justify-between gap-4 mb-2">
+          <p class="sidebar-name">Lyes Mouhoun</p>
+          <button id="themeToggle" class="theme-switch" aria-label="Changer de thème">
+            <div class="switch-track">
+              <div class="switch-knob">
+                <span class="icon-sun">☀️</span>
+                <span class="icon-moon">🌙</span>
+              </div>
+            </div>
+          </button>
+        </div>
         <p class="sidebar-subtitle">BTS SIO SISR</p>
       </div>
     </div>
@@ -44,22 +56,19 @@
     <nav class="sidebar-nav">
       <a href="#accueil" class="nav-link">Accueil</a>
       <a href="#profil" class="nav-link">Profil</a>
+      <a href="#parcours" class="nav-link">Parcours</a>
+      <a href="#e7" class="nav-link">Epreuve Technique E7</a>
       <a href="#competences" class="nav-link">Compétences</a>
-      <a href="#e6" class="nav-link">Situations Pro E6</a>
+      <a href="#doc_technique" class="nav-link">Documentation Technique</a>
+      <a href="#experiences" class="nav-link">Expériences</a>
       <a href="#projets" class="nav-link">Projets</a>
       <a href="#certifications" class="nav-link">Certifications</a>
-      <a href="#parcours" class="nav-link">Parcours</a>
-      <a href="#experiences" class="nav-link">Expériences</a>
-      <a href="#documents" class="nav-link">Documents</a>
+      <a href="#e6" class="nav-link">Epreuve E6</a>
       <a href="#veille" class="nav-link">Veille</a>
       <a href="#contact" class="nav-link">Contact</a>
     </nav>
 
     <div class="sidebar-footer">
-      <button id="themeToggle" class="theme-toggle" aria-label="Changer de thème">
-        <span class="toggle-icon">☀️</span>
-        <span class="toggle-text">Mode clair</span>
-      </button>
       <p style="margin-top: 0.75rem;">© 2025 Lyes Mouhoun</p>
     </div>
   </aside>
@@ -69,18 +78,32 @@
 
     <!-- Accueil -->
     <section id="accueil" class="hero-section">
-      <div class="text-center max-w-2xl mx-auto">
-        <div class="flex items-center justify-center gap-3 mb-4 hero-subtitle">
-          <img src="logo/lycéee turgot.jpeg" alt="Logo Lycée Turgot" class="h-12 w-12 object-contain rounded-lg">
-          <p class="text-accent text-sm tracking-widest">ÉTUDIANT EN 2ÈME ANNÉE BTS SIO — OPTION SISR</p>
+      <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12 px-6">
+        <!-- Left: Image -->
+        <div class="hero-image-container order-2 md:order-1" data-aos="fade-right">
+          <div class="profile-glow"></div>
+          <img src="logo/moi image présentation.png" alt="Lyes Mouhoun" class="profile-img">
         </div>
-        <h1 class="hero-title">Lyes Mouhoun</h1>
-        <p class="text-xl text-gray-400 mb-2 font-light hero-subtitle">Passionné par les infrastructures systèmes et
-          réseaux</p>
-        <p class="text-sm text-gray-500 mb-8 hero-subtitle">📍 Lycée Turgot — Paris 75003</p>
-        <div class="flex gap-4 justify-center hero-buttons">
-          <a href="#profil" class="btn-primary antigravity-glow">Découvrir →</a>
-          <a href="#contact" class="btn-secondary antigravity-glow">Me contacter</a>
+
+        <!-- Right: Text Content -->
+        <div class="hero-content text-center md:text-left md:flex-1 order-1 md:order-2" data-aos="fade-left">
+          <div class="flex items-center justify-center md:justify-start gap-3 mb-6 hero-subtitle">
+            <img src="logo/lycéee turgot.jpeg" alt="Logo Lycée Turgot"
+              class="h-12 w-12 object-contain rounded-lg shadow-lg">
+            <p class="text-accent text-sm tracking-widest font-semibold uppercase">Étudiant en 2ème année BTS SIO —
+              Option SISR</p>
+          </div>
+          <h1 class="hero-title text-5xl md:text-7xl mb-4">Lyes Mouhoun</h1>
+          <p class="text-xl md:text-2xl text-gray-400 mb-4 font-light leading-relaxed">Passionné par les infrastructures
+            systèmes et réseaux</p>
+          <div class="flex items-center justify-center md:justify-start gap-2 text-sm text-gray-500 mb-8">
+            <span class="text-xl">📍</span>
+            <span>Lycée Turgot — Paris 75003</span>
+          </div>
+          <div class="flex gap-4 justify-center md:justify-start hero-buttons">
+            <a href="#profil" class="btn-primary antigravity-glow">Découvrir →</a>
+            <a href="#contact" class="btn-secondary antigravity-glow">Me contacter</a>
+          </div>
         </div>
       </div>
     </section>
@@ -118,42 +141,233 @@
       </div>
     </section>
 
+    <section id="parcours" class="section" data-aos="fade-up">
+      <h2 class="section-title"><span>Parcours</span></h2>
+      <div class="section-divider"></div>
+      <div class="max-w-2xl mx-auto">
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="text-accent text-sm font-medium">2019 - 2020</span>
+              <h3 class="font-semibold text-white mt-1">Brevet Général</h3>
+              <p class="text-gray-500 text-sm">Collège Stéphane Mallarmé — Mention</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="text-accent text-sm font-medium">2022 - 2023</span>
+              <h3 class="font-semibold text-white mt-1">Bac Général Maths/SVT</h3>
+              <p class="text-gray-500 text-sm">Lycée Edgar Quinet, Paris</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="text-accent text-sm font-medium">2023 - 2024</span>
+              <h3 class="font-semibold text-white mt-1">Année PASS</h3>
+              <p class="text-gray-500 text-sm">Réorientation vers l'informatique</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="text-accent text-sm font-medium">2024 - 2026</span>
+              <h3 class="font-semibold text-white mt-1">BTS SIO Option SISR</h3>
+              <p class="text-gray-500 text-sm">Lycée Turgot, Paris — En cours</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Epreuve Technique E7 -->
+    <section id="e7" class="section" data-aos="fade-up">
+      <h2 class="section-title"><span>Epreuve Technique E7</span></h2>
+      <p class="section-subtitle">Support de l'épreuve "Administration des systèmes et des réseaux"</p>
+      <div class="section-divider"></div>
+
+      <div class="max-w-6xl mx-auto">
+        <!-- Infrastructure Réseau - Full width -->
+        <div class="mb-10">
+          <div class="pdf-container glow-border">
+            <div class="pdf-header">
+              <span class="pdf-title">🌐 Infrastructure Réseau</span>
+              <a href="pdf/e6/infra_reseau.pdf" target="_blank" class="btn-accent text-xs">Plein écran ↗</a>
+            </div>
+            <iframe src="pdf/e6/infra_reseau.pdf"></iframe>
+          </div>
+        </div>
+
+        <!-- Situations Pro 1 & 2 - Side by side -->
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="pdf-container glow-border">
+            <div class="pdf-header">
+              <span class="pdf-title">📋 Situation Professionnelle 1</span>
+              <a href="pdf/e6/situation_pro_1.pdf" target="_blank" class="btn-accent text-xs">Plein écran ↗</a>
+            </div>
+            <iframe src="pdf/e6/situation_pro_1.pdf"></iframe>
+          </div>
+
+          <div class="pdf-container glow-border">
+            <div class="pdf-header">
+              <span class="pdf-title">📋 Situation Professionnelle 2</span>
+              <a href="pdf/e6/situation_pro_2.pdf" target="_blank" class="btn-accent text-xs">Plein écran ↗</a>
+            </div>
+            <iframe src="pdf/e6/situation_pro_2.pdf"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Compétences -->
     <section id="competences" class="section" data-aos="fade-up">
       <h2 class="section-title"><span>Compétences</span></h2>
       <div class="section-divider"></div>
 
       <!-- Antigravity Marquee -->
-      <div class="marquee-banner" data-aos="fade-in" style="margin-top: 1rem; margin-bottom: 3rem;">
-        <div class="marquee-track">
-          <!-- We duplicate the items several times to create an infinite scroll -->
-          <a href="#comp-linux" class="marquee-item transition hover:text-accent">🐧 Linux <span
-              class="marquee-dot"></span></a>
-          <a href="#comp-windows" class="marquee-item transition hover:text-accent">🪟 Windows Server <span
-              class="marquee-dot"></span></a>
-          <a href="#comp-virtu" class="marquee-item transition hover:text-accent">☁️ Virtualisation <span
-              class="marquee-dot"></span></a>
-          <a href="#comp-reseau" class="marquee-item transition hover:text-accent">🌐 Réseau & Infra <span
-              class="marquee-dot"></span></a>
-          <a href="#comp-secu" class="marquee-item transition hover:text-accent">🛡️ Cybersécurité <span
-              class="marquee-dot"></span></a>
-          <a href="#comp-supervision" class="marquee-item transition hover:text-accent">📊 Supervision <span
-              class="marquee-dot"></span></a>
-          <!-- Duplicates for seamless loop -->
-          <a href="#comp-linux" class="marquee-item transition hover:text-accent">🐧 Linux <span
-              class="marquee-dot"></span></a>
-          <a href="#comp-windows" class="marquee-item transition hover:text-accent">🪟 Windows Server <span
-              class="marquee-dot"></span></a>
-          <a href="#comp-virtu" class="marquee-item transition hover:text-accent">☁️ Virtualisation <span
-              class="marquee-dot"></span></a>
-          <a href="#comp-reseau" class="marquee-item transition hover:text-accent">🌐 Réseau & Infra <span
-              class="marquee-dot"></span></a>
-          <a href="#comp-secu" class="marquee-item transition hover:text-accent">🛡️ Cybersécurité <span
-              class="marquee-dot"></span></a>
-          <a href="#comp-supervision" class="marquee-item transition hover:text-accent">📊 Supervision <span
-              class="marquee-dot"></span></a>
+      <div class="marquee-banner cards-marquee docs-marquee" data-aos="fade-in"
+        style="margin-top: 1rem; margin-bottom: 3rem;">
+        <div class="marquee-track" style="animation-duration: 40s;">
+          <!-- First Set -->
+          <a href="pdf/doc_technique/proxmox instalation.pdf" target="_blank" class="tech-card doc-card">
+            <img src="logo/logo proxmox.png" alt="Proxmox" class="tech-icon mb-2"
+              style="width: 40px; height: 40px; object-fit: contain;">
+            <span class="tech-name text-center leading-tight">Proxmox</span>
+          </a>
+          <a href="pdf/doc_technique/Documentation-Installation Active Directory (AD DS) Windows Server 2022.pdf"
+            target="_blank" class="tech-card doc-card active">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg" alt="Windows"
+              class="tech-icon mb-2" style="width: 35px; height: 35px;">
+            <span class="tech-name text-center leading-tight">Active<br>Directory</span>
+          </a>
+          <a href="pdf/doc_technique/Documentation-Installation et Configuration SSH sur Debian.pdf" target="_blank"
+            class="tech-card doc-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="SSH"
+              class="tech-icon mb-2" style="width: 35px; height: 35px;">
+            <span class="tech-name text-center leading-tight">SSH<br>Debian</span>
+          </a>
+          <a href="pdf/projets/Documentation-Installation Debian 12.1.0.pdf" target="_blank" class="tech-card doc-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/debian/debian-original.svg" alt="Debian"
+              class="tech-icon mb-2" style="width: 35px; height: 35px;">
+            <span class="tech-name text-center leading-tight">Debian 12</span>
+          </a>
+          <a href="pdf/doc_technique/sauvegarde,restauration FIC (full image copie) site web.pdf" target="_blank"
+            class="tech-card doc-card">
+            <span class="text-3xl mb-2">💾</span>
+            <span class="tech-name text-center leading-tight">Sauvegarde<br>& Resta.</span>
+          </a>
+          <a href="pdf/doc_technique/pfsense.pdf" target="_blank" class="tech-card doc-card">
+            <img src="logo/pfsense logo.png" alt="pfSense" class="tech-icon mb-2"
+              style="width: 35px; height: 35px; object-fit: contain;">
+            <span class="tech-name text-center leading-tight">pfSense</span>
+          </a>
+          <a href="pdf/doc_technique/Installation de Metasploitable 2 sur l'Hyperviseur Proxmox VE.pdf" target="_blank"
+            class="tech-card doc-card">
+            <img src="logo/metasploit 2 logo.png" alt="Metasploit" class="tech-icon mb-2"
+              style="width: 35px; height: 35px; object-fit: contain;">
+            <span class="tech-name text-center leading-tight">Metasploitable<br>2</span>
+          </a>
+          <a href="pdf/doc_technique/documentation instalation et utilisation Lynis .pdf" target="_blank"
+            class="tech-card doc-card">
+            <img src="logo/logo lynis.png" alt="Lynis" class="tech-icon mb-2"
+              style="width: 35px; height: 35px; object-fit: contain;">
+            <span class="tech-name text-center leading-tight">Lynis</span>
+          </a>
+          <a href="pdf/doc_technique/Documentation-Installation GLPI sur Debian (1) (1).pdf" target="_blank"
+            class="tech-card doc-card">
+            <img src="logo/logo glpi.png" alt="GLPI" class="tech-icon mb-2"
+              style="width: 35px; height: 35px; object-fit: contain;">
+            <span class="tech-name text-center leading-tight">GLPI</span>
+          </a>
+          <a href="pdf/doc_technique/doc insta et utili de  SNMP.pdf" target="_blank" class="tech-card doc-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/networkx/networkx-original.svg" alt="SNMP"
+              class="tech-icon mb-2" style="width: 35px; height: 35px;">
+            <span class="tech-name text-center leading-tight">SNMP</span>
+          </a>
+          <a href="pdf/doc_technique/doc commandes routeur cisco.pdf" target="_blank" class="tech-card doc-card">
+            <img src="logo/logo cisco.png" alt="Cisco" class="tech-icon mb-2"
+              style="width: 35px; height: 35px; object-fit: contain;">
+            <span class="tech-name text-center leading-tight">Routing</span>
+          </a>
+          <a href="pdf/doc_technique/switch.pdf" target="_blank" class="tech-card doc-card">
+            <img src="logo/logo cisco.png" alt="Cisco" class="tech-icon mb-2"
+              style="width: 35px; height: 35px; object-fit: contain;">
+            <span class="tech-name text-center leading-tight">Switching</span>
+          </a>
+
+
+          <!-- Second Set (Duplicate for seamless scroll) -->
+          <a href="pdf/doc_technique/proxmox instalation.pdf" target="_blank" class="tech-card doc-card">
+            <img src="logo/logo proxmox.png" alt="Proxmox" class="tech-icon mb-2"
+              style="width: 40px; height: 40px; object-fit: contain;">
+            <span class="tech-name text-center leading-tight">Proxmox</span>
+          </a>
+          <a href="pdf/doc_technique/Documentation-Installation Active Directory (AD DS) Windows Server 2022.pdf"
+            target="_blank" class="tech-card doc-card active">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg" alt="Windows"
+              class="tech-icon mb-2" style="width: 35px; height: 35px;">
+            <span class="tech-name text-center leading-tight">Active<br>Directory</span>
+          </a>
+          <a href="pdf/doc_technique/Documentation-Installation et Configuration SSH sur Debian.pdf" target="_blank"
+            class="tech-card doc-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="SSH"
+              class="tech-icon mb-2" style="width: 35px; height: 35px;">
+            <span class="tech-name text-center leading-tight">SSH<br>Debian</span>
+          </a>
+          <a href="pdf/projets/Documentation-Installation Debian 12.1.0.pdf" target="_blank" class="tech-card doc-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/debian/debian-original.svg" alt="Debian"
+              class="tech-icon mb-2" style="width: 35px; height: 35px;">
+            <span class="tech-name text-center leading-tight">Debian 12</span>
+          </a>
+          <a href="pdf/doc_technique/sauvegarde,restauration FIC (full image copie) site web.pdf" target="_blank"
+            class="tech-card doc-card">
+            <span class="text-3xl mb-2">💾</span>
+            <span class="tech-name text-center leading-tight">Sauvegarde<br>& Resta.</span>
+          </a>
+          <a href="pdf/doc_technique/pfsense.pdf" target="_blank" class="tech-card doc-card">
+            <img src="logo/pfsense logo.png" alt="pfSense" class="tech-icon mb-2"
+              style="width: 35px; height: 35px; object-fit: contain;">
+            <span class="tech-name text-center leading-tight">pfSense</span>
+          </a>
+          <a href="pdf/doc_technique/Installation de Metasploitable 2 sur l'Hyperviseur Proxmox VE.pdf" target="_blank"
+            class="tech-card doc-card">
+            <img src="logo/metasploit 2 logo.png" alt="Metasploit" class="tech-icon mb-2"
+              style="width: 35px; height: 35px; object-fit: contain;">
+            <span class="tech-name text-center leading-tight">Metasploitable<br>2</span>
+          </a>
+          <a href="pdf/doc_technique/documentation instalation et utilisation Lynis .pdf" target="_blank"
+            class="tech-card doc-card">
+            <img src="logo/logo lynis.png" alt="Lynis" class="tech-icon mb-2"
+              style="width: 35px; height: 35px; object-fit: contain;">
+            <span class="tech-name text-center leading-tight">Lynis</span>
+          </a>
+          <a href="pdf/doc_technique/Documentation-Installation GLPI sur Debian (1) (1).pdf" target="_blank"
+            class="tech-card doc-card">
+            <img src="logo/logo glpi.png" alt="GLPI" class="tech-icon mb-2"
+              style="width: 35px; height: 35px; object-fit: contain;">
+            <span class="tech-name text-center leading-tight">GLPI</span>
+          </a>
+          <a href="pdf/doc_technique/doc insta et utili de  SNMP.pdf" target="_blank" class="tech-card doc-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/networkx/networkx-original.svg" alt="SNMP"
+              class="tech-icon mb-2" style="width: 35px; height: 35px;">
+            <span class="tech-name text-center leading-tight">SNMP</span>
+          </a>
+          <a href="pdf/doc_technique/doc commandes routeur cisco.pdf" target="_blank" class="tech-card doc-card">
+            <img src="logo/logo cisco.png" alt="Cisco" class="tech-icon mb-2"
+              style="width: 35px; height: 35px; object-fit: contain;">
+            <span class="tech-name text-center leading-tight">Routing</span>
+          </a>
+          <a href="pdf/doc_technique/switch.pdf" target="_blank" class="tech-card doc-card">
+            <img src="logo/logo cisco.png" alt="Cisco" class="tech-icon mb-2"
+              style="width: 35px; height: 35px; object-fit: contain;">
+            <span class="tech-name text-center leading-tight">Switching</span>
+          </a>
+
         </div>
       </div>
+
       <div class="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
         <!-- Linux -->
@@ -269,7 +483,7 @@
         <!-- Sécurité -->
         <div id="comp-secu" class="skill-card stagger-item">
           <div class="skill-header">
-            <img src="https://cdn-icons-png.flaticon.com/512/2092/2092663.png" alt="Sécurité" class="skill-logo">
+            <img src="logo/sécurité logo.jpg" alt="Sécurité" class="skill-logo">
             <div>
               <h3 class="skill-name">Sécurité</h3>
               <p class="text-gray-500 text-sm">Cybersécurité</p>
@@ -296,7 +510,7 @@
         <!-- Supervision -->
         <div id="comp-supervision" class="skill-card stagger-item">
           <div class="skill-header">
-            <img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png" alt="Supervision" class="skill-logo">
+            <img src="logo/supervision logo.jpg" alt="Supervision" class="skill-logo">
             <div>
               <h3 class="skill-name">Supervision</h3>
               <p class="text-gray-500 text-sm">Monitoring & ITSM</p>
@@ -323,41 +537,220 @@
       </div>
     </section>
 
-    <!-- Situations Professionnelles E6 -->
-    <section id="e6" class="section" data-aos="fade-up">
-      <h2 class="section-title"><span>Situations Professionnelles E6</span></h2>
-      <p class="section-subtitle">Support de l'épreuve "Administration des systèmes et des réseaux"</p>
+    <!-- Documentation Technique -->
+    <section id="doc_technique" class="section" data-aos="fade-up">
+      <h2 class="section-title"><span>Documentation Technique</span></h2>
       <div class="section-divider"></div>
 
-      <div class="max-w-6xl mx-auto">
-        <!-- Infrastructure Réseau - Full width -->
-        <div class="mb-10">
-          <div class="pdf-container glow-border">
-            <div class="pdf-header">
-              <span class="pdf-title">🌐 Infrastructure Réseau</span>
-              <a href="pdf/infra_reseau.pdf" target="_blank" class="btn-accent text-xs">Plein écran ↗</a>
-            </div>
-            <iframe src="pdf/infra_reseau.pdf"></iframe>
+      <div class="max-w-7xl mx-auto px-4">
+
+        <!-- Virtualisation -->
+        <div class="mb-12 stagger-item">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="text-3xl">☁️</span>
+            <h3 class="text-2xl font-bold text-white">Virtualisation</h3>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <a href="pdf/doc_technique/proxmox instalation.pdf" target="_blank"
+              class="card card-hover flex items-center gap-4 p-5 min-h-[100px]">
+              <img src="logo/logo proxmox.png" alt="Proxmox" class="w-10 h-10 object-contain flex-shrink-0">
+              <div>
+                <h4 class="font-medium text-white text-base leading-tight">Installation Proxmox</h4>
+                <p class="text-gray-500 text-xs mt-1">Configuration complète Proxmox VE</p>
+              </div>
+            </a>
           </div>
         </div>
 
-        <!-- Situations Pro 1 & 2 - Side by side -->
-        <div class="grid md:grid-cols-2 gap-6">
-          <div class="pdf-container glow-border">
-            <div class="pdf-header">
-              <span class="pdf-title">📋 Situation Professionnelle 1</span>
-              <a href="pdf/situation_pro_1.pdf" target="_blank" class="btn-accent text-xs">Plein écran ↗</a>
-            </div>
-            <iframe src="pdf/situation_pro_1.pdf"></iframe>
+        <!-- Systèmes & Administration -->
+        <div class="mb-12 stagger-item">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="text-3xl">🖥️</span>
+            <h3 class="text-2xl font-bold text-white">Systèmes & Administration</h3>
           </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <a href="pdf/doc_technique/Documentation-Installation Active Directory (AD DS) Windows Server 2022.pdf"
+              target="_blank" class="card card-hover flex items-center gap-4 p-5 min-h-[100px]">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg" alt="AD"
+                class="w-10 h-10 object-contain flex-shrink-0">
+              <div>
+                <h4 class="font-medium text-white text-base leading-tight">Active Directory</h4>
+                <p class="text-gray-500 text-xs mt-1">Sur Windows Server 2022</p>
+              </div>
+            </a>
+            <a href="pdf/projets/Documentation-Installation Debian 12.1.0.pdf" target="_blank"
+              class="card card-hover flex items-center gap-4 p-5 min-h-[100px]">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/debian/debian-original.svg" alt="Debian"
+                class="w-10 h-10 object-contain flex-shrink-0">
+              <div>
+                <h4 class="font-medium text-white text-base leading-tight">Installation Debian 12</h4>
+                <p class="text-gray-500 text-xs mt-1">Déploiement Debian (CLI)</p>
+              </div>
+            </a>
+          </div>
+        </div>
 
-          <div class="pdf-container glow-border">
-            <div class="pdf-header">
-              <span class="pdf-title">📋 Situation Professionnelle 2</span>
-              <a href="pdf/situation_pro_2.pdf" target="_blank" class="btn-accent text-xs">Plein écran ↗</a>
-            </div>
-            <iframe src="pdf/situation_pro_2.pdf"></iframe>
+        <!-- Réseau & Cybersécurité -->
+        <div class="mb-12 stagger-item">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="text-3xl">🛡️</span>
+            <h3 class="text-2xl font-bold text-white">Réseau & Cybersécurité</h3>
           </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <a href="pdf/doc_technique/pfsense.pdf" target="_blank"
+              class="card card-hover flex items-center gap-4 p-5 min-h-[100px]">
+              <img src="logo/pfsense logo.png" alt="pfSense" class="w-10 h-10 object-contain flex-shrink-0">
+              <div>
+                <h4 class="font-medium text-white text-base leading-tight">Installation pfSense</h4>
+                <p class="text-gray-500 text-xs mt-1">Déploiement pfSense</p>
+              </div>
+            </a>
+            <a href="pdf/doc_technique/doc commandes routeur cisco.pdf" target="_blank"
+              class="card card-hover flex items-center gap-4 p-5 min-h-[100px]">
+              <img src="logo/logo cisco.png" alt="Cisco" class="w-10 h-10 object-contain flex-shrink-0">
+              <div>
+                <h4 class="font-medium text-white text-base leading-tight">Commandes Cisco</h4>
+                <p class="text-gray-500 text-xs mt-1">Routing</p>
+              </div>
+            </a>
+            <a href="pdf/doc_technique/switch.pdf" target="_blank"
+              class="card card-hover flex items-center gap-4 p-5 min-h-[100px]">
+              <img src="logo/logo cisco.png" alt="Cisco" class="w-10 h-10 object-contain flex-shrink-0">
+              <div>
+                <h4 class="font-medium text-white text-base leading-tight">Commandes Cisco</h4>
+                <p class="text-gray-500 text-xs mt-1">Switching</p>
+              </div>
+            </a>
+            <a href="pdf/doc_technique/Documentation-Installation et Configuration SSH sur Debian.pdf" target="_blank"
+              class="card card-hover flex items-center gap-4 p-5 min-h-[100px]">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="SSH"
+                class="w-10 h-10 object-contain flex-shrink-0">
+              <div>
+                <h4 class="font-medium text-white text-base leading-tight">Service SSH</h4>
+                <p class="text-gray-500 text-xs mt-1">Accès sécurisé Debian</p>
+              </div>
+            </a>
+            <a href="pdf/doc_technique/Installation de Metasploitable 2 sur l'Hyperviseur Proxmox VE.pdf"
+              target="_blank" class="card card-hover flex items-center gap-4 p-5 min-h-[100px]">
+              <img src="logo/metasploit 2 logo.png" alt="Metasploit" class="w-10 h-10 object-contain flex-shrink-0">
+              <div>
+                <h4 class="font-medium text-white text-base leading-tight">Metasploitable 2</h4>
+                <p class="text-gray-500 text-xs mt-1">Lab de pénétration</p>
+              </div>
+            </a>
+            <a href="pdf/doc_technique/documentation instalation et utilisation Lynis .pdf" target="_blank"
+              class="card card-hover flex items-center gap-4 p-5 min-h-[100px]">
+              <img src="logo/logo lynis.png" alt="Lynis" class="w-10 h-10 object-contain flex-shrink-0">
+              <div>
+                <h4 class="font-medium text-white text-base leading-tight">Audit Lynis</h4>
+                <p class="text-gray-500 text-xs mt-1">Hardening Système</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Supervision & Gestion IT -->
+        <div class="mb-12 stagger-item">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="text-3xl">📊</span>
+            <h3 class="text-2xl font-bold text-white">Supervision & Gestion IT</h3>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <a href="pdf/doc_technique/Documentation-Installation GLPI sur Debian (1) (1).pdf" target="_blank"
+              class="card card-hover flex items-center gap-4 p-5 min-h-[100px]">
+              <img src="logo/logo glpi.png" alt="GLPI" class="w-10 h-10 object-contain flex-shrink-0">
+              <div>
+                <h4 class="font-medium text-white text-base leading-tight">Installation GLPI</h4>
+                <p class="text-gray-500 text-xs mt-1">Gestion de parc & ITSM</p>
+              </div>
+            </a>
+            <a href="pdf/doc_technique/doc insta et utili de  SNMP.pdf" target="_blank"
+              class="card card-hover flex items-center gap-4 p-5 min-h-[100px]">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/networkx/networkx-original.svg" alt="SNMP"
+                class="w-10 h-10 object-contain flex-shrink-0">
+              <div>
+                <h4 class="font-medium text-white text-base leading-tight">Protocole SNMP</h4>
+                <p class="text-gray-500 text-xs mt-1">Supervision réseau</p>
+              </div>
+            </a>
+            <a href="pdf/doc_technique/sauvegarde,restauration FIC (full image copie) site web.pdf" target="_blank"
+              class="card card-hover flex items-center gap-4 p-5 min-h-[100px]">
+              <span class="text-3xl">💾</span>
+              <div>
+                <h4 class="font-medium text-white text-base leading-tight">Sauvegarde & Rest.</h4>
+                <p class="text-gray-500 text-xs mt-1">Stratégie de récuperage</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Expériences -->
+    <section id="experiences" class="section" data-aos="fade-up">
+      <h2 class="section-title"><span>Expériences Professionnelles</span></h2>
+      <div class="section-divider"></div>
+      <div class="max-w-3xl mx-auto space-y-6">
+        <div class="card card-hover stagger-item">
+          <div class="flex items-start gap-4 mb-4">
+            <div class="logo-container">
+              <img src="logo/stage 1.jpg" alt="Logo Stage 1">
+            </div>
+            <div class="flex-1">
+              <div class="flex justify-between items-start flex-wrap gap-2">
+                <h3 class="font-semibold text-white">Stage 1ère année BTS SIO SISR</h3>
+                <span class="badge">2024-2025</span>
+              </div>
+              <p class="text-gray-500 text-sm mt-1">Technicien Infrastructure & Sécurité</p>
+            </div>
+          </div>
+          <ul class="text-gray-400 text-sm space-y-2 mb-4">
+            <li class="flex items-start gap-2"><span class="text-accent">▸</span> Maintenance et mise à jour des sites
+              WordPress (correction erreurs 404, plugins, navigation)</li>
+            <li class="flex items-start gap-2"><span class="text-accent">▸</span> Sauvegarde et restauration des bases
+              de données MySQL via SSH</li>
+            <li class="flex items-start gap-2"><span class="text-accent">▸</span> Automatisation de formulaires
+              dynamiques PHP et génération de QR codes</li>
+            <li class="flex items-start gap-2"><span class="text-accent">▸</span> Création et configuration d'un
+              sous-domaine WordPress sur OVH</li>
+            <li class="flex items-start gap-2"><span class="text-accent">▸</span> Sécurisation des accès : suppression
+              anciens comptes, réinitialisation mots de passe</li>
+            <li class="flex items-start gap-2"><span class="text-accent">▸</span> Détection et suppression d'un malware
+              sur le serveur</li>
+          </ul>
+          <a href="pdf/stages/Raportstage.pdf" target="_blank" class="btn-accent">📄 Voir le rapport →</a>
+        </div>
+
+        <div class="card card-hover stagger-item">
+          <div class="flex items-start gap-4 mb-4">
+            <div class="logo-container">
+              <img src="logo/stage2eme annee.png" alt="Logo Stage 2">
+            </div>
+            <div class="flex-1">
+              <div class="flex justify-between items-start flex-wrap gap-2">
+                <h3 class="font-semibold text-white">Stage 2ème année BTS SIO SISR</h3>
+                <span class="badge badge-alt">2025-2026</span>
+              </div>
+              <p class="text-gray-500 text-sm mt-1">Technicien Support & Réseau</p>
+            </div>
+          </div>
+          <ul class="text-gray-400 text-sm space-y-2 mb-4">
+            <li class="flex items-start gap-2"><span class="text-accent">▸</span> Réparation et optimisation du matériel
+              en atelier (upgrade SSD, RAM)</li>
+            <li class="flex items-start gap-2"><span class="text-accent">▸</span> Déploiement sur site et recette client
+              (Centre de Formation Aubervilliers)</li>
+            <li class="flex items-start gap-2"><span class="text-accent">▸</span> Migration critique pare-feu
+              Stormshield vers Fortinet</li>
+            <li class="flex items-start gap-2"><span class="text-accent">▸</span> Segmentation réseau virtuelle avec
+              pfSense sous Proxmox</li>
+            <li class="flex items-start gap-2"><span class="text-accent">▸</span> Déploiement Active Directory et GPO
+              dans environnement virtualisé</li>
+            <li class="flex items-start gap-2"><span class="text-accent">▸</span> Mise en œuvre cluster Proxmox HA avec
+              stockage ZFS et Q-Device</li>
+          </ul>
+          <a href="pdf/stages/rapport de stage 2eme annee.pdf" target="_blank" class="btn-accent">📄 Voir le rapport
+            →</a>
         </div>
       </div>
     </section>
@@ -375,7 +768,6 @@
             <span class="skill-item">Sécurité</span>
             <span class="skill-item">Réseau</span>
           </div>
-          <a href="https://github.com/lyes3105" target="_blank" class="btn-accent mb-2">GitHub →</a>
           <div class="flex flex-col gap-2 mt-3">
             <a href="pdf/projets/documentation projet mairie.pdf" target="_blank" class="btn-doc">📄 Voir
               Documentation</a>
@@ -392,7 +784,6 @@
             <span class="skill-item">Linux</span>
             <span class="skill-item">Réseau</span>
           </div>
-          <a href="https://github.com/lyes3105" target="_blank" class="btn-accent mb-2">GitHub →</a>
           <div class="flex flex-col gap-2 mt-3">
             <a href="pdf/projets/cahier des charges Lyes-Rémi.pdf" target="_blank" class="btn-doc">📄 Voir
               Documentation</a>
@@ -414,7 +805,6 @@
             <span class="skill-item">JS</span>
           </div>
           <a href="devine-le-nombre.html" target="_blank" class="btn-accent mb-2">🎮 Jouer au Jeu →</a>
-          <a href="https://github.com/lyes3105" target="_blank" class="btn-accent mb-2">GitHub →</a>
           <div class="flex flex-col gap-2 mt-3">
             <a href="pdf/projets/Cahier des Charges jeu devine le nombre.pdf" target="_blank" class="btn-doc">📋 Cahier
               Des Charges</a>
@@ -437,9 +827,9 @@
             <span class="skill-item">PHP</span>
           </div>
           <div class="flex flex-col gap-2 mt-3">
-            <a href="pdf/projets/Inext cachier des charges.pdf" target="_blank" class="btn-doc">� Cahier Des
+            <a href="pdf/projets/Inext cahier des charges.pdf" target="_blank" class="btn-doc">📋 Cahier Des
               Charges</a>
-            <a href="pdf/projets/cahier de recette inext.pdf" target="_blank" class="btn-doc">� Cahier De Recette</a>
+            <a href="pdf/projets/cahier de recette inext.pdf" target="_blank" class="btn-doc">📝 Cahier De Recette</a>
             <a href="pdf/projets/journaldebord inext.pdf" target="_blank" class="btn-doc">📓 Journal De Bord</a>
             <button onclick="document.getElementById('inextSuiviModal').style.display='flex'" class="btn-doc">📊 Suivi
               De Projet</button>
@@ -511,27 +901,30 @@
       <h2 class="section-title"><span>Certifications</span></h2>
       <div class="section-divider"></div>
       <div class="max-w-5xl mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-5">
-        <a href="pdf/notionsdebasesreseau.pdf" target="_blank" class="card card-hover text-center stagger-item">
+        <a href="pdf/certifications/notionsdebasesreseau.pdf" target="_blank"
+          class="card card-hover text-center stagger-item">
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Cisco_logo_blue_2016.svg/1200px-Cisco_logo_blue_2016.svg.png"
             alt="Cisco" class="cert-logo mx-auto mb-3">
           <h3 class="font-medium text-white text-sm">Notions Réseaux</h3>
           <p class="text-xs text-gray-600 mt-1">Cisco Networking Academy</p>
         </a>
-        <a href="pdf/Python Essentials 1.pdf" target="_blank" class="card card-hover text-center stagger-item">
+        <a href="pdf/certifications/Python Essentials 1.pdf" target="_blank"
+          class="card card-hover text-center stagger-item">
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"
             class="cert-logo mx-auto mb-3">
           <h3 class="font-medium text-white text-sm">Python Essentials 1</h3>
           <p class="text-xs text-gray-600 mt-1">Cisco Networking Academy</p>
         </a>
-        <a href="pdf/introcyber.pdf" target="_blank" class="card card-hover text-center stagger-item">
+        <a href="pdf/certifications/introcyber.pdf" target="_blank" class="card card-hover text-center stagger-item">
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Cisco_logo_blue_2016.svg/1200px-Cisco_logo_blue_2016.svg.png"
             alt="Cisco" class="cert-logo mx-auto mb-3">
           <h3 class="font-medium text-white text-sm">Intro Cybersécurité</h3>
           <p class="text-xs text-gray-600 mt-1">Cisco Networking Academy</p>
         </a>
-        <a href="pdf/intropackettracer.pdf" target="_blank" class="card card-hover text-center stagger-item">
+        <a href="pdf/certifications/intropackettracer.pdf" target="_blank"
+          class="card card-hover text-center stagger-item">
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Cisco_logo_blue_2016.svg/1200px-Cisco_logo_blue_2016.svg.png"
             alt="Cisco" class="cert-logo mx-auto mb-3">
@@ -547,232 +940,48 @@
           <h3 class="font-medium text-white text-sm">CCNA</h3>
           <p class="text-xs text-gray-600 mt-1">Cisco Networking Academy</p>
         </div>
-        <a href="pdf/pix_certification.pdf" target="_blank" class="card card-hover text-center stagger-item">
+        <a href="pdf/certifications/pix_certification.pdf" target="_blank"
+          class="card card-hover text-center stagger-item">
           <img src="https://pix.fr/images/pix-logo.svg" alt="PIX" class="cert-logo mx-auto mb-3">
           <h3 class="font-medium text-white text-sm">PIX Digital Skills</h3>
           <p class="text-xs text-gray-600 mt-1">PIX</p>
         </a>
-        <div class="card card-hover text-center stagger-item relative">
-          <span class="absolute top-2 right-2 bg-yellow-500 text-black text-xs px-2 py-1 rounded-full font-semibold">En
-            cours</span>
-          <img src="https://cyber.gouv.fr/sites/default/files/logo.svg" alt="ANSSI" class="cert-logo mx-auto mb-3">
+        <a href="pdf/certifications/anssi capture.png" target="_blank"
+          class="card card-hover text-center stagger-item relative">
+          <img src="logo/Anssi.png" alt="ANSSI" class="cert-logo mx-auto mb-3">
           <h3 class="font-medium text-white text-sm">SecNumAcadémie</h3>
           <p class="text-xs text-gray-600 mt-1">ANSSI</p>
-        </div>
+        </a>
       </div>
     </section>
 
-    <!-- Parcours -->
-    <section id="parcours" class="section" data-aos="fade-up">
-      <h2 class="section-title"><span>Parcours</span></h2>
-      <div class="section-divider"></div>
-      <div class="max-w-2xl mx-auto">
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <span class="text-accent text-sm font-medium">2019 - 2020</span>
-              <h3 class="font-semibold text-white mt-1">Brevet Général</h3>
-              <p class="text-gray-500 text-sm">Collège Stéphane Mallarmé — Mention</p>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <span class="text-accent text-sm font-medium">2022 - 2023</span>
-              <h3 class="font-semibold text-white mt-1">Bac Général Maths/SVT</h3>
-              <p class="text-gray-500 text-sm">Lycée Edgar Quinet, Paris</p>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <span class="text-accent text-sm font-medium">2023 - 2024</span>
-              <h3 class="font-semibold text-white mt-1">Année PASS</h3>
-              <p class="text-gray-500 text-sm">Réorientation vers l'informatique</p>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <span class="text-accent text-sm font-medium">2024 - 2026</span>
-              <h3 class="font-semibold text-white mt-1">BTS SIO Option SISR</h3>
-              <p class="text-gray-500 text-sm">Lycée Turgot, Paris — En cours</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Expériences -->
-    <section id="experiences" class="section" data-aos="fade-up">
-      <h2 class="section-title"><span>Expériences Professionnelles</span></h2>
-      <div class="section-divider"></div>
-      <div class="max-w-3xl mx-auto space-y-6">
-        <div class="card card-hover stagger-item">
-          <div class="flex items-start gap-4 mb-4">
-            <div class="logo-container">
-              <img src="logo/stage 1.jpg" alt="Logo Stage 1">
-            </div>
-            <div class="flex-1">
-              <div class="flex justify-between items-start flex-wrap gap-2">
-                <h3 class="font-semibold text-white">Stage 1ère année BTS SIO SISR</h3>
-                <span class="badge">2024-2025</span>
-              </div>
-              <p class="text-gray-500 text-sm mt-1">Technicien Infrastructure & Sécurité</p>
-            </div>
-          </div>
-          <ul class="text-gray-400 text-sm space-y-2 mb-4">
-            <li class="flex items-start gap-2"><span class="text-accent">▸</span> Maintenance et mise à jour des sites
-              WordPress (correction erreurs 404, plugins, navigation)</li>
-            <li class="flex items-start gap-2"><span class="text-accent">▸</span> Sauvegarde et restauration des bases
-              de données MySQL via SSH</li>
-            <li class="flex items-start gap-2"><span class="text-accent">▸</span> Automatisation de formulaires
-              dynamiques PHP et génération de QR codes</li>
-            <li class="flex items-start gap-2"><span class="text-accent">▸</span> Création et configuration d'un
-              sous-domaine WordPress sur OVH</li>
-            <li class="flex items-start gap-2"><span class="text-accent">▸</span> Sécurisation des accès : suppression
-              anciens comptes, réinitialisation mots de passe</li>
-            <li class="flex items-start gap-2"><span class="text-accent">▸</span> Détection et suppression d'un malware
-              sur le serveur</li>
-          </ul>
-          <a href="pdf/Raportstage.pdf" target="_blank" class="btn-accent">📄 Voir le rapport →</a>
-        </div>
-
-        <div class="card card-hover stagger-item">
-          <div class="flex items-start gap-4 mb-4">
-            <div class="logo-container">
-              <img src="logo/stage2eme annee.png" alt="Logo Stage 2">
-            </div>
-            <div class="flex-1">
-              <div class="flex justify-between items-start flex-wrap gap-2">
-                <h3 class="font-semibold text-white">Stage 2ème année BTS SIO SISR</h3>
-                <span class="badge badge-alt">2025-2026</span>
-              </div>
-              <p class="text-gray-500 text-sm mt-1">Technicien Support & Réseau</p>
-            </div>
-          </div>
-          <ul class="text-gray-400 text-sm space-y-2 mb-4">
-            <li class="flex items-start gap-2"><span class="text-accent">▸</span> Réparation et optimisation du matériel
-              en atelier (upgrade SSD, RAM)</li>
-            <li class="flex items-start gap-2"><span class="text-accent">▸</span> Déploiement sur site et recette client
-              (Centre de Formation Aubervilliers)</li>
-            <li class="flex items-start gap-2"><span class="text-accent">▸</span> Migration critique pare-feu
-              Stormshield vers Fortinet</li>
-            <li class="flex items-start gap-2"><span class="text-accent">▸</span> Segmentation réseau virtuelle avec
-              pfSense sous Proxmox</li>
-            <li class="flex items-start gap-2"><span class="text-accent">▸</span> Déploiement Active Directory et GPO
-              dans environnement virtualisé</li>
-            <li class="flex items-start gap-2"><span class="text-accent">▸</span> Mise en œuvre cluster Proxmox HA avec
-              stockage ZFS et Q-Device</li>
-          </ul>
-          <a href="pdf/rapport de stage 2eme annee.pdf" target="_blank" class="btn-accent">📄 Voir le rapport →</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Documents Officiels -->
-    <section id="documents" class="section" data-aos="fade-up">
-      <h2 class="section-title"><span>Documents Officiels</span></h2>
+    <!-- Situation professionnel épreuve E6 -->
+    <section id="e6" class="section" data-aos="fade-up">
+      <h2 class="section-title"><span>Situation professionnel épreuve E6</span></h2>
       <div class="section-divider"></div>
       <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
         <div>
           <div class="pdf-container glow-border">
             <div class="pdf-header">
               <span class="pdf-title">📊 Tableau de Synthèse</span>
-              <a href="pdf/Tableau_Synthese.pdf" target="_blank" class="btn-accent text-xs">Plein écran ↗</a>
+              <a href="pdf/officiels/Tableau_Synthese.pdf" target="_blank" class="btn-accent text-xs">Plein écran ↗</a>
             </div>
-            <iframe src="pdf/Tableau_Synthese.pdf"></iframe>
+            <iframe src="pdf/officiels/Tableau_Synthese.pdf"></iframe>
           </div>
         </div>
         <div>
           <div class="pdf-container glow-border">
             <div class="pdf-header">
               <span class="pdf-title">📄 Curriculum Vitae</span>
-              <a href="pdf/Lyes mouhoun CV.pdf" target="_blank" class="btn-accent text-xs">Plein écran ↗</a>
+              <a href="pdf/officiels/Lyes mouhoun CV.pdf" target="_blank" class="btn-accent text-xs">Plein écran ↗</a>
             </div>
-            <iframe src="pdf/Lyes mouhoun CV.pdf"></iframe>
+            <iframe src="pdf/officiels/Lyes mouhoun CV.pdf"></iframe>
 
           </div>
         </div>
 
       </div>
 
-      <div class="max-w-5xl mx-auto mt-12">
-        <h3 class="text-accent mb-6 font-semibold text-lg text-center">Documentation Technique</h3>
-        <div class="grid md:grid-cols-2 gap-4">
-          <a href="pdf/proxmox instalation.pdf" target="_blank"
-            class="card card-hover flex items-center gap-4 stagger-item">
-            <span class="text-3xl">🖥️</span>
-            <div>
-              <h4 class="font-medium text-white">Installation Proxmox</h4>
-              <p class="text-gray-600 text-sm">Configuration complète Proxmox VE</p>
-            </div>
-          </a>
-          <a href="pdf/Documentation-Installation GLPI sur Debian (1) (1).pdf" target="_blank"
-            class="card card-hover flex items-center gap-4 stagger-item">
-            <span class="text-3xl">🎫</span>
-            <div>
-              <h4 class="font-medium text-white">Installation GLPI</h4>
-              <p class="text-gray-600 text-sm">Déploiement GLPI sur Debian</p>
-            </div>
-          </a>
-          <a href="pdf/pfsense.pdf" target="_blank" class="card card-hover flex items-center gap-4 stagger-item">
-            <span class="text-3xl">🎫</span>
-            <div>
-              <h4 class="font-medium text-white">Installation Pfsense</h4>
-              <p class="text-gray-600 text-sm">Déploiement Pfsense dans Proxmox</p>
-            </div>
-          </a>
-          <a href="pdf/sauvegarde,restauration FIC (full image copie) site web.pdf" target="_blank"
-            class="card card-hover flex items-center gap-4 stagger-item">
-            <span class="text-3xl">💾</span>
-            <div>
-              <h4 class="font-medium text-white">Sauvegarde & Restauration</h4>
-              <p class="text-gray-600 text-sm">Full Image Copie (FIC) Site Web</p>
-            </div>
-          </a>
-          <a href="pdf/Documentation-Installation Active Directory (AD DS) Windows Server 2022.pdf" target="_blank"
-            class="card card-hover flex items-center gap-4 stagger-item">
-            <span class="text-3xl">🪟</span>
-            <div>
-              <h4 class="font-medium text-white">Active Directory (AD DS)</h4>
-              <p class="text-gray-600 text-sm">Installation sur Windows Server 2022</p>
-            </div>
-          </a>
-          <a href="pdf/Installation de Metasploitable 2 sur Proxmox VE.pdf" target="_blank"
-            class="card card-hover flex items-center gap-4 stagger-item">
-            <span class="text-3xl">🛡️</span>
-            <div>
-              <h4 class="font-medium text-white">Installation Metasploitable 2</h4>
-              <p class="text-gray-600 text-sm">Déploiement sur serveur Proxmox VE</p>
-            </div>
-          </a>
-          <a href="pdf/Documentation-Installation et Configuration SSH sur Debian.pdf" target="_blank"
-            class="card card-hover flex items-center gap-4 stagger-item">
-            <span class="text-3xl">🔑</span>
-            <div>
-              <h4 class="font-medium text-white">Installation SSH</h4>
-              <p class="text-gray-600 text-sm">Déploiement et Configuration sur Debian</p>
-            </div>
-          </a>
-          <a href="pdf/projets/Documentation-Installation Debian 12.1.0.pdf" target="_blank"
-            class="card card-hover flex items-center gap-4 stagger-item">
-            <span class="text-3xl">🐧</span>
-            <div>
-              <h4 class="font-medium text-white">Installation Debian 12</h4>
-              <p class="text-gray-600 text-sm">Déploiement Debian 12.1.0 (CLI)</p>
-            </div>
-          </a>
-          <a href="pdf/Documentation-Configuration par GPO de l'Agent-GLPI.pdf" target="_blank"
-            class="card card-hover flex items-center gap-4 stagger-item">
-            <span class="text-3xl">⚙️</span>
-            <div>
-              <h4 class="font-medium text-white">Configuration Agent GLPI</h4>
-              <p class="text-gray-600 text-sm">Déploiement centralisé par GPO</p>
-            </div>
-          </a>
-        </div>
       </div>
     </section>
 

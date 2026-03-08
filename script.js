@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
   createParticles();
 
   // Setup all animations
-  setupMouseGlow();
+  setupCustomCursor();
   setupNavigation();
   setupCardEffects();
   setupButtonEffects();
@@ -118,32 +118,55 @@ function createParticles() {
 }
 
 // ==============================
-// Mouse Glow Effect
+// Custom Cursor System
 // ==============================
-function setupMouseGlow() {
-  const mouseGlow = document.getElementById('mouseGlow');
-  if (!mouseGlow) return;
+function setupCustomCursor() {
+  const dot = document.querySelector('.cursor-dot');
+  const outline = document.querySelector('.cursor-outline');
+  const flashlight = document.querySelector('.flashlight');
 
-  let mouseX = window.innerWidth / 2;
-  let mouseY = window.innerHeight / 2;
-  let glowX = mouseX;
-  let glowY = mouseY;
+  if (!dot || !outline || !flashlight) return;
 
-  document.addEventListener('mousemove', (e) => {
+  let mouseX = 0;
+  let mouseY = 0;
+  let outlineX = 0;
+  let outlineY = 0;
+
+  // Track mouse movement
+  window.addEventListener('mousemove', (e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
+
+    // Immediate dot movement
+    dot.style.left = mouseX + 'px';
+    dot.style.top = mouseY + 'px';
+
+    // Flashlight effect position
+    flashlight.style.setProperty('--x', mouseX + 'px');
+    flashlight.style.setProperty('--y', mouseY + 'px');
   });
 
+  // Smooth trail for the outline
   function animate() {
-    glowX += (mouseX - glowX) * 0.08;
-    glowY += (mouseY - glowY) * 0.08;
+    let distX = mouseX - outlineX;
+    let distY = mouseY - outlineY;
 
-    mouseGlow.style.left = glowX + 'px';
-    mouseGlow.style.top = glowY + 'px';
+    outlineX = outlineX + distX * 0.15;
+    outlineY = outlineY + distY * 0.15;
+
+    outline.style.left = outlineX + 'px';
+    outline.style.top = outlineY + 'px';
 
     requestAnimationFrame(animate);
   }
   animate();
+
+  // Hover detection
+  const interactiveElements = 'a, button, .card-hover, .skill-card, .nav-link, .theme-switch';
+  document.querySelectorAll(interactiveElements).forEach(el => {
+    el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+    el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+  });
 }
 
 // ==============================
@@ -323,101 +346,62 @@ function setupThemeToggle() {
   console.log('setupThemeToggle init', toggleBtn, transitionOverlay);
   if (!toggleBtn || !transitionOverlay) return;
 
-  const toggleIcon = toggleBtn.querySelector('.toggle-icon');
-  const toggleText = toggleBtn.querySelector('.toggle-text');
   let isAnimating = false;
 
   // Load saved theme
   const savedTheme = localStorage.getItem('portfolio-theme');
   if (savedTheme === 'light') {
     document.documentElement.setAttribute('data-theme', 'light');
-    updateToggleButton(true);
   }
 
   // Toggle on click
   toggleBtn.addEventListener('click', (e) => {
-    console.log('themeToggle clicked! isAnimating:', isAnimating);
     if (isAnimating) return;
     isAnimating = true;
 
     const isLight = document.documentElement.getAttribute('data-theme') === 'light';
     const targetTheme = isLight ? 'dark' : 'light';
-    const btnRect = toggleBtn.getBoundingClientRect();
-    const centerX = btnRect.left + btnRect.width / 2;
-    const centerY = btnRect.top + btnRect.height / 2;
+    const rect = toggleBtn.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
 
-    console.log('Switching to targetTheme:', targetTheme, 'from isLight:', isLight);
+    // Create ripple effect
+    const ripple = document.createElement('div');
+    ripple.style.position = 'absolute';
+    ripple.style.top = `${centerY}px`;
+    ripple.style.left = `${centerX}px`;
+    ripple.style.width = '10px';
+    ripple.style.height = '10px';
+    ripple.style.background = targetTheme === 'light' ? 'rgba(10, 189, 227, 0.2)' : 'rgba(124, 58, 237, 0.2)';
+    ripple.style.borderRadius = '50%';
+    ripple.style.transform = 'translate(-50%, -50%) scale(1)';
+    ripple.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+    ripple.style.zIndex = '99998';
+    ripple.style.pointerEvents = 'none';
+    transitionOverlay.appendChild(ripple);
 
-    // Create celestial body (Sun or Moon)
-    const celestial = document.createElement('div');
-    celestial.className = 'theme-celestial';
-    celestial.textContent = isLight ? '🌙' : '☀️';
-    celestial.style.top = `${centerY}px`;
-    celestial.style.left = `${centerX}px`;
-    transitionOverlay.appendChild(celestial);
-
-    // Initial state
-    celestial.style.transform = `translate(-50%, 0) scale(0)`;
-    celestial.style.opacity = '0';
-    celestial.style.transition = 'all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)';
-
-    // Trigger rise animation
-    requestAnimationFrame(() => {
-      celestial.style.transform = `translate(-50%, -60vh) scale(3)`;
-      celestial.style.opacity = '1';
-    });
-
-    // Theme switch & Lightwave ripple
+    // Apply theme change with small delay for ripple start
     setTimeout(() => {
-      // Apply theme
       if (targetTheme === 'light') {
         document.documentElement.setAttribute('data-theme', 'light');
       } else {
         document.documentElement.removeAttribute('data-theme');
       }
       localStorage.setItem('portfolio-theme', targetTheme);
-      updateToggleButton(targetTheme === 'light');
-
-      // Create ripple effect
-      const ripple = document.createElement('div');
-      ripple.style.position = 'absolute';
-      ripple.style.top = celestial.style.top;
-      ripple.style.left = celestial.style.left;
-      ripple.style.width = '10px';
-      ripple.style.height = '10px';
-      ripple.style.background = targetTheme === 'light' ? '#faf8f5' : '#09090b';
-      ripple.style.borderRadius = '50%';
-      ripple.style.transform = 'translate(-50%, -50%) scale(1)';
-      ripple.style.transition = 'transform 0.8s ease-in-out';
-      ripple.style.zIndex = '99998';
-      transitionOverlay.appendChild(ripple);
 
       requestAnimationFrame(() => {
-        ripple.style.transform = 'translate(-50%, -50%) scale(500)';
+        ripple.style.transform = 'translate(-50%, -50%) scale(300)';
+        ripple.style.opacity = '0';
       });
 
       // Cleanup
       setTimeout(() => {
-        celestial.style.opacity = '0';
-        celestial.style.transform = `translate(-50%, -100vh) scale(1)`;
-        setTimeout(() => {
-          transitionOverlay.innerHTML = '';
-          isAnimating = false;
-        }, 500);
-      }, 700);
-
-    }, 600);
+        transitionOverlay.innerHTML = '';
+        isAnimating = false;
+      }, 800);
+    }, 50);
   });
 
-  function updateToggleButton(isLight) {
-    if (isLight) {
-      toggleIcon.textContent = '🌙';
-      toggleText.textContent = 'Mode sombre';
-    } else {
-      toggleIcon.textContent = '☀️';
-      toggleText.textContent = 'Mode clair';
-    }
-  }
 }
 
 // ==============================
