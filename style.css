@@ -5,7 +5,15 @@
   --accent: #7c3aed;
   --accent-light: #a78bfa;
   --accent-dark: #5b21b6;
-  --accent-glow: rgba(124, 58, 237, 0.4);
+  --accent-glow: rgba(124, 58, 237, 0.3);
+
+  /* Missing Slider Variables */
+  --bg-primary: #05080f;
+  --bg-surface: rgba(255, 255, 255, 0.03);
+  --bg-surface-hover: rgba(255, 255, 255, 0.08);
+  --border-color: rgba(255, 255, 255, 0.1);
+  --primary: #7c3aed;
+  --primary-light: #a78bfa;
   --dark: #09090b;
   --dark-card: #0f0f12;
   --dark-lighter: #18181b;
@@ -2103,18 +2111,6 @@ body,
   box-shadow: none;
 }
 
-.tech-icon {
-  width: 42px;
-  height: 42px;
-  margin-bottom: 12px;
-  object-fit: contain;
-  transition: transform 0.3s ease;
-}
-
-.tech-card:hover .tech-icon,
-.tech-card.active .tech-icon {
-  transform: scale(1.1);
-}
 
 .tech-name {
   font-size: 0.8rem;
