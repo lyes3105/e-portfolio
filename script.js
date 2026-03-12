@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
   setupScrollProgress();
   setupThemeToggle();
   initParallaxShapes();
+  setupTechFilter();
 
   // Animate hero on load
   animateHeroOnLoad();
@@ -480,3 +481,53 @@ function initParallaxShapes() {
   }
   animateFloat();
 }
+
+// ==============================
+// Technology Marquee Filter (Dimming effect)
+// ==============================
+function filterTech(category) {
+  const icons = document.querySelectorAll('.tech-track .tech-icon');
+  const buttons = document.querySelectorAll('.tech-filter');
+
+  buttons.forEach(btn => {
+    btn.classList.remove('active');
+    if (btn.dataset.filter === category) {
+      btn.classList.add('active');
+    }
+  });
+
+  const slider = document.querySelector('.tech-slider');
+  const halfway = icons.length / 2;
+
+  if (category === 'all') {
+    slider.classList.remove('filtered');
+  } else {
+    slider.classList.add('filtered');
+  }
+
+  icons.forEach((icon, index) => {
+    const isDuplicate = index >= halfway;
+    const iconCategory = icon.dataset.category || '';
+    const matches = iconCategory.includes(category);
+
+    if (category === 'all') {
+      icon.style.display = 'flex';
+      icon.style.opacity = '1';
+      icon.style.transform = 'scale(1)';
+    } else {
+      if (matches && !isDuplicate) {
+        icon.style.display = 'flex';
+        icon.style.opacity = '1';
+        icon.style.transform = 'scale(1)';
+      } else {
+        icon.style.display = 'none';
+      }
+    }
+  });
+}
+
+// Initial cleanup - the HTML already has two full sets, so it just works via CSS.
+// We don't filter the big blocks below anymore.
+document.addEventListener('DOMContentLoaded', () => {
+  // Optionnel : init 'all' au chargement
+});
