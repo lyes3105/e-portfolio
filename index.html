@@ -193,6 +193,7 @@
     <section id="e6" class="section" data-aos="fade-up">
       <h2 class="section-title"><span>Epreuve Technique E6</span></h2>
       <p class="section-subtitle">Support de l'épreuve "Administration des systèmes et des réseaux"</p>
+      <p style="max-width: 700px; margin: 0.5rem auto 1.5rem; text-align: center; color: var(--text-muted, #9ca3af); font-size: 0.9rem; line-height: 1.6;">Organisation support : <strong style="color: var(--text-secondary, #d1d5db);">la Maison de la Formation Continue (MFC)</strong>, un centre de formation pour adultes basé à Lille, disposant de filiales à Bordeaux, Lyon, Nantes, Nice et Rennes.</p>
       <div class="section-divider"></div>
 
       <div class="max-w-6xl mx-auto">
@@ -208,53 +209,9 @@
         </div>
 
         <div class="e6-grid">
-          <!-- Carte 1: Active Directory & DNS -->
+          <!-- Carte 1: Cluster pfSense HA & HAProxy -->
           <div class="e6-card glow-border" data-aos="fade-up">
             <div class="realization-badge">Réalisation 1</div>
-            <div class="e6-icon">
-              <!-- Windows Icon -->
-              <svg viewBox="0 0 24 24">
-                <path
-                  d="M0 3.449L9.75 2.1L9.751 11.332L0 11.332L0 3.449ZM0 12.651L9.75 12.651L9.75 21.9L0 20.551L0 12.651ZM10.865 1.944L24 0V11.332L10.865 11.332V1.944ZM10.865 12.651L24 12.651V24L10.865 22.056V12.651Z" />
-              </svg>
-            </div>
-            <h3 class="e6-card-title">Active Directory & DNS</h3>
-            <p class="e6-card-desc">Déploiement d'une infrastructure de gestion des identités centralisée sous Windows
-              Server 2022.</p>
-
-            <ul class="check-list">
-              <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
-                  stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-                Installation Forêt AD DS
-              </li>
-              <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
-                  stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-                Configuration DNS & DHCP
-              </li>
-              <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
-                  stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-                Jonction Client Windows 11
-              </li>
-            </ul>
-
-            <div class="e6-card-footer flex flex-col gap-2">
-              <a href="pdf/e6/situation_pro_1.pdf" target="_blank" class="btn-primary w-full text-center">Voir réalisation 1 (PDF)</a>
-              <a href="pdf/doc_technique/Documentation-Installation Active Directory (AD DS) Windows Server 2022.pdf" target="_blank" class="btn-doc w-full text-center text-xs">📄 Installation AD DS</a>
-            </div>
-          </div>
-
-          <!-- Carte 2: Sécurité pfSense -->
-          <div class="e6-card glow-border" data-aos="fade-up" data-aos-delay="200">
-            <div class="realization-badge">Réalisation 2</div>
             <div class="e6-icon">
               <!-- Shield Icon -->
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -262,9 +219,8 @@
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
               </svg>
             </div>
-            <h3 class="e6-card-title">Sécurité pfSense</h3>
-            <p class="e6-card-desc">Sécurisation du réseau local et gestion des flux entrants/sortants via un pare-feu
-              dédié.</p>
+            <h3 class="e6-card-title">Cluster pfSense HA & HAProxy</h3>
+            <p class="e6-card-desc">Mise en place d'un cluster de pare-feux pfSense en haute disponibilité et d'un répartiteur de charge HAProxy pour les services de la MFC.</p>
 
             <ul class="check-list">
               <li>
@@ -272,28 +228,86 @@
                   stroke-linejoin="round">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
-                Segmentation Réseau
+                Cluster pfSense HA
               </li>
               <li>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
                   stroke-linejoin="round">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
-                Filtrage & NAT
+                HAProxy Load Balancing
               </li>
               <li>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
                   stroke-linejoin="round">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
-                Règles ICMP & Web
+                HA applicative GLPI
               </li>
             </ul>
 
             <div class="e6-card-footer flex flex-col gap-2">
-              <a href="pdf/e6/situation_pro_2.pdf" target="_blank" class="btn-primary w-full text-center">Voir réalisation 2 (PDF)</a>
-              <a href="pdf/doc_technique/pfsense.pdf" target="_blank" class="btn-doc w-full text-center text-xs">📄 Documentation pfSense</a>
+              <a href="pdf/e6/E6 situation 1 HAproxy Lyes Mouhoun .pdf" target="_blank" class="btn-primary w-full text-center">Voir réalisation 1 (PDF)</a>
+              <a href="pdf/e6/Infrastructure situation pro 2.pdf" target="_blank" class="btn-primary w-full text-center" style="background: linear-gradient(135deg, #6366f1, #8b5cf6); font-size: 0.85rem;">🌐 Schéma réseau</a>
+              <a href="pdf/e6/documentation Cluster pfsense.pdf" target="_blank" class="btn-doc w-full text-center text-xs">📄 Documentation Cluster pfSense</a>
+              <a href="pdf/e6/Mise en place d'un HAProxy sur Cluster pfSense (Load Balancing de GLPI).pdf" target="_blank" class="btn-doc w-full text-center text-xs">📄 HAProxy Load Balancing GLPI</a>
             </div>
+          </div>
+
+          <!-- Carte 2: Déploiement GPO -->
+          <div class="e6-card glow-border" data-aos="fade-up" data-aos-delay="200">
+            <div class="realization-badge">Réalisation 2</div>
+            <div class="e6-icon">
+              <!-- Windows Icon -->
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M0 3.449L9.75 2.1L9.751 11.332L0 11.332L0 3.449ZM0 12.651L9.75 12.651L9.75 21.9L0 20.551L0 12.651ZM10.865 1.944L24 0V11.332L10.865 11.332V1.944ZM10.865 12.651L24 12.651V24L10.865 22.056V12.651Z" />
+              </svg>
+            </div>
+            <h3 class="e6-card-title">Déploiement fond d'écran via GPO</h3>
+            <p class="e6-card-desc">Déploiement d'un fond d'écran via GPO pour les utilisateurs de la MFC.</p>
+
+            <ul class="check-list">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                Méthodologie AGDLP
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                Création & liaison GPO
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                Déploiement fond d'écran
+              </li>
+            </ul>
+
+            <div class="e6-card-footer flex flex-col gap-2">
+              <a href="pdf/e6/E6 situation 2 GPO Lyes Mouhoun .pdf" target="_blank" class="btn-primary w-full text-center">Voir réalisation 2 (PDF)</a>
+              <a href="pdf/e6/infrastructure situation pro1.pdf" target="_blank" class="btn-primary w-full text-center" style="background: linear-gradient(135deg, #6366f1, #8b5cf6); font-size: 0.85rem;">🌐 Schéma réseau</a>
+              <a href="pdf/e6/Documentation-Deploiement fond ecran via GPO.html" target="_blank" class="btn-doc w-full text-center text-xs">📄 Documentation Déploiement GPO</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Annexes documentaires -->
+        <div class="mt-8" data-aos="fade-up">
+          <h3 style="color: var(--text-secondary, #d1d5db); font-size: 1.1rem; margin-bottom: 1rem; text-align: center; font-weight: 600;">📎 Annexes documentaires</h3>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center;">
+            <a href="pdf/doc_technique/Documentation-Installation Active Directory (AD DS) Windows Server 2022.pdf" target="_blank" class="btn-doc text-xs" style="padding: 0.4rem 0.8rem;">📄 Installation AD DS</a>
+            <a href="pdf/e6/Doc Technique PFSENSE REJOINT dns .pdf" target="_blank" class="btn-doc text-xs" style="padding: 0.4rem 0.8rem;">📄 pfSense rejoint le DNS (AD)</a>
+            <a href="pdf/e6/documentation Joindre une machine Linux au domaine active directory.pdf" target="_blank" class="btn-doc text-xs" style="padding: 0.4rem 0.8rem;">📄 Joindre Linux au domaine AD</a>
+            <a href="pdf/doc_technique/pfsense.pdf" target="_blank" class="btn-doc text-xs" style="padding: 0.4rem 0.8rem;">📄 Documentation pfSense (base)</a>
+            <a href="pdf/doc_technique/Documentation-Configuration par GPO de l'Agent-GLPI.pdf" target="_blank" class="btn-doc text-xs" style="padding: 0.4rem 0.8rem;">📄 Configuration Agent GLPI via GPO</a>
           </div>
         </div>
       </div>

@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentation - Déploiement d'un fond d'écran via GPO</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #1a1a2e;
+      background: #f8f9fa;
+      line-height: 1.7;
+      padding: 2rem;
+    }
+    
+    .doc-container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      padding: 3rem;
+    }
+    
+    .doc-header {
+      text-align: center;
+      border-bottom: 3px solid #4361ee;
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    
+    .doc-header .org {
+      font-size: 0.85rem;
+      color: #6c757d;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+    }
+    
+    .doc-header h1 {
+      font-size: 1.6rem;
+      color: #1a1a2e;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    
+    .doc-header .meta {
+      font-size: 0.8rem;
+      color: #868e96;
+    }
+    
+    .doc-header .meta span {
+      margin: 0 0.5rem;
+    }
+    
+    .info-box {
+      background: #e7f5ff;
+      border-left: 4px solid #4361ee;
+      padding: 1rem 1.25rem;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 2rem;
+      font-size: 0.9rem;
+    }
+    
+    .info-box strong { color: #4361ee; }
+    
+    h2 {
+      font-size: 1.25rem;
+      color: #4361ee;
+      margin: 2rem 0 0.75rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 2px solid #e9ecef;
+    }
+    
+    h3 {
+      font-size: 1.05rem;
+      color: #1a1a2e;
+      margin: 1.5rem 0 0.5rem;
+    }
+    
+    p { margin-bottom: 0.75rem; font-size: 0.92rem; }
+    
+    ul, ol {
+      margin: 0.5rem 0 1rem 1.5rem;
+      font-size: 0.92rem;
+    }
+    
+    li { margin-bottom: 0.4rem; }
+    
+    .step-box {
+      background: #f8f9fa;
+      border: 1px solid #dee2e6;
+      border-radius: 8px;
+      padding: 1.25rem;
+      margin: 1rem 0;
+    }
+    
+    .step-box .step-title {
+      font-weight: 600;
+      color: #4361ee;
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+    }
+    
+    code {
+      background: #f1f3f5;
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      color: #c92a2a;
+      font-family: 'Consolas', monospace;
+    }
+    
+    .path {
+      background: #fff3bf;
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      font-family: 'Consolas', monospace;
+      color: #5c4813;
+    }
+    
+    .warning-box {
+      background: #fff9db;
+      border-left: 4px solid #f59f00;
+      padding: 0.75rem 1rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1rem 0;
+      font-size: 0.88rem;
+    }
+    
+    .success-box {
+      background: #d3f9d8;
+      border-left: 4px solid #2f9e44;
+      padding: 0.75rem 1rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1rem 0;
+      font-size: 0.88rem;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 0.88rem;
+    }
+    
+    th {
+      background: #4361ee;
+      color: #fff;
+      padding: 0.6rem 0.75rem;
+      text-align: left;
+      font-weight: 600;
+    }
+    
+    td {
+      padding: 0.5rem 0.75rem;
+      border-bottom: 1px solid #dee2e6;
+    }
+    
+    tr:nth-child(even) { background: #f8f9fa; }
+    
+    .footer {
+      text-align: center;
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid #e9ecef;
+      font-size: 0.8rem;
+      color: #868e96;
+    }
+    
+    .schema-agdlp {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      margin: 1.5rem 0;
+      flex-wrap: wrap;
+    }
+    
+    .agdlp-item {
+      background: #4361ee;
+      color: #fff;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-align: center;
+    }
+    
+    .agdlp-item.user { background: #2196f3; }
+    .agdlp-item.gg { background: #7c3aed; }
+    .agdlp-item.dl { background: #e91e63; }
+    .agdlp-item.perm { background: #2f9e44; }
+    
+    .agdlp-arrow {
+      font-size: 1.2rem;
+      color: #868e96;
+      font-weight: bold;
+    }
+
+    @media print {
+      body { padding: 0; background: #fff; }
+      .doc-container { box-shadow: none; padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="doc-container">
+    
+    <div class="doc-header">
+      <p class="org">Maison de la Formation Continue — MFC</p>
+      <h1>Documentation : Déploiement d'un fond d'écran via GPO pour les utilisateurs de la MFC</h1>
+      <p class="meta">
+        <span>Auteur : Lyes Mouhoun</span> | 
+        <span>Date : 07/04/2026</span> | 
+        <span>Réalisation professionnelle n°1</span>
+      </p>
+    </div>
+
+    <div class="info-box">
+      <strong>Objectif :</strong> Déployer un fond d'écran personnalisé MFC à l'ensemble des utilisateurs du domaine <code>mfc.local</code> via une stratégie de groupe (GPO), en respectant la méthodologie AGDLP.
+    </div>
+
+    <!-- ============================================ -->
+    <h2>1. Prérequis</h2>
+    
+    <table>
+      <tr>
+        <th>Élément</th>
+        <th>Détail</th>
+      </tr>
+      <tr>
+        <td>Serveur AD</td>
+        <td><code>SVLIL-ADMADS1</code> — Windows Server 2022 — 10.10.20.1</td>
+      </tr>
+      <tr>
+        <td>Domaine</td>
+        <td><code>mfc.local</code></td>
+      </tr>
+      <tr>
+        <td>Client de test</td>
+        <td>Windows 11 — joint au domaine <code>mfc.local</code></td>
+      </tr>
+      <tr>
+        <td>Image du fond d'écran</td>
+        <td>Fichier <code>.jpg</code> ou <code>.png</code> — résolution recommandée : 1920×1080</td>
+      </tr>
+      <tr>
+        <td>Partage réseau</td>
+        <td><code>\\SVLIL-ADMADS1\Partage_MFC\fond_ecran_mfc.jpg</code></td>
+      </tr>
+    </table>
+
+    <!-- ============================================ -->
+    <h2>2. Mise en place du partage réseau pour l'image</h2>
+    
+    <div class="step-box">
+      <p class="step-title">Étape 2.1 — Créer le dossier partagé</p>
+      <ol>
+        <li>Sur le serveur <code>SVLIL-ADMADS1</code>, créer le dossier : <span class="path">C:\Partage_MFC</span></li>
+        <li>Y placer le fichier image du fond d'écran : <code>fond_ecran_mfc.jpg</code></li>
+        <li>Clic droit sur le dossier → <strong>Propriétés</strong> → onglet <strong>Partage</strong> → <strong>Partage avancé</strong></li>
+        <li>Cocher <strong>Partager ce dossier</strong> — Nom du partage : <code>Partage_MFC</code></li>
+        <li>Cliquer sur <strong>Autorisations</strong> → Ajouter le groupe <strong>Tout le monde</strong> en <strong>Lecture</strong></li>
+      </ol>
+    </div>
+
+    <div class="step-box">
+      <p class="step-title">Étape 2.2 — Vérifier les permissions NTFS</p>
+      <ol>
+        <li>Onglet <strong>Sécurité</strong> → Vérifier que <strong>Utilisateurs du domaine</strong> ont un accès en <strong>Lecture</strong></li>
+        <li>Le chemin UNC final sera : <code>\\SVLIL-ADMADS1\Partage_MFC\fond_ecran_mfc.jpg</code></li>
+      </ol>
+    </div>
+
+    <div class="warning-box">
+      ⚠️ <strong>Important :</strong> L'image doit être accessible en lecture par tous les utilisateurs du domaine. Un partage réseau est nécessaire, car un chemin local (C:\...) ne fonctionnera pas sur les postes distants.
+    </div>
+
+    <!-- ============================================ -->
+    <h2>3. Méthodologie AGDLP — Gestion des droits</h2>
+    
+    <p>La méthodologie <strong>AGDLP</strong> (Account → Global Group → Domain Local Group → Permission) est une bonne pratique Microsoft pour structurer les droits d'accès dans un domaine Active Directory.</p>
+
+    <div class="schema-agdlp">
+      <div class="agdlp-item user">👤 Pierre Bus<br><small>(Compte utilisateur)</small></div>
+      <div class="agdlp-arrow">→</div>
+      <div class="agdlp-item gg">GG_utilisateurs<br><small>(Groupe Global)</small></div>
+      <div class="agdlp-arrow">→</div>
+      <div class="agdlp-item dl">DL_fond-d'ecran<br><small>(Groupe Domaine Local)</small></div>
+      <div class="agdlp-arrow">→</div>
+      <div class="agdlp-item perm">🔑 Permission<br><small>(GPO Fond d'écran)</small></div>
+    </div>
+
+    <h3>3.1 — Créer le Groupe Global <code>GG_utilisateurs</code></h3>
+    
+    <div class="step-box">
+      <p class="step-title">Procédure</p>
+      <ol>
+        <li>Ouvrir le <strong>Gestionnaire de serveur</strong> → <strong>Outils</strong> → <strong>Utilisateurs et ordinateurs Active Directory</strong></li>
+        <li>Naviguer vers l'OU souhaitée (ex. : <code>mfc.local → Utilisateurs</code>)</li>
+        <li>Clic droit → <strong>Nouveau</strong> → <strong>Groupe</strong></li>
+        <li>Nom du groupe : <code>GG_utilisateurs</code></li>
+        <li>Étendue du groupe : <strong>Globale</strong></li>
+        <li>Type de groupe : <strong>Sécurité</strong></li>
+        <li>Valider avec <strong>OK</strong></li>
+      </ol>
+    </div>
+
+    <h3>3.2 — Ajouter l'utilisateur Pierre Bus dans le groupe global</h3>
+    
+    <div class="step-box">
+      <p class="step-title">Procédure</p>
+      <ol>
+        <li>Dans <strong>Utilisateurs et ordinateurs Active Directory</strong>, localiser l'utilisateur <code>Pierre Bus</code></li>
+        <li>Clic droit sur <strong>Pierre Bus</strong> → <strong>Propriétés</strong> → onglet <strong>Membre de</strong></li>
+        <li>Cliquer sur <strong>Ajouter</strong> → saisir <code>GG_utilisateurs</code> → <strong>Vérifier les noms</strong> → <strong>OK</strong></li>
+        <li>Valider avec <strong>Appliquer</strong> puis <strong>OK</strong></li>
+      </ol>
+    </div>
+
+    <h3>3.3 — Créer le Groupe Domaine Local <code>DL_fond-d'ecran</code></h3>
+    
+    <div class="step-box">
+      <p class="step-title">Procédure</p>
+      <ol>
+        <li>Dans la même OU, clic droit → <strong>Nouveau</strong> → <strong>Groupe</strong></li>
+        <li>Nom du groupe : <code>DL_fond-d'ecran</code></li>
+        <li>Étendue du groupe : <strong>Domaine local</strong></li>
+        <li>Type de groupe : <strong>Sécurité</strong></li>
+        <li>Valider avec <strong>OK</strong></li>
+      </ol>
+    </div>
+
+    <h3>3.4 — Imbriquer le Groupe Global dans le Groupe Domaine Local</h3>
+    
+    <div class="step-box">
+      <p class="step-title">Procédure</p>
+      <ol>
+        <li>Clic droit sur <code>DL_fond-d'ecran</code> → <strong>Propriétés</strong> → onglet <strong>Membres</strong></li>
+        <li>Cliquer sur <strong>Ajouter</strong> → saisir <code>GG_utilisateurs</code> → <strong>Vérifier les noms</strong> → <strong>OK</strong></li>
+        <li>Le groupe <code>GG_utilisateurs</code> apparaît dans la liste des membres</li>
+        <li>Valider avec <strong>Appliquer</strong> puis <strong>OK</strong></li>
+      </ol>
+    </div>
+
+    <div class="success-box">
+      ✅ <strong>Résultat AGDLP :</strong> L'utilisateur Pierre Bus est membre de <code>GG_utilisateurs</code>, lui-même imbriqué dans <code>DL_fond-d'ecran</code>. Tout utilisateur ajouté au groupe global héritera automatiquement de la GPO.
+    </div>
+
+    <!-- ============================================ -->
+    <h2>4. Création de la GPO — Fond d'écran</h2>
+
+    <div class="step-box">
+      <p class="step-title">Étape 4.1 — Ouvrir la console de gestion des stratégies de groupe</p>
+      <ol>
+        <li>Sur <code>SVLIL-ADMADS1</code>, ouvrir le <strong>Gestionnaire de serveur</strong></li>
+        <li><strong>Outils</strong> → <strong>Gestion des stratégies de groupe</strong> (GPMC)</li>
+        <li>Développer : <code>Forêt : mfc.local</code> → <code>Domaines</code> → <code>mfc.local</code></li>
+      </ol>
+    </div>
+
+    <div class="step-box">
+      <p class="step-title">Étape 4.2 — Créer la GPO</p>
+      <ol>
+        <li>Clic droit sur <strong>Objets de stratégie de groupe</strong> → <strong>Nouveau</strong></li>
+        <li>Nom de la GPO : <code>GPO_Fond_Ecran_MFC</code></li>
+        <li>Cliquer sur <strong>OK</strong></li>
+      </ol>
+    </div>
+
+    <div class="step-box">
+      <p class="step-title">Étape 4.3 — Modifier la GPO</p>
+      <ol>
+        <li>Clic droit sur <code>GPO_Fond_Ecran_MFC</code> → <strong>Modifier</strong></li>
+        <li>Naviguer vers :<br>
+          <span class="path">Configuration utilisateur → Stratégies → Modèles d'administration → Bureau → Bureau</span>
+        </li>
+        <li>Double-cliquer sur <strong>Papier peint du Bureau</strong></li>
+        <li>Cocher <strong>Activé</strong></li>
+        <li>Dans le champ <strong>Nom du papier peint</strong>, entrer le chemin UNC :<br>
+          <code>\\SVLIL-ADMADS1\Partage_MFC\fond_ecran_mfc.jpg</code>
+        </li>
+        <li>Style du papier peint : <strong>Remplir</strong> (ou Étirer selon la préférence)</li>
+        <li>Cliquer sur <strong>Appliquer</strong> puis <strong>OK</strong></li>
+      </ol>
+    </div>
+
+    <div class="warning-box">
+      ⚠️ <strong>Note :</strong> L'option « Ne pas autoriser les modifications du papier peint » peut également être activée dans le même dossier pour empêcher les utilisateurs de changer le fond d'écran.
+    </div>
+
+    <!-- ============================================ -->
+    <h2>5. Liaison et filtrage de la GPO</h2>
+
+    <div class="step-box">
+      <p class="step-title">Étape 5.1 — Lier la GPO à l'OU</p>
+      <ol>
+        <li>Dans la <strong>GPMC</strong>, clic droit sur l'OU cible (ex. : <code>mfc.local</code> ou une OU spécifique)</li>
+        <li>Sélectionner <strong>Lier un objet de stratégie de groupe existant</strong></li>
+        <li>Choisir <code>GPO_Fond_Ecran_MFC</code> → <strong>OK</strong></li>
+      </ol>
+    </div>
+
+    <div class="step-box">
+      <p class="step-title">Étape 5.2 — Appliquer le filtrage de sécurité</p>
+      <ol>
+        <li>Cliquer sur la GPO <code>GPO_Fond_Ecran_MFC</code> dans la GPMC</li>
+        <li>Dans l'onglet <strong>Étendue</strong>, section <strong>Filtrage de sécurité</strong></li>
+        <li>Supprimer <strong>Utilisateurs authentifiés</strong> (par défaut)</li>
+        <li>Cliquer sur <strong>Ajouter</strong> → saisir <code>DL_fond-d'ecran</code> → <strong>OK</strong></li>
+      </ol>
+    </div>
+
+    <div class="success-box">
+      ✅ <strong>Résultat :</strong> Seuls les membres du groupe <code>DL_fond-d'ecran</code> (donc les membres de <code>GG_utilisateurs</code>, dont Pierre Bus) recevront la GPO du fond d'écran.
+    </div>
+
+    <!-- ============================================ -->
+    <h2>6. Vérification et tests</h2>
+
+    <div class="step-box">
+      <p class="step-title">Étape 6.1 — Forcer l'application de la GPO</p>
+      <ol>
+        <li>Sur le poste client Windows 11, ouvrir une <strong>invite de commandes en administrateur</strong></li>
+        <li>Exécuter la commande : <code>gpupdate /force</code></li>
+        <li>Attendre le message de confirmation : « La mise à jour de la stratégie s'est terminée avec succès. »</li>
+        <li>Se déconnecter puis se reconnecter avec le compte <strong>Pierre Bus</strong></li>
+      </ol>
+    </div>
+
+    <div class="step-box">
+      <p class="step-title">Étape 6.2 — Vérifier l'application</p>
+      <ol>
+        <li>Après la reconnexion, le fond d'écran MFC doit s'afficher automatiquement sur le bureau</li>
+        <li>Pour confirmer, exécuter : <code>gpresult /r</code></li>
+        <li>Vérifier que <code>GPO_Fond_Ecran_MFC</code> apparaît dans la liste des GPO appliquées</li>
+        <li>Vérifier que l'utilisateur ne peut pas modifier le fond d'écran (clic droit → Personnaliser → option grisée)</li>
+      </ol>
+    </div>
+
+    <div class="success-box">
+      ✅ <strong>Validation finale :</strong> Le fond d'écran MFC est déployé avec succès via GPO pour les utilisateurs du groupe <code>GG_utilisateurs</code> en respectant la méthodologie AGDLP.
+    </div>
+
+    <!-- ============================================ -->
+    <h2>7. Récapitulatif</h2>
+
+    <table>
+      <tr>
+        <th>Élément</th>
+        <th>Nom / Valeur</th>
+      </tr>
+      <tr>
+        <td>Serveur AD</td>
+        <td><code>SVLIL-ADMADS1</code> (10.10.20.1)</td>
+      </tr>
+      <tr>
+        <td>Domaine</td>
+        <td><code>mfc.local</code></td>
+      </tr>
+      <tr>
+        <td>GPO</td>
+        <td><code>GPO_Fond_Ecran_MFC</code></td>
+      </tr>
+      <tr>
+        <td>Groupe Global</td>
+        <td><code>GG_utilisateurs</code></td>
+      </tr>
+      <tr>
+        <td>Groupe Domaine Local</td>
+        <td><code>DL_fond-d'ecran</code></td>
+      </tr>
+      <tr>
+        <td>Utilisateur</td>
+        <td><code>Pierre Bus</code> (membre de GG_utilisateurs)</td>
+      </tr>
+      <tr>
+        <td>Chemin UNC image</td>
+        <td><code>\\SVLIL-ADMADS1\Partage_MFC\fond_ecran_mfc.jpg</code></td>
+      </tr>
+      <tr>
+        <td>Chemin GPO</td>
+        <td>Config. utilisateur → Bureau → Papier peint du Bureau</td>
+      </tr>
+    </table>
+
+    <div class="footer">
+      <p>Documentation réalisée par <strong>Lyes Mouhoun</strong> — BTS SIO SISR — Lycée Turgot, Paris</p>
+      <p>Maison de la Formation Continue (MFC) — Réalisation professionnelle n°1 — Épreuve E6</p>
+    </div>
+
+  </div>
+</body>
+</html>

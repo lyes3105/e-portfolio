@@ -1,0 +1,55 @@
+Chiffres clef
+
+Siège (Lille) : 30 salles / 250 postes
+3 étages : 1er étage = admin, RdC et 2e/3e salles de formation
+Réserve de 30 PC
+5 techniciens
+Déploiement par image
+Réseau administratif isolé
+VPN avec les filiales
+Intranet local
+Messagerie locale
+Serveur web hébergé
+
+- Serveur d'annuaire + DHCP + DNS
+- Serveur de fichier + admin parc
+- Serveur NAS (sauvegardes données)
+- DMZ
+	. Intranet
+	. Relais messagerie mfc.fr
+	. Serveur FTP documents formation
+	. Proxy pour filtrer accès internet depuis formation
+	. Nommage : SVLIL-PUB[rôle du serveur +n°]
+- Nommage général
+	SV[3 premières lettres du site]-ADM[rôle du serveur +n°]
+	3 lettres du site qui peut être LIL, BOR, NAN, LYO, NIC 
+	rôle du serveur (3 lettres + 1 chiffre) est ADS (Active Directory) FIC (fichiers) BDD (SGBD) NAS (NAS) POP (messagerie) WEB (web) FTP (ftp) GPA (gestion de parc) APP (applications) …
+	Exemple : SVLIL-ADMADS1 (premier serveur active directory de Lille)
+	SV[3 premières lettres du site]-FOR
+	
+Admin :	paramétrer les noms des postes selon les règles de gestion suivantes :
+STA[3 premières lettres du site]-B[numéro du bureau]P[numéro du poste]
+•	3 lettres du site qui peut être LIL, BOR, NAN, LYO, NIC 
+•	numéro du bureau est compris 00 et 11
+•	numéro du poste 2 chiffres : correspond au numéro écrit sur la prise murale
+Exemple : STALIL-B01P01 (station de Lille du bureau 01 prise 01)
+Formation : 
+STA[3 premières lettres du site]-S[numéro de la salle]P[numéro du poste]
+•	3 lettres du site qui peut être LIL, BOR, NAN, LYO, NIC 
+•	N°salle sur 2 chiffres : correspond aux numéros affectés aux salles de formation
+•	numéro du poste 2 chiffres : correspond au numéro écrit sur la prise murale
+Exemple : STALIL-S22P01 (station de Lille de la salle 22 prise 01)
+
+
+L’adresse choisie pour la MFC est le réseau 10.0.0.0/16, le 2ème octet indiquera le site et le vlan, le 3ème octet indiquera le type de matériel et le 4ème numérotera le matériel.
+10.10 pour le réseau administratif et pour le Wifi des stagiaires, 10.11 pour le réseau de la formation et 10.12 pour le Wifi de la salle de réunion puis 10.13 pour la TOIP
+Les routeurs sont numérotés 1 sur le troisième octet
+Les commutateurs sont numérotés 2 sur le troisième octet
+Les bornes WIFI sont numérotées 3 sur le troisième octet
+Les téléphones IP sont numérotés 60 sur le troisième octet
+Les serveurs sont numérotés 10 sur le troisième octet pour LinuX et 20 pour Windows
+Les imprimantes sont numérotées 50 sur le troisième octet
+Les copieurs sont numérotés 51 sur le troisième octet
+
+Les adresses paramétrées via DHCP :
+Les stations sont numérotées de 100 à 120 sur le troisième octet
