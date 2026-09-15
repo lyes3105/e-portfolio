@@ -1339,7 +1339,13 @@
       <div class="section-divider"></div>
 
       <div class="max-w-2xl mx-auto contact-wrapper">
-        <form action="mailto:lyesmouhoun05@gmail.com" method="POST" enctype="text/plain" class="card space-y-5 w-full">
+        <form action="https://formsubmit.co/lyesmouhoun05@gmail.com" method="POST" class="card space-y-5 w-full">
+          <!-- FormSubmit Configuration -->
+          <input type="hidden" name="_subject" value="Nouveau message depuis ton Portfolio !">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://lyes3105.github.io/e-portfolio/index.html?success=1#contact">
+          <input type="hidden" name="_template" value="table">
+          
           <div class="grid md:grid-cols-2 gap-4">
             <input type="text" name="name" placeholder="Votre nom" required class="form-input">
             <input type="email" name="email" placeholder="Votre email" required class="form-input">
