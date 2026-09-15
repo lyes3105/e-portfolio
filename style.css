@@ -141,12 +141,16 @@ body.cursor-hover .cursor-outline {
   opacity: 0.8;
 }
 
-@media (max-width: 1024px) {
-
+/* Disable custom cursor ONLY on touch devices */
+@media (pointer: coarse) {
   .cursor-dot,
   .cursor-outline,
   .flashlight {
-    display: none;
+    display: none !important;
+  }
+
+  body, a, button, .card-hover, .skill-card, .nav-link, .theme-switch {
+    cursor: auto !important;
   }
 }
 
